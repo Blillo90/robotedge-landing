@@ -5,14 +5,14 @@ export default function About() {
         <div>
           <h2 className="text-2xl font-bold text-slate-900 mb-5">Who we are</h2>
           <p className="text-slate-500 mb-4 leading-relaxed">
-            RobotEdge is a research publication focused on algorithmic and
-            quantitative trading. We believe that transparent, methodical analysis
-            leads to better outcomes than intuition-driven decisions.
+            RobotEdge is a trading academy dedicated to algorithmic and
+            quantitative trading. We help traders replace gut-feel decisions
+            with systematic, rules-based strategies powered by real data.
           </p>
           <p className="text-slate-500 leading-relaxed">
-            Our blog covers strategy development, risk frameworks, Python
-            implementation, and market microstructure — written by practitioners
-            for practitioners.
+            Our guides walk you through strategy design, backtesting frameworks,
+            risk management, and deploying live trading bots — written by active
+            algo traders for traders who take their edge seriously.
           </p>
         </div>
         <div className="bg-slate-50 rounded-xl p-8 border border-slate-100">
@@ -30,7 +30,7 @@ export default function About() {
                 Format
               </dt>
               <dd className="text-slate-800 font-medium text-sm">
-                Long-form Research Articles
+                Practical Guides &amp; In-Depth Articles
               </dd>
             </div>
             <div>
@@ -46,7 +46,7 @@ export default function About() {
                 Topics
               </dt>
               <dd className="text-slate-800 font-medium text-sm">
-                Backtesting, Risk, Python, Live Trading
+                Trading Bots, Backtesting, Risk, Python, Automation
               </dd>
             </div>
           </dl>

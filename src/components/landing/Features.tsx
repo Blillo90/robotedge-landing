@@ -1,23 +1,23 @@
 const features = [
   {
-    title: 'Systematic Approach',
+    title: 'Rules-Based Trading',
     description:
-      'Every strategy is defined by explicit, testable rules — removing emotional bias from the trading process entirely.',
+      'Every automated trading strategy runs on explicit, testable logic — no discretion, no second-guessing. Just consistent, repeatable execution.',
   },
   {
-    title: 'Rigorous Backtesting',
+    title: 'Backtesting & Validation',
     description:
-      'Validate strategies against historical data with proper statistical methods before risking a single dollar.',
+      'Stress-test every trading bot against historical data using rigorous statistical methods. Know your edge before you risk a single dollar.',
   },
   {
     title: 'Risk Management',
     description:
-      'Position sizing, drawdown limits, and portfolio construction treated with the same rigor as signal generation.',
+      'Position sizing, drawdown controls, and capital allocation built directly into your algorithms — because protecting capital matters as much as capturing returns.',
   },
   {
-    title: 'Live Deployment',
+    title: 'Live Bot Deployment',
     description:
-      'From research to production: brokers, execution infrastructure, and live monitoring explained in detail.',
+      'Go from backtested strategy to fully operational trading bot: broker integration, real-time monitoring, and ongoing refinement — covered step by step.',
   },
 ]
 
@@ -27,11 +27,11 @@ export default function Features() {
       <div className="max-w-6xl mx-auto">
         <div className="max-w-lg mb-14">
           <h2 className="text-2xl font-bold text-slate-900 mb-3">
-            Built on first principles
+            The four pillars of algorithmic trading
           </h2>
           <p className="text-slate-500 leading-relaxed">
-            Systematic trading is not a black box. We break down each component
-            so you understand exactly what you&apos;re building and why it works.
+            Systematic trading is a learnable discipline. We cover every layer
+            — from strategy logic to live bot deployment — so nothing is a black box.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
