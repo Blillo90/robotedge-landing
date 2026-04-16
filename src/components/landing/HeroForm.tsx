@@ -111,7 +111,7 @@ export default function HeroForm() {
           placeholder="tu@email.com"
           autoComplete="email"
           disabled={status === 'loading'}
-          className={inputBase}
+          className={inputBase + ' sm:flex-[1.6]'}
           style={inputStyle}
           onFocus={onFocus}
           onBlur={onBlur}
