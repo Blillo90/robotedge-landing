@@ -137,3 +137,56 @@
   color: #F7F5F2;
   padding: 0;
 }
+
+/* ─── Video placeholder ───────────────────────────────────────────────────── */
+.prose .video-placeholder {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(20,138,255,0.2);
+  background: #0C1521;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prose .video-placeholder__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.prose .video-placeholder__play svg {
+  width: 72px;
+  height: 72px;
+  transition: transform 0.2s;
+}
+
+.prose .video-placeholder:hover .video-placeholder__play svg {
+  transform: scale(1.08);
+}
+
+.prose .video-placeholder__label {
+  color: #F0F4F8;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-display), sans-serif;
+  margin: 0;
+}
+
+.prose .video-placeholder__sub {
+  color: #3A5270;
+  font-size: 0.8rem;
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}

@@ -60,7 +60,7 @@ function PerformanceCard() {
 
   return (
     <div
-      className="w-full max-w-[520px] overflow-hidden shadow-2xl"
+      className="w-full max-w-[600px] overflow-hidden shadow-2xl"
       style={{ borderRadius: '12px', background: '#111C28', border: '1px solid rgba(255,255,255,0.08)' }}
     >
       {/* Header */}
@@ -98,12 +98,6 @@ function PerformanceCard() {
         ))}
       </div>
 
-      {/* Footer */}
-      <div className="px-6 py-3" style={{ background: '#0C1521', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <p className="text-xs" style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}>
-          Resultados simulados. No constituye asesoramiento financiero.
-        </p>
-      </div>
     </div>
   )
 }
@@ -112,7 +106,7 @@ export default function Hero() {
   return (
     <section className="pt-[60px] px-4 sm:px-6 pb-6">
       <div
-        className="relative max-w-6xl mx-auto overflow-hidden"
+        className="relative max-w-[1400px] mx-auto overflow-hidden"
         style={{
           background: '#0C1521',
           borderRadius: '12px',

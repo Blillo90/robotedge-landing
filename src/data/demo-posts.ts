@@ -20,6 +20,20 @@ export const demoPosts: Post[] = [
   <li><strong>La ejecución</strong>: la conexión con el broker, el manejo de órdenes, los logs. Donde más bugs aparecen en producción.</li>
 </ul>
 
+<h2>Mira cómo funciona en la práctica</h2>
+<div class="video-placeholder">
+  <div class="video-placeholder__inner">
+    <div class="video-placeholder__play">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="12" fill="rgba(20,138,255,0.15)" stroke="rgba(20,138,255,0.4)" stroke-width="1"/>
+        <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="#148AFF"/>
+      </svg>
+    </div>
+    <p class="video-placeholder__label">Demo: Robot de trading en Python ejecutando en live</p>
+    <p class="video-placeholder__sub">Próximamente disponible en esta guía</p>
+  </div>
+</div>
+
 <h2>El proceso correcto: de la idea al live trading</h2>
 <p>La metodología que funciona sigue siempre el mismo orden. No hay atajos.</p>
 <ol>
