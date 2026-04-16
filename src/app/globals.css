@@ -49,9 +49,9 @@
   background-size: 52px 52px;
 }
 
-/* ─── Feature card hover ──────────────────────────────────────────────────── */
-.feature-card .feature-num         { color: #ABA79F; transition: color 0.25s; }
-.feature-card:hover .feature-num   { color: #059669; }
+/* ─── Feature card hover (dark bg) ───────────────────────────────────────── */
+.feature-card .feature-num         { color: #2D4A5E; transition: color 0.25s; }
+.feature-card:hover .feature-num   { color: #10B981; }
 
 /* ─── Post card hover ─────────────────────────────────────────────────────── */
 .post-card .post-title             { color: #141412; transition: color 0.2s; }
