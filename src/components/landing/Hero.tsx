@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import HeroForm from './HeroForm'
 
 function EquityCurve() {
   return (
@@ -185,22 +186,9 @@ export default function Hero() {
               precisión — las 24 horas del día.
             </p>
 
-            {/* CTAs */}
-            <div className="animate-fade-up delay-4 flex flex-col sm:flex-row gap-3 mb-16">
-              <Link
-                href="/blog"
-                className="inline-flex items-center gap-2 bg-edge hover:bg-edge-dim text-white text-sm font-medium px-6 py-3.5 transition-colors"
-              >
-                Ver las Guías
-                <span aria-hidden>→</span>
-              </Link>
-              <Link
-                href="#about"
-                className="inline-flex items-center text-sm font-medium px-6 py-3.5 text-ink-2 hover:text-ink-1 transition-colors"
-                style={{ border: '1px solid rgba(0,0,0,0.12)' }}
-              >
-                Sobre Nosotros
-              </Link>
+            {/* Lead form */}
+            <div className="animate-fade-up delay-4 mb-16">
+              <HeroForm />
             </div>
 
             {/* Stat row */}

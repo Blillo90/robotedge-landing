@@ -7,15 +7,12 @@ import Testimonials from '@/components/landing/Testimonials'
 import About from '@/components/landing/About'
 import LeadForm from '@/components/landing/LeadForm'
 import BlogCTA from '@/components/landing/BlogCTA'
-import EmailCapture from '@/components/landing/EmailCapture'
-
 export default function HomePage() {
   return (
     <>
       <Navbar />
       <main id="main-content">
         <Hero />
-        <EmailCapture />
         <MetricsStrip />
         <Features />
         <Testimonials />
