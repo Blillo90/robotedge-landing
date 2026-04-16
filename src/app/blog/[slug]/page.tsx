@@ -29,7 +29,7 @@ export default async function PostPage({ params }: Props) {
   const post = await getPostBySlug(slug)
   if (!post) notFound()
 
-  const publishedDate = new Date(post.created_at).toLocaleDateString('en-US', {
+  const publishedDate = new Date(post.created_at).toLocaleDateString('es-ES', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -45,7 +45,7 @@ export default async function PostPage({ params }: Props) {
             className="inline-flex items-center gap-2 text-xs tracking-[0.12em] uppercase text-ink-3 hover:text-ink-1 transition-colors mb-14"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            ← Back
+            ← Volver
           </Link>
 
           <header className="mb-12">

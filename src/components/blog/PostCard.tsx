@@ -2,9 +2,9 @@ import Link from 'next/link'
 import type { Post } from '@/types'
 
 function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString('en-US', {
+  return new Date(dateString).toLocaleDateString('es-ES', {
     year: 'numeric',
-    month: 'short',
+    month: 'long',
     day: 'numeric',
   })
 }
@@ -34,7 +34,7 @@ export default function PostCard({ post }: { post: Post }) {
         className="post-read mt-auto pt-1 text-xs font-medium"
         style={{ fontFamily: 'var(--font-mono)' }}
       >
-        Read article →
+        Leer artículo →
       </Link>
     </article>
   )

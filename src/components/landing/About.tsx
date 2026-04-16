@@ -1,8 +1,8 @@
 const specs = [
-  { label: 'Focus',    value: 'Algorithmic & Quantitative Trading' },
-  { label: 'Format',   value: 'Step-by-Step Guides & Articles' },
-  { label: 'Language', value: 'English & Spanish' },
-  { label: 'Topics',   value: 'Trading Bots, Backtesting, Risk, Automation' },
+  { label: 'Enfoque',  value: 'Trading Algorítmico & Cuantitativo' },
+  { label: 'Formato',  value: 'Guías Prácticas & Artículos Técnicos' },
+  { label: 'Idioma',   value: 'Español & English' },
+  { label: 'Temas',    value: 'Bots, Backtesting, Riesgo, Python, Automatización' },
 ]
 
 export default function About() {
@@ -18,32 +18,33 @@ export default function About() {
               className="text-xs tracking-[0.22em] uppercase text-edge"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
-              Who we are
+              Quiénes somos
             </span>
           </div>
           <h2
             className="font-display font-bold text-ink-1 leading-tight mb-6"
             style={{ fontSize: 'clamp(26px, 3.5vw, 44px)' }}
           >
-            A trading academy built for systematic traders
+            Una academia de trading construida para traders sistemáticos
           </h2>
           <p className="text-ink-2 leading-relaxed mb-5">
-            RobotEdge is a trading academy dedicated to algorithmic and
-            quantitative trading. We help traders replace gut-feel decisions
-            with systematic, rules-based strategies powered by real data.
+            RobotEdge es una academia de trading dedicada al trading algorítmico
+            y cuantitativo. Ayudamos a traders a sustituir decisiones basadas en
+            el instinto por estrategias sistemáticas y basadas en reglas,
+            respaldadas por datos reales.
           </p>
           <p className="text-ink-2 leading-relaxed">
-            Our guides cover everything from designing your first automated
-            trading strategy to deploying fully operational trading bots —
-            written by active algo traders, for traders who take their edge
-            seriously.
+            Nuestras guías cubren desde el diseño de tu primera estrategia
+            automatizada hasta el despliegue de bots de trading totalmente
+            operativos — escritas por traders algorítmicos activos, para traders
+            que se toman su ventaja en serio.
           </p>
         </div>
 
         {/* Right: spec table */}
         <div
           className="bg-bg-surface"
-          style={{ border: '1px solid rgba(255,255,255,0.07)' }}
+          style={{ border: '1px solid rgba(0,0,0,0.08)' }}
         >
           {specs.map((s, i) => (
             <div
@@ -51,7 +52,7 @@ export default function About() {
               className="flex items-start justify-between gap-8 px-8 py-6"
               style={{
                 borderBottom:
-                  i < specs.length - 1 ? '1px solid rgba(255,255,255,0.06)' : undefined,
+                  i < specs.length - 1 ? '1px solid rgba(0,0,0,0.06)' : undefined,
               }}
             >
               <dt

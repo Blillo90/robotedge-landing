@@ -1,27 +1,27 @@
 const features = [
   {
     number: '01',
-    title: 'Rules-Based Systems',
+    title: 'Sistemas Basados en Reglas',
     description:
-      'Every automated trading strategy runs on explicit, testable logic — no guesswork, no emotional decisions. Just consistent, repeatable execution.',
+      'Cada estrategia de trading automatizado funciona con lógica explícita y verificable — sin improvisación, sin decisiones emocionales. Solo ejecución consistente y repetible.',
   },
   {
     number: '02',
-    title: 'Data-Driven Backtesting',
+    title: 'Backtesting con Datos Reales',
     description:
-      'Before any trading bot goes live, it\'s stress-tested against historical data using rigorous statistical methods. Know your edge before risking a single dollar.',
+      'Antes de que un bot opere en vivo, se somete a pruebas rigurosas contra datos históricos con métodos estadísticos serios. Conoce tu ventaja antes de arriesgar un euro.',
   },
   {
     number: '03',
-    title: 'Built-In Risk Management',
+    title: 'Gestión de Riesgo Integrada',
     description:
-      'Position sizing, drawdown controls, and capital allocation baked directly into your algorithms — because protecting capital is as critical as generating returns.',
+      'Tamaño de posición, límites de drawdown y gestión de capital integrados directamente en tus algoritmos — porque proteger el capital es tan crítico como generar retornos.',
   },
   {
     number: '04',
-    title: 'Live Bot Deployment',
+    title: 'Despliegue del Bot en Vivo',
     description:
-      'From backtested strategy to live trading bot: broker connectivity, real-time monitoring, and ongoing optimisation — covered step by step.',
+      'De la estrategia con backtesting al bot operativo: conexión con brokers, monitorización en tiempo real y optimización continua — explicado paso a paso.',
   },
 ]
 
@@ -38,35 +38,30 @@ export default function Features() {
               className="text-xs tracking-[0.22em] uppercase text-edge"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
-              Core Curriculum
+              Metodología
             </span>
           </div>
           <h2
             className="font-display font-bold text-ink-1 leading-tight mb-4"
             style={{ fontSize: 'clamp(26px, 3.5vw, 44px)' }}
           >
-            The building blocks of algorithmic trading
+            Los pilares del trading algorítmico
           </h2>
           <p className="text-ink-2 leading-relaxed" style={{ maxWidth: '52ch' }}>
-            Automated trading doesn&apos;t have to be a black box. We break down
-            every component — from strategy logic to live bot deployment — so
-            you understand exactly how your system works.
+            El trading automatizado no tiene por qué ser una caja negra. Desglosamos
+            cada componente — desde la lógica de la estrategia hasta el despliegue del
+            bot — para que entiendas exactamente cómo funciona tu sistema.
           </p>
         </div>
 
         {/* Feature grid — hairline borders via gap-px */}
         <div
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px"
-          style={{ background: 'rgba(255,255,255,0.07)' }}
+          style={{ background: 'rgba(0,0,0,0.07)' }}
         >
           {features.map((f) => (
-            <div
-              key={f.number}
-              className="feature-card p-8 bg-bg-surface"
-            >
-              <p
-                className="feature-num font-mono text-2xl font-medium mb-6"
-              >
+            <div key={f.number} className="feature-card p-8 bg-bg-surface">
+              <p className="feature-num font-mono text-2xl font-medium mb-6">
                 {f.number}
               </p>
               <h3 className="text-sm font-semibold text-ink-1 mb-3 leading-snug">

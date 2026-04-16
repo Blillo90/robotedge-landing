@@ -9,32 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-syne)', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
-        sans: ['var(--font-figtree)', 'sans-serif'],
+        display: ['var(--font-display)', 'sans-serif'],
+        mono:    ['var(--font-mono)',    'monospace'],
+        sans:    ['var(--font-figtree)', 'sans-serif'],
       },
       colors: {
         bg: {
-          base:     '#06090D',
-          surface:  '#0C1219',
-          elevated: '#111C27',
+          base:     '#F7F5F2',
+          surface:  '#FFFFFF',
+          elevated: '#EDE9E3',
         },
         edge: {
-          DEFAULT: '#22D3A0',
-          dim:     '#17A37C',
+          DEFAULT: '#059669',
+          dim:     '#047857',
         },
         ink: {
-          1: '#F0F4F8',
-          2: '#7D96B0',
-          3: '#3A5270',
-        },
-        line: 'rgba(255,255,255,0.07)',
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: 'none',
-          },
+          1: '#141412',
+          2: '#6A6861',
+          3: '#ABA79F',
         },
       },
     },

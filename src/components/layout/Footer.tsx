@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer
       className="px-6 py-10 bg-bg-base"
-      style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
     >
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5 group">
@@ -32,7 +32,7 @@ export default function Footer() {
             className="text-xs tracking-[0.14em] uppercase text-ink-3 hover:text-ink-1 transition-colors"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            About
+            Acerca de
           </Link>
         </nav>
 
@@ -40,7 +40,7 @@ export default function Footer() {
           className="text-xs text-ink-3"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
-          &copy; {year} RobotEdge. All rights reserved.
+          &copy; {year} RobotEdge. Todos los derechos reservados.
         </p>
       </div>
     </footer>

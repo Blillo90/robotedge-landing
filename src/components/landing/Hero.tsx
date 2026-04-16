@@ -9,7 +9,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 65% 55% at 20% 40%, rgba(34,211,160,0.07) 0%, transparent 65%)',
+            'radial-gradient(ellipse 60% 55% at 15% 45%, rgba(5,150,105,0.06) 0%, transparent 65%)',
         }}
       />
 
@@ -20,7 +20,7 @@ export default function Hero() {
           fontSize: 'clamp(180px, 28vw, 400px)',
           fontFamily: 'var(--font-mono)',
           fontWeight: 500,
-          color: 'rgba(255,255,255,0.022)',
+          color: 'rgba(0,0,0,0.04)',
           letterSpacing: '-0.05em',
         }}
         aria-hidden
@@ -37,17 +37,17 @@ export default function Hero() {
             className="text-xs tracking-[0.22em] uppercase text-edge"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            Algorithmic &amp; Automated Trading
+            Trading Algorítmico &amp; Automatizado
           </span>
         </div>
 
         {/* Headline */}
         <h1
-          className="animate-fade-up delay-2 font-display font-extrabold text-ink-1 leading-[1.0] tracking-tight mb-8"
-          style={{ fontSize: 'clamp(44px, 7.5vw, 100px)', maxWidth: '13ch' }}
+          className="animate-fade-up delay-2 font-display font-extrabold text-ink-1 leading-[1.05] tracking-tight mb-8"
+          style={{ fontSize: 'clamp(40px, 7vw, 92px)', maxWidth: '14ch' }}
         >
-          Let your trading robots work for{' '}
-          <span className="text-edge">you.</span>
+          Que tus robots de trading trabajen para{' '}
+          <span className="text-edge">ti.</span>
         </h1>
 
         {/* Body */}
@@ -55,38 +55,38 @@ export default function Hero() {
           className="animate-fade-up delay-3 text-ink-2 leading-relaxed mb-10"
           style={{ fontSize: '1.1rem', maxWidth: '48ch' }}
         >
-          Automated trading strategies built on data, not emotion. Learn to
-          design, backtest, and deploy trading bots that execute with precision
-          — 24 hours a day.
+          Estrategias de trading automatizadas basadas en datos, no en emociones.
+          Aprende a diseñar, hacer backtesting y desplegar bots que operan con
+          precisión — las 24 horas del día.
         </p>
 
         {/* CTAs */}
         <div className="animate-fade-up delay-4 flex flex-col sm:flex-row gap-3">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 bg-edge hover:bg-edge-dim text-bg-base text-sm font-medium px-6 py-3.5 transition-colors"
+            className="inline-flex items-center gap-2 bg-edge hover:bg-edge-dim text-white text-sm font-medium px-6 py-3.5 transition-colors"
           >
-            Explore the Guides
+            Ver las Guías
             <span aria-hidden>→</span>
           </Link>
           <Link
             href="#about"
             className="inline-flex items-center text-sm font-medium px-6 py-3.5 text-ink-2 hover:text-ink-1 transition-colors"
-            style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+            style={{ border: '1px solid rgba(0,0,0,0.12)' }}
           >
-            About Us
+            Sobre Nosotros
           </Link>
         </div>
 
         {/* Stat row */}
         <div
           className="animate-fade-up delay-5 mt-20 pt-8 flex flex-wrap gap-12"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+          style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
         >
           {[
-            { label: 'Execution',     value: '24 / 7' },
-            { label: 'Strategy type', value: 'Rules-Based' },
-            { label: 'Approach',      value: 'Systematic' },
+            { label: 'Ejecución',     value: '24 / 7' },
+            { label: 'Tipo de estrategia', value: 'Basada en reglas' },
+            { label: 'Enfoque',       value: 'Sistemático' },
           ].map((s) => (
             <div key={s.label}>
               <p
