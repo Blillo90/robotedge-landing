@@ -7,6 +7,7 @@ import Testimonials from '@/components/landing/Testimonials'
 import About from '@/components/landing/About'
 import LeadForm from '@/components/landing/LeadForm'
 import BlogCTA from '@/components/landing/BlogCTA'
+import EmailCapture from '@/components/landing/EmailCapture'
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
         <About />
         <LeadForm />
         <BlogCTA />
+        <EmailCapture />
       </main>
       <Footer />
     </>
