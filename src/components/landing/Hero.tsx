@@ -188,7 +188,9 @@ export default function Hero() {
 
             {/* Lead form */}
             <div className="animate-fade-up delay-4 mb-16">
-              <HeroForm />
+              <div className="px-6 py-6" style={{ background: '#0C1521' }}>
+                <HeroForm />
+              </div>
             </div>
 
             {/* Stat row */}

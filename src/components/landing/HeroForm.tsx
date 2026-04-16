@@ -39,26 +39,30 @@ export default function HeroForm() {
   }
 
   const inputBase =
-    'flex-1 min-w-0 px-4 py-3.5 text-sm bg-transparent outline-none disabled:opacity-50 placeholder:text-ink-3'
+    'flex-1 min-w-0 px-4 py-3.5 text-sm bg-transparent outline-none disabled:opacity-50'
   const inputStyle = {
-    border:     '1px solid rgba(0,0,0,0.12)',
-    color:      '#141412',
+    border:     '1px solid rgba(255,255,255,0.12)',
+    color:      '#F0F4F8',
     fontFamily: 'var(--font-mono)',
   }
+  const onFocus = (e: React.FocusEvent<HTMLInputElement>) =>
+    (e.currentTarget.style.borderColor = 'rgba(16,185,129,0.6)')
+  const onBlur  = (e: React.FocusEvent<HTMLInputElement>) =>
+    (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)')
 
   if (status === 'success') {
     return (
       <div
         className="flex items-center gap-3 px-5 py-4"
-        style={{ border: '1px solid rgba(5,150,105,0.3)', background: 'rgba(5,150,105,0.05)' }}
+        style={{ border: '1px solid rgba(16,185,129,0.3)', background: 'rgba(16,185,129,0.08)' }}
       >
         <span
           className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-white text-xs"
-          style={{ background: '#059669' }}
+          style={{ background: '#10B981' }}
         >
           ✓
         </span>
-        <p className="text-sm" style={{ fontFamily: 'var(--font-mono)', color: '#141412' }}>
+        <p className="text-sm" style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}>
           ¡Listo! Revisa tu bandeja de entrada.
         </p>
       </div>
@@ -82,8 +86,8 @@ export default function HeroForm() {
           disabled={status === 'loading'}
           className={inputBase}
           style={inputStyle}
-          onFocus={(e) => (e.currentTarget.style.borderColor = '#059669')}
-          onBlur={(e)  => (e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)')}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
         <input
           id="hf-apellidos"
@@ -95,8 +99,8 @@ export default function HeroForm() {
           disabled={status === 'loading'}
           className={inputBase}
           style={inputStyle}
-          onFocus={(e) => (e.currentTarget.style.borderColor = '#059669')}
-          onBlur={(e)  => (e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)')}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
         <input
           id="hf-email"
@@ -109,28 +113,28 @@ export default function HeroForm() {
           disabled={status === 'loading'}
           className={inputBase}
           style={inputStyle}
-          onFocus={(e) => (e.currentTarget.style.borderColor = '#059669')}
-          onBlur={(e)  => (e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)')}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="px-6 py-3.5 text-sm font-medium text-white transition-colors disabled:opacity-60 shrink-0"
-          style={{ background: '#059669', fontFamily: 'var(--font-mono)' }}
-          onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#047857' }}
-          onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#059669' }}
+          className="px-6 py-3.5 text-sm font-medium transition-colors disabled:opacity-60 shrink-0"
+          style={{ background: '#10B981', color: '#0C1521', fontFamily: 'var(--font-mono)' }}
+          onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#059669' }}
+          onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#10B981' }}
         >
           {status === 'loading' ? '…' : 'Empezar →'}
         </button>
       </div>
 
       {status === 'error' && (
-        <p className="mt-2 text-xs text-red-500" role="alert">
+        <p className="mt-2 text-xs text-red-400" role="alert">
           Error al enviar. Inténtalo de nuevo.
         </p>
       )}
 
-      <p className="mt-3 text-xs" style={{ color: '#ABA79F', fontFamily: 'var(--font-mono)' }}>
+      <p className="mt-3 text-xs" style={{ color: '#3A5270', fontFamily: 'var(--font-mono)' }}>
         Gratis. Sin spam. Baja cuando quieras.
       </p>
     </form>
