@@ -17,8 +17,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Solicitud inválida.' }, { status: 400 })
   }
 
-  const data = body as Record<string, unknown>
-  const email = typeof data?.email === 'string' ? data.email.trim().toLowerCase() : ''
+  const data    = body as Record<string, unknown>
+  const email   = typeof data?.email    === 'string' ? data.email.trim().toLowerCase() : ''
+  const nombre  = typeof data?.nombre   === 'string' ? data.nombre.trim().slice(0, 100)   : ''
+  const apellidos = typeof data?.apellidos === 'string' ? data.apellidos.trim().slice(0, 100) : ''
 
   if (!isValidEmail(email)) {
     return NextResponse.json({ error: 'Introduce un email válido.' }, { status: 400 })
@@ -26,7 +28,12 @@ export async function POST(req: NextRequest) {
 
   try {
     const supabase = createPublicClient()
-    const { error } = await supabase.from('leads').insert({ email, source: 'landing' })
+    const { error } = await supabase.from('leads').insert({
+      email,
+      nombre:    nombre   || null,
+      apellidos: apellidos || null,
+      source:    'landing',
+    })
 
     // Ignore duplicate email — treat as success (no info leak)
     if (error && !error.message.includes('duplicate')) {

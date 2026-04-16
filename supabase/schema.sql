@@ -46,6 +46,8 @@ CREATE POLICY "Authenticated users have full access"
 CREATE TABLE IF NOT EXISTS leads (
   id         UUID        DEFAULT gen_random_uuid() PRIMARY KEY,
   email      TEXT        NOT NULL UNIQUE,
+  nombre     TEXT,
+  apellidos  TEXT,
   source     TEXT        NOT NULL DEFAULT 'landing',
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );

@@ -15,13 +15,13 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <Hero />
+        <EmailCapture />
         <MetricsStrip />
         <Features />
         <Testimonials />
         <About />
         <LeadForm />
         <BlogCTA />
-        <EmailCapture />
       </main>
       <Footer />
     </>
