@@ -66,10 +66,9 @@ export default function Navbar() {
           <Link
             href="/blog"
             className="text-xs tracking-[0.14em] uppercase font-medium px-4 py-2 text-white transition-colors rounded-lg"
-            style={{ background: '#148AFF' }}
+            style={{ background: '#148AFF', fontFamily: 'var(--font-mono)' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
             onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
-            style={{ fontFamily: 'var(--font-mono)' }}
           >
             Leer Artículos
           </Link>
