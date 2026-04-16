@@ -42,7 +42,8 @@ function PerformanceCard() {
 
   return (
     <div
-      className="w-full max-w-[420px] rounded-sm overflow-hidden shadow-2xl"
+      className="w-full max-w-[500px] overflow-hidden shadow-2xl"
+      style={{ borderRadius: '12px' }}
       style={{
         background: '#111C28',
         border: '1px solid rgba(255,255,255,0.08)',
@@ -59,13 +60,13 @@ function PerformanceCard() {
         >
           Estrategia Demo
         </span>
-        <span className="flex items-center gap-1.5">
+        <span className="flex items-center gap-2 px-3 py-1 rounded-full" style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.25)' }}>
           <span
-            className="w-2 h-2 rounded-full"
-            style={{ background: '#10B981', boxShadow: '0 0 8px #10B981' }}
+            className="w-2 h-2 rounded-full shrink-0"
+            style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }}
           />
           <span
-            className="text-sm"
+            className="text-xs font-medium"
             style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}
           >
             Live
@@ -127,7 +128,7 @@ export default function Hero() {
         className="relative max-w-6xl mx-auto overflow-hidden"
         style={{
           background: '#0C1521',
-          borderRadius: '4px',
+          borderRadius: '12px',
         }}
       >
 

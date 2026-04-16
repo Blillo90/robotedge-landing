@@ -119,7 +119,7 @@ export default function HeroForm() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="px-6 py-3.5 text-sm font-medium transition-colors disabled:opacity-60 shrink-0"
+          className="px-6 py-3.5 text-sm font-medium transition-colors disabled:opacity-60 shrink-0 rounded-lg"
           style={{ background: '#10B981', color: '#0C1521', fontFamily: 'var(--font-mono)' }}
           onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#059669' }}
           onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#10B981' }}

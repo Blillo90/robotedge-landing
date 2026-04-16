@@ -11,7 +11,7 @@ function formatDate(dateString: string) {
 
 export default function PostCard({ post }: { post: Post }) {
   return (
-    <article className="post-card flex flex-col gap-4 p-8 bg-bg-surface">
+    <article className="post-card flex flex-col gap-4 p-8 rounded-xl" style={{ background: 'rgba(255,255,255,0.7)' }}>
       <div className="post-bar w-full h-px" />
       <time
         className="text-xs tabular-nums text-ink-3"

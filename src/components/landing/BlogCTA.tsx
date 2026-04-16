@@ -38,7 +38,7 @@ export default function BlogCTA() {
 
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 bg-edge hover:bg-edge-dim text-white text-sm font-medium px-8 py-4 transition-colors"
+          className="inline-flex items-center gap-2 bg-edge hover:bg-edge-dim text-white text-sm font-medium px-8 py-4 rounded-xl transition-colors"
         >
           Leer las Guías
           <span aria-hidden>→</span>

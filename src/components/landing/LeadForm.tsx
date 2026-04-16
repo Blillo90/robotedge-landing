@@ -125,7 +125,7 @@ export default function LeadForm() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="px-6 py-3.5 text-sm font-medium transition-colors disabled:opacity-60 shrink-0"
+                className="px-6 py-3.5 text-sm font-medium transition-colors disabled:opacity-60 shrink-0 rounded-xl"
                 style={{
                   background:  '#10B981',
                   color:       '#0C1521',
