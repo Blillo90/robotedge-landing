@@ -17,8 +17,7 @@ export default function BlogCTA() {
         {/* Vertical accent line */}
         <div
           className="w-px h-12 mx-auto mb-8"
-          style={{ background: '#148AFF' }}
-          style={{ opacity: 0.4 }}
+          style={{ background: '#148AFF', opacity: 0.6 }}
         />
 
         <h2
