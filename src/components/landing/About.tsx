@@ -16,8 +16,7 @@ export default function About() {
             <span className="block w-6 h-px" style={{ background: '#148AFF' }} />
             <span
               className="text-xs tracking-[0.22em] uppercase"
-              style={{ color: '#148AFF' }}
-              style={{ fontFamily: 'var(--font-mono)' }}
+              style={{ color: '#148AFF', fontFamily: 'var(--font-mono)' }}
             >
               Quiénes somos
             </span>
