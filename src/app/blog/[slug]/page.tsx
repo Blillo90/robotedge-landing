@@ -38,30 +38,40 @@ export default async function PostPage({ params }: Props) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-white">
-        <article className="max-w-2xl mx-auto px-6 py-16">
+      <main className="min-h-screen bg-bg-base" style={{ paddingTop: '60px' }}>
+        <article className="max-w-2xl mx-auto px-6 py-20">
           <Link
             href="/blog"
-            className="text-xs text-slate-400 hover:text-slate-600 transition-colors mb-10 inline-block"
+            className="inline-flex items-center gap-2 text-xs tracking-[0.12em] uppercase text-ink-3 hover:text-ink-1 transition-colors mb-14"
+            style={{ fontFamily: 'var(--font-mono)' }}
           >
-            ← Back to blog
+            ← Back
           </Link>
 
-          <header className="mb-10">
-            <time className="text-xs text-slate-400 font-medium block mb-4">
+          <header className="mb-12">
+            <time
+              className="text-xs block mb-6 text-ink-3"
+              style={{ fontFamily: 'var(--font-mono)' }}
+            >
               {publishedDate}
             </time>
-            <h1 className="text-4xl font-bold text-slate-900 leading-tight mb-4 tracking-tight">
+            <h1
+              className="font-display font-extrabold text-ink-1 leading-tight mb-5 tracking-tight"
+              style={{ fontSize: 'clamp(26px, 4vw, 46px)' }}
+            >
               {post.title}
             </h1>
             {post.excerpt && (
-              <p className="text-lg text-slate-500 leading-relaxed">
+              <p className="text-lg text-ink-2 leading-relaxed">
                 {post.excerpt}
               </p>
             )}
           </header>
 
-          <div className="border-t border-slate-100 pt-10">
+          <div
+            className="pt-12"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+          >
             {/*
               Content is written by the authenticated admin only.
               HTML is rendered directly — add a sanitization library

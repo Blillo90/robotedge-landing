@@ -4,34 +4,35 @@ import type { Post } from '@/types'
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString('en-US', {
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
   })
 }
 
 export default function PostCard({ post }: { post: Post }) {
   return (
-    <article className="flex flex-col gap-3 group">
-      <div className="w-full h-px bg-slate-200 group-hover:bg-slate-900 transition-colors duration-300" />
-      <time className="text-xs text-slate-400 font-medium tabular-nums">
+    <article className="post-card flex flex-col gap-4 p-8 bg-bg-surface">
+      <div className="post-bar w-full h-px" />
+      <time
+        className="text-xs tabular-nums text-ink-3"
+        style={{ fontFamily: 'var(--font-mono)' }}
+      >
         {formatDate(post.created_at)}
       </time>
-      <h2 className="text-base font-semibold text-slate-900 leading-snug">
-        <Link
-          href={`/blog/${post.slug}`}
-          className="hover:text-slate-600 transition-colors"
-        >
+      <h2 className="post-title text-base font-semibold leading-snug font-display">
+        <Link href={`/blog/${post.slug}`}>
           {post.title}
         </Link>
       </h2>
       {post.excerpt && (
-        <p className="text-sm text-slate-500 leading-relaxed line-clamp-3">
+        <p className="text-sm text-ink-2 leading-relaxed line-clamp-3">
           {post.excerpt}
         </p>
       )}
       <Link
         href={`/blog/${post.slug}`}
-        className="text-xs font-medium text-slate-900 hover:text-slate-500 transition-colors mt-auto pt-1"
+        className="post-read mt-auto pt-1 text-xs font-medium"
+        style={{ fontFamily: 'var(--font-mono)' }}
       >
         Read article →
       </Link>

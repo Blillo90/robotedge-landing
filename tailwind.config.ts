@@ -9,7 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-syne)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
+        sans: ['var(--font-figtree)', 'sans-serif'],
+      },
+      colors: {
+        bg: {
+          base:     '#06090D',
+          surface:  '#0C1219',
+          elevated: '#111C27',
+        },
+        edge: {
+          DEFAULT: '#22D3A0',
+          dim:     '#17A37C',
+        },
+        ink: {
+          1: '#F0F4F8',
+          2: '#7D96B0',
+          3: '#3A5270',
+        },
+        line: 'rgba(255,255,255,0.07)',
       },
       typography: {
         DEFAULT: {

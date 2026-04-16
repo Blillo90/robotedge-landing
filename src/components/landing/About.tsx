@@ -1,56 +1,72 @@
+const specs = [
+  { label: 'Focus',    value: 'Algorithmic & Quantitative Trading' },
+  { label: 'Format',   value: 'Step-by-Step Guides & Articles' },
+  { label: 'Language', value: 'English & Spanish' },
+  { label: 'Topics',   value: 'Trading Bots, Backtesting, Risk, Automation' },
+]
+
 export default function About() {
   return (
-    <section id="about" className="bg-white py-20 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-28 px-6 bg-bg-base">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start">
+
+        {/* Left: copy */}
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 mb-5">Who we are</h2>
-          <p className="text-slate-500 mb-4 leading-relaxed">
-            RobotEdge is a research publication focused on algorithmic and
-            quantitative trading. We believe that transparent, methodical analysis
-            leads to better outcomes than intuition-driven decisions.
+          <div className="flex items-center gap-3 mb-5">
+            <span className="block w-6 h-px bg-edge" />
+            <span
+              className="text-xs tracking-[0.22em] uppercase text-edge"
+              style={{ fontFamily: 'var(--font-mono)' }}
+            >
+              Who we are
+            </span>
+          </div>
+          <h2
+            className="font-display font-bold text-ink-1 leading-tight mb-6"
+            style={{ fontSize: 'clamp(26px, 3.5vw, 44px)' }}
+          >
+            A trading academy built for systematic traders
+          </h2>
+          <p className="text-ink-2 leading-relaxed mb-5">
+            RobotEdge is a trading academy dedicated to algorithmic and
+            quantitative trading. We help traders replace gut-feel decisions
+            with systematic, rules-based strategies powered by real data.
           </p>
-          <p className="text-slate-500 leading-relaxed">
-            Our blog covers strategy development, risk frameworks, Python
-            implementation, and market microstructure — written by practitioners
-            for practitioners.
+          <p className="text-ink-2 leading-relaxed">
+            Our guides cover everything from designing your first automated
+            trading strategy to deploying fully operational trading bots —
+            written by active algo traders, for traders who take their edge
+            seriously.
           </p>
         </div>
-        <div className="bg-slate-50 rounded-xl p-8 border border-slate-100">
-          <dl className="space-y-6">
-            <div>
-              <dt className="text-xs font-medium tracking-widest text-slate-400 uppercase mb-1">
-                Focus
+
+        {/* Right: spec table */}
+        <div
+          className="bg-bg-surface"
+          style={{ border: '1px solid rgba(255,255,255,0.07)' }}
+        >
+          {specs.map((s, i) => (
+            <div
+              key={s.label}
+              className="flex items-start justify-between gap-8 px-8 py-6"
+              style={{
+                borderBottom:
+                  i < specs.length - 1 ? '1px solid rgba(255,255,255,0.06)' : undefined,
+              }}
+            >
+              <dt
+                className="text-xs tracking-[0.15em] uppercase text-ink-3 shrink-0"
+                style={{ fontFamily: 'var(--font-mono)' }}
+              >
+                {s.label}
               </dt>
-              <dd className="text-slate-800 font-medium text-sm">
-                Systematic &amp; Quantitative Trading
+              <dd className="text-sm font-medium text-ink-1 text-right">
+                {s.value}
               </dd>
             </div>
-            <div>
-              <dt className="text-xs font-medium tracking-widest text-slate-400 uppercase mb-1">
-                Format
-              </dt>
-              <dd className="text-slate-800 font-medium text-sm">
-                Long-form Research Articles
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-medium tracking-widest text-slate-400 uppercase mb-1">
-                Language
-              </dt>
-              <dd className="text-slate-800 font-medium text-sm">
-                English &amp; Spanish
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-medium tracking-widest text-slate-400 uppercase mb-1">
-                Topics
-              </dt>
-              <dd className="text-slate-800 font-medium text-sm">
-                Backtesting, Risk, Python, Live Trading
-              </dd>
-            </div>
-          </dl>
+          ))}
         </div>
+
       </div>
     </section>
   )
