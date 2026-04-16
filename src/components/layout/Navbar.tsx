@@ -50,13 +50,6 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-7" aria-label="Navegación principal">
           <Link
-            href="/blog"
-            className="text-xs tracking-[0.14em] uppercase text-ink-2 hover:text-ink-1 transition-colors"
-            style={{ fontFamily: 'var(--font-mono)' }}
-          >
-            Blog
-          </Link>
-          <Link
             href={aboutHref}
             className="text-xs tracking-[0.14em] uppercase text-ink-2 hover:text-ink-1 transition-colors"
             style={{ fontFamily: 'var(--font-mono)' }}
@@ -92,13 +85,6 @@ export default function Navbar() {
           style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}
           aria-label="Menú móvil"
         >
-          <Link
-            href="/blog"
-            className="py-3.5 text-sm font-medium text-ink-1 hover:text-edge transition-colors"
-            style={{ borderBottom: '1px solid rgba(0,0,0,0.05)' }}
-          >
-            Blog
-          </Link>
           <Link
             href={aboutHref}
             className="py-3.5 text-sm font-medium text-ink-1 hover:text-edge transition-colors"
