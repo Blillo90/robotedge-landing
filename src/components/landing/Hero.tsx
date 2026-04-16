@@ -43,8 +43,8 @@ function PerformanceCard() {
   return (
     <div
       className="w-full max-w-[500px] overflow-hidden shadow-2xl"
-      style={{ borderRadius: '12px' }}
       style={{
+        borderRadius: '12px',
         background: '#111C28',
         border: '1px solid rgba(255,255,255,0.08)',
       }}
