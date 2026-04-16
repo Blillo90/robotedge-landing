@@ -122,10 +122,14 @@ function PerformanceCard() {
 
 export default function Hero() {
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden pt-[60px]"
-      style={{ background: '#0C1521' }}
-    >
+    <section className="bg-bg-base pt-[60px] px-4 sm:px-6 pb-6">
+      <div
+        className="relative max-w-6xl mx-auto overflow-hidden"
+        style={{
+          background: '#0C1521',
+          borderRadius: '4px',
+        }}
+      >
 
       {/* Grid lines */}
       <div
@@ -161,7 +165,7 @@ export default function Hero() {
         01
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 w-full">
+      <div className="relative z-10 px-8 md:px-14 py-16 md:py-20 w-full">
         <div className="grid lg:grid-cols-[1fr_auto] gap-16 items-center">
 
           {/* Left: copy */}
@@ -240,6 +244,7 @@ export default function Hero() {
           </div>
 
         </div>
+      </div>
       </div>
     </section>
   )
