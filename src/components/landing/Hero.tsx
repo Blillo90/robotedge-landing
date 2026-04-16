@@ -45,7 +45,7 @@ function PerformanceCard() {
 
   return (
     <div
-      className="w-full max-w-[320px] rounded-sm overflow-hidden shadow-xl"
+      className="w-full max-w-[420px] rounded-sm overflow-hidden shadow-2xl"
       style={{
         background: '#FFFFFF',
         border: '1px solid rgba(0,0,0,0.09)',
@@ -53,22 +53,22 @@ function PerformanceCard() {
     >
       {/* Header */}
       <div
-        className="px-5 py-3.5 flex items-center justify-between"
+        className="px-6 py-4 flex items-center justify-between"
         style={{ borderBottom: '1px solid rgba(0,0,0,0.07)', background: '#F7F5F2' }}
       >
         <span
-          className="text-xs tracking-[0.16em] uppercase text-ink-1 font-medium"
+          className="text-sm tracking-[0.16em] uppercase text-ink-1 font-semibold"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
           Estrategia Demo
         </span>
         <span className="flex items-center gap-1.5">
           <span
-            className="w-1.5 h-1.5 rounded-full"
-            style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }}
+            className="w-2 h-2 rounded-full"
+            style={{ background: '#10B981', boxShadow: '0 0 8px #10B981' }}
           />
           <span
-            className="text-xs"
+            className="text-sm"
             style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}
           >
             Live
@@ -77,26 +77,26 @@ function PerformanceCard() {
       </div>
 
       {/* Equity curve */}
-      <div className="px-5 pt-4 pb-2" style={{ height: 80 }}>
+      <div className="px-6 pt-5 pb-3" style={{ height: 110 }}>
         <EquityCurve />
       </div>
 
       {/* Metrics */}
-      <div className="px-5 pb-4">
+      <div className="px-6 pb-5">
         {rows.map((r) => (
           <div
             key={r.label}
-            className="flex items-center justify-between py-2"
+            className="flex items-center justify-between py-2.5"
             style={{ borderBottom: '1px solid rgba(0,0,0,0.05)' }}
           >
             <span
-              className="text-xs text-ink-2"
+              className="text-sm text-ink-2"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
               {r.label}
             </span>
             <span
-              className="text-xs font-semibold"
+              className="text-sm font-bold"
               style={{
                 fontFamily: 'var(--font-mono)',
                 color:
@@ -114,8 +114,8 @@ function PerformanceCard() {
       </div>
 
       {/* Footer note */}
-      <div className="px-5 py-3" style={{ background: '#F7F5F2', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-        <p className="text-[10px] text-ink-3" style={{ fontFamily: 'var(--font-mono)' }}>
+      <div className="px-6 py-3.5" style={{ background: '#F7F5F2', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+        <p className="text-xs text-ink-3" style={{ fontFamily: 'var(--font-mono)' }}>
           Resultados simulados. No constituye asesoramiento financiero.
         </p>
       </div>
