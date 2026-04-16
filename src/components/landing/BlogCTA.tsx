@@ -38,10 +38,8 @@ export default function BlogCTA() {
 
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-white text-sm font-medium px-8 py-4 rounded-xl transition-colors"
-          style={{ background: '#148AFF' }}
-          onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
-          onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
+          className="inline-flex items-center gap-2 text-white text-sm font-medium px-8 py-4 rounded-xl bg-[#148AFF] hover:bg-[#0E6FD4] transition-colors"
+          style={{ fontFamily: 'var(--font-mono)' }}
         >
           Leer las Guías
           <span aria-hidden>→</span>
