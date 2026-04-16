@@ -29,9 +29,10 @@ export default function Testimonials() {
 
         <div className="mb-14 max-w-xl">
           <div className="flex items-center gap-3 mb-5">
-            <span className="block w-6 h-px bg-edge" />
+            <span className="block w-6 h-px" style={{ background: '#148AFF' }} />
             <span
-              className="text-xs tracking-[0.22em] uppercase text-edge"
+              className="text-xs tracking-[0.22em] uppercase"
+              style={{ color: '#148AFF' }}
               style={{ fontFamily: 'var(--font-mono)' }}
             >
               Testimonios
@@ -42,7 +43,7 @@ export default function Testimonials() {
             style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
           >
             Traders que operaban con el instinto.<br />
-            <span className="text-edge">Ahora operan con datos.</span>
+            <span style={{ color: '#148AFF' }}>Ahora operan con datos.</span>
           </h2>
         </div>
 

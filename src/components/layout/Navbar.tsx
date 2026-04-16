@@ -43,7 +43,7 @@ export default function Navbar() {
           </svg>
           {/* Text */}
           <span className="font-display font-bold text-sm tracking-tight leading-none">
-            <span className="text-ink-1 group-hover:text-ink-1 transition-colors">Robot</span><span style={{ color: '#10B981' }}>Edge</span>
+            <span className="text-ink-1">Robot</span><span style={{ color: '#148AFF' }}>Edge</span>
           </span>
         </Link>
 
@@ -65,7 +65,10 @@ export default function Navbar() {
           </Link>
           <Link
             href="/blog"
-            className="text-xs tracking-[0.14em] uppercase font-medium px-4 py-2 bg-ink-1 hover:bg-edge text-white transition-colors"
+            className="text-xs tracking-[0.14em] uppercase font-medium px-4 py-2 text-white transition-colors rounded-lg"
+            style={{ background: '#148AFF' }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
             style={{ fontFamily: 'var(--font-mono)' }}
           >
             Leer Artículos

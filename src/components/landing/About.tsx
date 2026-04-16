@@ -13,9 +13,10 @@ export default function About() {
         {/* Left: copy */}
         <div>
           <div className="flex items-center gap-3 mb-5">
-            <span className="block w-6 h-px bg-edge" />
+            <span className="block w-6 h-px" style={{ background: '#148AFF' }} />
             <span
-              className="text-xs tracking-[0.22em] uppercase text-edge"
+              className="text-xs tracking-[0.22em] uppercase"
+              style={{ color: '#148AFF' }}
               style={{ fontFamily: 'var(--font-mono)' }}
             >
               Quiénes somos

@@ -46,7 +46,7 @@ export default function HeroForm() {
     fontFamily: 'var(--font-mono)',
   }
   const onFocus = (e: React.FocusEvent<HTMLInputElement>) =>
-    (e.currentTarget.style.borderColor = 'rgba(16,185,129,0.6)')
+    (e.currentTarget.style.borderColor = 'rgba(20,138,255,0.6)')
   const onBlur  = (e: React.FocusEvent<HTMLInputElement>) =>
     (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)')
 
@@ -120,9 +120,9 @@ export default function HeroForm() {
           type="submit"
           disabled={status === 'loading'}
           className="px-6 py-3.5 text-sm font-medium transition-colors disabled:opacity-60 shrink-0 rounded-lg"
-          style={{ background: '#10B981', color: '#0C1521', fontFamily: 'var(--font-mono)' }}
-          onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#059669' }}
-          onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#10B981' }}
+          style={{ background: '#148AFF', color: '#fff', fontFamily: 'var(--font-mono)' }}
+          onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#0E6FD4' }}
+          onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#148AFF' }}
         >
           {status === 'loading' ? '…' : 'Empezar →'}
         </button>

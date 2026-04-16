@@ -160,10 +160,10 @@ export default function Hero() {
           <div>
             {/* Eyebrow tag */}
             <div className="animate-fade-up delay-1 flex items-center gap-3 mb-8">
-              <span className="block w-8 h-px" style={{ background: '#10B981' }} />
+              <span className="block w-8 h-px" style={{ background: '#148AFF' }} />
               <span
                 className="text-xs tracking-[0.22em] uppercase"
-                style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}
+                style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
               >
                 Trading Algorítmico &amp; Automatizado
               </span>
@@ -175,7 +175,7 @@ export default function Hero() {
               style={{ fontSize: 'clamp(40px, 6.5vw, 86px)', maxWidth: '14ch', color: '#F0F4F8' }}
             >
               Que tus robots de trading trabajen para{' '}
-              <span style={{ color: '#10B981' }}>ti.</span>
+              <span style={{ color: '#148AFF' }}>ti.</span>
             </h1>
 
             {/* Body */}

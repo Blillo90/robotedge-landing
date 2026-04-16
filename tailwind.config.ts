@@ -23,6 +23,12 @@ const config: Config = {
           DEFAULT: '#059669',
           dim:     '#047857',
         },
+        blue: {
+          accent:  '#148AFF',
+          dim:     '#0E6FD4',
+          light:   '#00C2FF',
+          glow:    'rgba(20,138,255,0.15)',
+        },
         ink: {
           1: '#141412',
           2: '#6A6861',

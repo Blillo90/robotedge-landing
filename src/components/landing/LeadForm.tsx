@@ -55,14 +55,14 @@ export default function LeadForm() {
 
         {/* Label */}
         <div className="flex items-center justify-center gap-3 mb-6">
-          <span className="block w-6 h-px" style={{ background: '#10B981' }} />
+          <span className="block w-6 h-px" style={{ background: '#148AFF' }} />
           <span
             className="text-xs tracking-[0.22em] uppercase"
-            style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}
+            style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
           >
             Recurso Gratuito
           </span>
-          <span className="block w-6 h-px" style={{ background: '#10B981' }} />
+          <span className="block w-6 h-px" style={{ background: '#148AFF' }} />
         </div>
 
         <h2
@@ -87,7 +87,7 @@ export default function LeadForm() {
               border: '1px solid rgba(16,185,129,0.25)',
             }}
           >
-            <p className="font-semibold mb-1" style={{ color: '#10B981' }}>
+            <p className="font-semibold mb-1" style={{ color: '#148AFF' }}>
               ¡Listo! Revisa tu bandeja de entrada.
             </p>
             <p className="text-sm" style={{ color: '#5A7A95' }}>
@@ -127,12 +127,12 @@ export default function LeadForm() {
                 disabled={status === 'loading'}
                 className="px-6 py-3.5 text-sm font-medium transition-colors disabled:opacity-60 shrink-0 rounded-xl"
                 style={{
-                  background:  '#10B981',
+                  background:  '#148AFF',
                   color:       '#0C1521',
                   fontFamily:  'var(--font-mono)',
                 }}
-                onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#059669' }}
-                onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#10B981' }}
+                onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#0E6FD4' }}
+                onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#148AFF' }}
               >
                 {status === 'loading' ? 'Enviando…' : 'Quiero la guía →'}
               </button>

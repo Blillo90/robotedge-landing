@@ -38,7 +38,7 @@ export default function MetricsStrip() {
           >
             <p
               className="text-3xl font-extrabold font-display mb-1"
-              style={{ color: '#10B981' }}
+              style={{ color: '#148AFF' }}
             >
               {m.value}
             </p>

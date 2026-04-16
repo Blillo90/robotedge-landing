@@ -16,7 +16,8 @@ export default function BlogCTA() {
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         {/* Vertical accent line */}
         <div
-          className="w-px h-12 mx-auto mb-8 bg-edge"
+          className="w-px h-12 mx-auto mb-8"
+          style={{ background: '#148AFF' }}
           style={{ opacity: 0.4 }}
         />
 
@@ -38,7 +39,10 @@ export default function BlogCTA() {
 
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 bg-edge hover:bg-edge-dim text-white text-sm font-medium px-8 py-4 rounded-xl transition-colors"
+          className="inline-flex items-center gap-2 text-white text-sm font-medium px-8 py-4 rounded-xl transition-colors"
+          style={{ background: '#148AFF' }}
+          onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
+          onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
         >
           Leer las Guías
           <span aria-hidden>→</span>
