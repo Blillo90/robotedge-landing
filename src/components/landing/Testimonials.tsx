@@ -46,13 +46,21 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px" style={{ background: 'rgba(0,0,0,0.07)' }}>
+        <div className="grid md:grid-cols-3 gap-5">
           {testimonials.map((t) => (
-            <div key={t.name} className="p-8 flex flex-col gap-6" style={{ background: 'rgba(255,255,255,0.7)' }}>
+            <div
+              key={t.name}
+              className="flex flex-col gap-6 p-8 rounded-2xl"
+              style={{
+                background: 'rgba(255,255,255,0.75)',
+                border: '1px solid rgba(0,0,0,0.07)',
+                boxShadow: '0 2px 16px rgba(0,0,0,0.04)',
+              }}
+            >
               {/* Stars */}
               <div className="flex gap-1" aria-label="5 estrellas">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#059669" aria-hidden>
+                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#148AFF" aria-hidden>
                     <path d="M7 1l1.5 4H13l-3.5 2.5 1.5 4L7 9 3 11.5l1.5-4L1 5h4.5z" />
                   </svg>
                 ))}
@@ -64,10 +72,10 @@ export default function Testimonials() {
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 pt-4" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-                  style={{ background: '#0C1521' }}
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+                  style={{ background: '#0C1521', letterSpacing: '0.05em' }}
                   aria-hidden
                 >
                   {t.init}
@@ -75,8 +83,8 @@ export default function Testimonials() {
                 <div>
                   <p className="text-sm font-semibold text-ink-1">{t.name}</p>
                   <p
-                    className="text-xs text-ink-3"
-                    style={{ fontFamily: 'var(--font-mono)' }}
+                    className="text-xs mt-0.5"
+                    style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
                   >
                     {t.role}
                   </p>

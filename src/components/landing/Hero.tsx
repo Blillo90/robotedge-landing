@@ -55,7 +55,7 @@ function PerformanceCard() {
     { label: 'Profit',          sublabel: 'All Time', value: '+48.26%', pct: 48,   color: '#10B981', valueColor: '#10B981' },
     { label: 'Winning Trades',  sublabel: 'All Time', value: '64.94%',  pct: 64.9, color: '#10B981', valueColor: '#F0F4F8' },
     { label: 'Avg Gain in $',   sublabel: 'All Time', value: '$17',     pct: 72,   color: '#06B6D4', valueColor: '#F0F4F8' },
-    { label: 'Avg Gain in %',   sublabel: 'All Time', value: '-0.02%',  pct: 99.5, color: '#475569', valueColor: '#F87171' },
+    { label: 'Avg Gain in %',   sublabel: 'All Time', value: '+1.34%',  pct: 68,   color: '#10B981', valueColor: '#10B981' },
   ]
 
   return (
