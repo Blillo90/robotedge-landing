@@ -11,6 +11,10 @@
 
   body {
     background-color: #F7F5F2;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 52px 52px;
     color: #141412;
     font-family: var(--font-figtree), sans-serif;
   }
