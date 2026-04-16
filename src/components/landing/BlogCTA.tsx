@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function BlogCTA() {
   return (
-    <section className="relative py-28 px-6 bg-bg-surface overflow-hidden">
+    <section className="relative py-28 px-6 overflow-hidden">
 
       {/* Bottom glow */}
       <div

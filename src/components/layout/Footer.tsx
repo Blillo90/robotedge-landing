@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="px-6 py-10 bg-bg-base"
+      className="px-6 py-10"
       style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
     >
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">

@@ -24,7 +24,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-28 px-6 bg-bg-base">
+    <section className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
 
         <div className="mb-14 max-w-xl">
@@ -48,7 +48,7 @@ export default function Testimonials() {
 
         <div className="grid md:grid-cols-3 gap-px" style={{ background: 'rgba(0,0,0,0.07)' }}>
           {testimonials.map((t) => (
-            <div key={t.name} className="bg-bg-surface p-8 flex flex-col gap-6">
+            <div key={t.name} className="p-8 flex flex-col gap-6" style={{ background: 'rgba(255,255,255,0.7)' }}>
               {/* Stars */}
               <div className="flex gap-1" aria-label="5 estrellas">
                 {Array.from({ length: 5 }).map((_, i) => (

@@ -7,7 +7,7 @@ const specs = [
 
 export default function About() {
   return (
-    <section id="about" className="py-28 px-6 bg-bg-base">
+    <section id="about" className="py-28 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-start">
 
         {/* Left: copy */}
@@ -43,8 +43,7 @@ export default function About() {
 
         {/* Right: spec table */}
         <div
-          className="bg-bg-surface"
-          style={{ border: '1px solid rgba(0,0,0,0.08)' }}
+          style={{ background: 'rgba(255,255,255,0.65)', border: '1px solid rgba(0,0,0,0.08)' }}
         >
           {specs.map((s, i) => (
             <div

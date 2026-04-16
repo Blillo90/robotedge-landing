@@ -122,7 +122,7 @@ function PerformanceCard() {
 
 export default function Hero() {
   return (
-    <section className="bg-bg-base pt-[60px] px-4 sm:px-6 pb-6">
+    <section className="pt-[60px] px-4 sm:px-6 pb-6">
       <div
         className="relative max-w-6xl mx-auto overflow-hidden"
         style={{
