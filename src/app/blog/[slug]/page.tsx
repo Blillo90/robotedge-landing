@@ -3,18 +3,18 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import { getPostBySlug, getPublishedPosts } from '@/lib/posts'
+import { getPostBySlug } from '@/lib/posts'
+import { demoPosts } from '@/data/demo-posts'
 
 type Props = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
-  const posts = await getPublishedPosts()
-  return posts.map((post) => ({ slug: post.slug }))
+  return demoPosts.map((p) => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = await getPostBySlug(slug)
+  const post = await getPostBySlug(slug) ?? demoPosts.find(p => p.slug === slug)
   if (!post) return {}
   return {
     title: post.title,
@@ -26,7 +26,7 @@ export const revalidate = 60
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params
-  const post = await getPostBySlug(slug)
+  const post = await getPostBySlug(slug) ?? demoPosts.find(p => p.slug === slug) ?? null
   if (!post) notFound()
 
   const publishedDate = new Date(post.created_at).toLocaleDateString('es-ES', {

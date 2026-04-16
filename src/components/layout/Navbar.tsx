@@ -33,12 +33,17 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-[60px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="RobotEdge — inicio">
-          <span className="block w-1.5 h-1.5 rounded-full bg-edge" />
-          <span
-            className="text-xs tracking-[0.22em] uppercase font-medium text-ink-1 group-hover:text-edge transition-colors"
-            style={{ fontFamily: 'var(--font-mono)' }}
-          >
-            RobotEdge
+          {/* Icon */}
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden>
+            <rect width="30" height="30" rx="7" fill="#0C1521"/>
+            <path d="M7 18 L11 13 L15 15.5 L22 8" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <circle cx="22" cy="8" r="2" fill="#10B981"/>
+            <circle cx="7" cy="18" r="1.5" fill="#10B981" fillOpacity="0.4"/>
+            <line x1="7" y1="22" x2="23" y2="22" stroke="#10B981" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="2 2"/>
+          </svg>
+          {/* Text */}
+          <span className="font-display font-bold text-sm tracking-tight leading-none">
+            <span className="text-ink-1 group-hover:text-ink-1 transition-colors">Robot</span><span style={{ color: '#10B981' }}>Edge</span>
           </span>
         </Link>
 

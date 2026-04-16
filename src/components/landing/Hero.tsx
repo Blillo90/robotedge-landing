@@ -32,87 +32,74 @@ function EquityCurve() {
   )
 }
 
+function Donut({ pct, color, size = 52 }: { pct: number; color: string; size?: number }) {
+  const r = (size - 8) / 2
+  const circ = 2 * Math.PI * r
+  const dash = Math.min(pct / 100, 1) * circ
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden>
+      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="5"/>
+      <circle
+        cx={size/2} cy={size/2} r={r}
+        fill="none" stroke={color} strokeWidth="5"
+        strokeDasharray={`${dash} ${circ}`}
+        strokeLinecap="round"
+        transform={`rotate(-90 ${size/2} ${size/2})`}
+      />
+    </svg>
+  )
+}
+
 function PerformanceCard() {
-  const rows = [
-    { label: 'Rentabilidad acum.',  value: '+34.7%', positive: true },
-    { label: 'Drawdown máx.',       value: '-8.2%',  positive: false },
-    { label: 'Win rate',            value: '58.4%',  positive: null },
-    { label: 'Operaciones',         value: '847',    positive: null },
+  const metrics = [
+    { label: 'Profit',          sublabel: 'All Time', value: '+48.26%', pct: 48,   color: '#10B981', valueColor: '#10B981' },
+    { label: 'Winning Trades',  sublabel: 'All Time', value: '64.94%',  pct: 64.9, color: '#10B981', valueColor: '#F0F4F8' },
+    { label: 'Avg Gain in $',   sublabel: 'All Time', value: '$17',     pct: 72,   color: '#06B6D4', valueColor: '#F0F4F8' },
+    { label: 'Avg Gain in %',   sublabel: 'All Time', value: '-0.02%',  pct: 99.5, color: '#475569', valueColor: '#F87171' },
   ]
 
   return (
     <div
-      className="w-full max-w-[500px] overflow-hidden shadow-2xl"
-      style={{
-        borderRadius: '12px',
-        background: '#111C28',
-        border: '1px solid rgba(255,255,255,0.08)',
-      }}
+      className="w-full max-w-[520px] overflow-hidden shadow-2xl"
+      style={{ borderRadius: '12px', background: '#111C28', border: '1px solid rgba(255,255,255,0.08)' }}
     >
       {/* Header */}
       <div
         className="px-6 py-4 flex items-center justify-between"
         style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: '#0C1521' }}
       >
-        <span
-          className="text-sm tracking-[0.16em] uppercase font-semibold"
-          style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}
-        >
+        <span className="text-sm tracking-[0.16em] uppercase font-semibold" style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}>
           Estrategia Demo
         </span>
-        <span className="flex items-center gap-2 px-3 py-1 rounded-full" style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.25)' }}>
-          <span
-            className="w-2 h-2 rounded-full shrink-0"
-            style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }}
-          />
-          <span
-            className="text-xs font-medium"
-            style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}
-          >
-            Live
-          </span>
+        <span className="flex items-center gap-2 px-3 py-1 rounded-full ml-auto" style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.25)' }}>
+          <span className="w-2 h-2 rounded-full shrink-0" style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }} />
+          <span className="text-xs font-medium" style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}>Live</span>
         </span>
       </div>
 
       {/* Equity curve */}
-      <div className="px-6 pt-5 pb-3" style={{ height: 110 }}>
+      <div className="px-6 pt-5 pb-3" style={{ height: 100 }}>
         <EquityCurve />
       </div>
 
-      {/* Metrics */}
-      <div className="px-6 pb-5">
-        {rows.map((r) => (
-          <div
-            key={r.label}
-            className="flex items-center justify-between py-2.5"
-            style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}
-          >
-            <span
-              className="text-sm"
-              style={{ fontFamily: 'var(--font-mono)', color: '#5A7A95' }}
-            >
-              {r.label}
-            </span>
-            <span
-              className="text-sm font-bold"
-              style={{
-                fontFamily: 'var(--font-mono)',
-                color:
-                  r.positive === true
-                    ? '#10B981'
-                    : r.positive === false
-                    ? '#F87171'
-                    : '#F0F4F8',
-              }}
-            >
-              {r.value}
-            </span>
+      {/* Metric grid */}
+      <div className="grid grid-cols-2 gap-px mx-6 mb-5" style={{ background: 'rgba(255,255,255,0.06)' }}>
+        {metrics.map((m) => (
+          <div key={m.label} className="flex items-center gap-3 p-4" style={{ background: '#111C28' }}>
+            <div className="relative shrink-0">
+              <Donut pct={m.pct} color={m.color} size={52} />
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs mb-0.5 truncate" style={{ fontFamily: 'var(--font-mono)', color: '#5A7A95' }}>{m.label}</p>
+              <p className="text-xs mb-1" style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}>{m.sublabel}</p>
+              <p className="text-base font-bold leading-none" style={{ fontFamily: 'var(--font-mono)', color: m.valueColor }}>{m.value}</p>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Footer note */}
-      <div className="px-6 py-3.5" style={{ background: '#0C1521', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      {/* Footer */}
+      <div className="px-6 py-3" style={{ background: '#0C1521', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <p className="text-xs" style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}>
           Resultados simulados. No constituye asesoramiento financiero.
         </p>
