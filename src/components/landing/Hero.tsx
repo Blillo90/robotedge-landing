@@ -12,25 +12,22 @@ function EquityCurve() {
     >
       <defs>
         <linearGradient id="eq-fill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#059669" stopOpacity="0.18" />
-          <stop offset="100%" stopColor="#059669" stopOpacity="0" />
+          <stop offset="0%" stopColor="#10B981" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
         </linearGradient>
       </defs>
-      {/* Area fill */}
       <path
         d="M0 110 C25 105 45 96 65 84 C80 75 85 82 100 70 C118 56 130 48 152 38 C165 32 170 40 184 30 C200 19 220 13 242 8 C262 4 285 3 320 1 L320 130 L0 130 Z"
         fill="url(#eq-fill)"
       />
-      {/* Line */}
       <path
         d="M0 110 C25 105 45 96 65 84 C80 75 85 82 100 70 C118 56 130 48 152 38 C165 32 170 40 184 30 C200 19 220 13 242 8 C262 4 285 3 320 1"
-        stroke="#059669"
+        stroke="#10B981"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      {/* End dot */}
-      <circle cx="320" cy="1" r="3.5" fill="#059669" />
+      <circle cx="320" cy="1" r="3.5" fill="#10B981" />
     </svg>
   )
 }
@@ -47,18 +44,18 @@ function PerformanceCard() {
     <div
       className="w-full max-w-[420px] rounded-sm overflow-hidden shadow-2xl"
       style={{
-        background: '#FFFFFF',
-        border: '1px solid rgba(0,0,0,0.09)',
+        background: '#111C28',
+        border: '1px solid rgba(255,255,255,0.08)',
       }}
     >
       {/* Header */}
       <div
         className="px-6 py-4 flex items-center justify-between"
-        style={{ borderBottom: '1px solid rgba(0,0,0,0.07)', background: '#F7F5F2' }}
+        style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: '#0C1521' }}
       >
         <span
-          className="text-sm tracking-[0.16em] uppercase text-ink-1 font-semibold"
-          style={{ fontFamily: 'var(--font-mono)' }}
+          className="text-sm tracking-[0.16em] uppercase font-semibold"
+          style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}
         >
           Estrategia Demo
         </span>
@@ -87,11 +84,11 @@ function PerformanceCard() {
           <div
             key={r.label}
             className="flex items-center justify-between py-2.5"
-            style={{ borderBottom: '1px solid rgba(0,0,0,0.05)' }}
+            style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}
           >
             <span
-              className="text-sm text-ink-2"
-              style={{ fontFamily: 'var(--font-mono)' }}
+              className="text-sm"
+              style={{ fontFamily: 'var(--font-mono)', color: '#5A7A95' }}
             >
               {r.label}
             </span>
@@ -101,10 +98,10 @@ function PerformanceCard() {
                 fontFamily: 'var(--font-mono)',
                 color:
                   r.positive === true
-                    ? '#059669'
+                    ? '#10B981'
                     : r.positive === false
-                    ? '#DC2626'
-                    : '#141412',
+                    ? '#F87171'
+                    : '#F0F4F8',
               }}
             >
               {r.value}
@@ -114,8 +111,8 @@ function PerformanceCard() {
       </div>
 
       {/* Footer note */}
-      <div className="px-6 py-3.5" style={{ background: '#F7F5F2', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-        <p className="text-xs text-ink-3" style={{ fontFamily: 'var(--font-mono)' }}>
+      <div className="px-6 py-3.5" style={{ background: '#0C1521', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <p className="text-xs" style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}>
           Resultados simulados. No constituye asesoramiento financiero.
         </p>
       </div>
@@ -125,25 +122,38 @@ function PerformanceCard() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center hero-grid bg-bg-base overflow-hidden pt-[60px]">
+    <section
+      className="relative min-h-screen flex items-center overflow-hidden pt-[60px]"
+      style={{ background: '#0C1521' }}
+    >
+
+      {/* Grid lines */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
       {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 55% 50% at 10% 50%, rgba(5,150,105,0.06) 0%, transparent 60%)',
+            'radial-gradient(ellipse 60% 55% at 10% 50%, rgba(16,185,129,0.08) 0%, transparent 65%)',
         }}
       />
 
-      {/* Decorative watermark number */}
+      {/* Decorative watermark */}
       <div
         className="absolute right-0 bottom-0 select-none pointer-events-none hidden xl:block leading-none"
         style={{
           fontSize: 'clamp(200px, 30vw, 440px)',
           fontFamily: 'var(--font-mono)',
           fontWeight: 500,
-          color: 'rgba(0,0,0,0.035)',
+          color: 'rgba(255,255,255,0.02)',
           letterSpacing: '-0.06em',
         }}
         aria-hidden
@@ -158,10 +168,10 @@ export default function Hero() {
           <div>
             {/* Eyebrow tag */}
             <div className="animate-fade-up delay-1 flex items-center gap-3 mb-8">
-              <span className="block w-8 h-px bg-edge" />
+              <span className="block w-8 h-px" style={{ background: '#10B981' }} />
               <span
-                className="text-xs tracking-[0.22em] uppercase text-edge"
-                style={{ fontFamily: 'var(--font-mono)' }}
+                className="text-xs tracking-[0.22em] uppercase"
+                style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}
               >
                 Trading Algorítmico &amp; Automatizado
               </span>
@@ -169,17 +179,17 @@ export default function Hero() {
 
             {/* Headline */}
             <h1
-              className="animate-fade-up delay-2 font-display font-extrabold text-ink-1 leading-[1.05] tracking-tight mb-8"
-              style={{ fontSize: 'clamp(40px, 6.5vw, 86px)', maxWidth: '14ch' }}
+              className="animate-fade-up delay-2 font-display font-extrabold leading-[1.05] tracking-tight mb-8"
+              style={{ fontSize: 'clamp(40px, 6.5vw, 86px)', maxWidth: '14ch', color: '#F0F4F8' }}
             >
               Que tus robots de trading trabajen para{' '}
-              <span className="text-edge">ti.</span>
+              <span style={{ color: '#10B981' }}>ti.</span>
             </h1>
 
             {/* Body */}
             <p
-              className="animate-fade-up delay-3 text-ink-2 leading-relaxed mb-10"
-              style={{ fontSize: '1.1rem', maxWidth: '46ch' }}
+              className="animate-fade-up delay-3 leading-relaxed mb-10"
+              style={{ fontSize: '1.1rem', maxWidth: '46ch', color: '#5A7A95' }}
             >
               Estrategias de trading automatizadas basadas en datos, no en emociones.
               Aprende a diseñar, hacer backtesting y desplegar bots que operan con
@@ -188,7 +198,10 @@ export default function Hero() {
 
             {/* Lead form */}
             <div className="animate-fade-up delay-4 mb-16">
-              <div className="px-6 py-6" style={{ background: '#0C1521' }}>
+              <div
+                className="px-6 py-6"
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
+              >
                 <HeroForm />
               </div>
             </div>
@@ -196,7 +209,7 @@ export default function Hero() {
             {/* Stat row */}
             <div
               className="animate-fade-up delay-5 pt-8 flex flex-wrap gap-10"
-              style={{ borderTop: '1px solid rgba(0,0,0,0.07)' }}
+              style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
             >
               {[
                 { label: 'Ejecución',          value: '24 / 7' },
@@ -205,14 +218,14 @@ export default function Hero() {
               ].map((s) => (
                 <div key={s.label}>
                   <p
-                    className="text-xs tracking-[0.15em] uppercase text-ink-3 mb-1"
-                    style={{ fontFamily: 'var(--font-mono)' }}
+                    className="text-xs tracking-[0.15em] uppercase mb-1"
+                    style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}
                   >
                     {s.label}
                   </p>
                   <p
-                    className="text-sm font-medium text-ink-1"
-                    style={{ fontFamily: 'var(--font-mono)' }}
+                    className="text-sm font-medium"
+                    style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}
                   >
                     {s.value}
                   </p>
@@ -221,7 +234,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: performance card — hidden on mobile */}
+          {/* Right: performance card */}
           <div className="animate-fade-in delay-3 hidden lg:flex justify-end">
             <PerformanceCard />
           </div>
