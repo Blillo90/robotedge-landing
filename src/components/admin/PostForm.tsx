@@ -23,6 +23,7 @@ export default function PostForm({ post, action }: PostFormProps) {
   const [slug, setSlug] = useState(post?.slug ?? '')
   const [excerpt, setExcerpt] = useState(post?.excerpt ?? '')
   const [content, setContent] = useState(post?.content ?? '')
+  const [coverImage, setCoverImage] = useState(post?.cover_image ?? '')
   const [published, setPublished] = useState(post?.published ?? false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -44,6 +45,7 @@ export default function PostForm({ post, action }: PostFormProps) {
     formData.set('slug', slug)
     formData.set('excerpt', excerpt)
     formData.set('content', content)
+    formData.set('cover_image', coverImage)
     formData.set('published', String(published))
 
     const result = await action(formData)
@@ -106,6 +108,23 @@ export default function PostForm({ post, action }: PostFormProps) {
           className={`${inputClass} resize-none`}
           placeholder="Short description shown in post listings"
         />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          Imagen de portada{' '}
+          <span className="font-normal text-slate-400">(opcional — URL)</span>
+        </label>
+        <input
+          type="url"
+          value={coverImage}
+          onChange={(e) => setCoverImage(e.target.value)}
+          className={inputClass}
+          placeholder="https://ejemplo.com/imagen.jpg"
+        />
+        <p className="text-xs text-slate-400 mt-1">
+          Si se deja vacío se mostrará el gráfico por defecto.
+        </p>
       </div>
 
       <div>

@@ -5,6 +5,7 @@ export const demoPosts: Post[] = [
     id: 'demo-1',
     title: 'Cómo construí mi primer robot de trading en Python paso a paso',
     slug: 'primer-robot-trading-python',
+    cover_image: null,
     excerpt:
       'Desde la idea hasta el bot operando en live: te cuento exactamente qué hice, qué errores cometí y cómo evitarlos.',
     content: `

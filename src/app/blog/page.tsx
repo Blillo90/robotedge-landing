@@ -93,26 +93,38 @@ export default async function BlogPage() {
                   </div>
                 </div>
 
-                {/* Right: visual accent */}
+                {/* Right: cover image or default chart */}
                 <div
-                  className="hidden md:flex items-center justify-center p-10"
-                  style={{ background: '#0C1521', borderLeft: '1px solid rgba(255,255,255,0.06)' }}
+                  className="hidden md:flex items-center justify-center overflow-hidden"
+                  style={{ background: '#0C1521', borderLeft: '1px solid rgba(255,255,255,0.06)', minHeight: 220 }}
                 >
-                  <svg viewBox="0 0 200 160" fill="none" className="w-full max-w-[200px]" aria-hidden>
-                    <defs>
-                      <linearGradient id="blog-fill" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#148AFF" stopOpacity="0.2"/>
-                        <stop offset="100%" stopColor="#148AFF" stopOpacity="0"/>
-                      </linearGradient>
-                    </defs>
-                    <path d="M0 130 C30 120 50 100 70 80 C85 65 90 75 110 55 C130 35 150 20 200 5 L200 160 L0 160 Z" fill="url(#blog-fill)"/>
-                    <path d="M0 130 C30 120 50 100 70 80 C85 65 90 75 110 55 C130 35 150 20 200 5" stroke="#148AFF" strokeWidth="2" strokeLinecap="round"/>
-                    <circle cx="200" cy="5" r="4" fill="#148AFF"/>
-                    <line x1="0" y1="155" x2="200" y2="155" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
-                    <line x1="0" y1="110" x2="200" y2="110" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
-                    <line x1="0" y1="65"  x2="200" y2="65"  stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
-                    <line x1="0" y1="20"  x2="200" y2="20"  stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
-                  </svg>
+                  {featured.cover_image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={featured.cover_image}
+                      alt={featured.title}
+                      className="w-full h-full object-cover"
+                      style={{ minHeight: 220 }}
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center p-10 w-full h-full">
+                      <svg viewBox="0 0 200 160" fill="none" className="w-full max-w-[200px]" aria-hidden>
+                        <defs>
+                          <linearGradient id="blog-fill" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#148AFF" stopOpacity="0.2"/>
+                            <stop offset="100%" stopColor="#148AFF" stopOpacity="0"/>
+                          </linearGradient>
+                        </defs>
+                        <path d="M0 130 C30 120 50 100 70 80 C85 65 90 75 110 55 C130 35 150 20 200 5 L200 160 L0 160 Z" fill="url(#blog-fill)"/>
+                        <path d="M0 130 C30 120 50 100 70 80 C85 65 90 75 110 55 C130 35 150 20 200 5" stroke="#148AFF" strokeWidth="2" strokeLinecap="round"/>
+                        <circle cx="200" cy="5" r="4" fill="#148AFF"/>
+                        <line x1="0" y1="155" x2="200" y2="155" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+                        <line x1="0" y1="110" x2="200" y2="110" stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+                        <line x1="0" y1="65"  x2="200" y2="65"  stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+                        <line x1="0" y1="20"  x2="200" y2="20"  stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>
+                      </svg>
+                    </div>
+                  )}
                 </div>
               </div>
             </Link>

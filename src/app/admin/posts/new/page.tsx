@@ -11,6 +11,7 @@ async function createPost(formData: FormData): Promise<{ error?: string }> {
     slug: formData.get('slug') as string,
     excerpt: (formData.get('excerpt') as string) || null,
     content: formData.get('content') as string,
+    cover_image: (formData.get('cover_image') as string) || null,
     published: formData.get('published') === 'true',
   })
 

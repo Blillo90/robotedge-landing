@@ -4,6 +4,7 @@ export interface Post {
   slug: string
   excerpt: string | null
   content: string
+  cover_image: string | null
   published: boolean
   created_at: string
   updated_at: string
