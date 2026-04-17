@@ -63,7 +63,7 @@ export default function Navbar() {
             onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
             onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
           >
-            Leer Artículos
+            Blog
           </Link>
         </nav>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
               href="/blog"
               className="block text-center text-sm font-medium py-3 px-6 bg-edge hover:bg-edge-dim text-white transition-colors"
             >
-              Leer Artículos →
+              Blog →
             </Link>
           </div>
         </nav>
