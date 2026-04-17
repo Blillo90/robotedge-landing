@@ -76,6 +76,7 @@ function CandleChart() {
 export default function Features() {
   return (
     <section
+      id="curso"
       className="py-28 px-6 relative overflow-hidden"
       style={{ background: '#0C1521' }}
     >
