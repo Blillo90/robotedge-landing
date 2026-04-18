@@ -148,10 +148,12 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 px-8 md:px-14 py-16 md:py-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start">
 
-          {/* Left: copy + stat row */}
-          <div className="flex flex-col justify-between h-full">
+        {/* Top: copy + performance card */}
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start mb-10">
+
+          {/* Left: copy */}
+          <div>
             {/* Eyebrow tag */}
             <div className="animate-fade-up delay-1 flex items-center gap-3 mb-8">
               <span className="block w-8 h-px" style={{ background: '#148AFF' }} />
@@ -174,61 +176,58 @@ export default function Hero() {
 
             {/* Body */}
             <p
-              className="animate-fade-up delay-3 leading-relaxed mb-12"
+              className="animate-fade-up delay-3 leading-relaxed"
               style={{ fontSize: '1.1rem', maxWidth: '46ch', color: '#5A7A95' }}
             >
               La mayoría de traders pierde porque opera con emociones. Tú vas a
               operar con datos, reglas y matemáticas. Este es el método que
               transforma cómo te relacionas con los mercados.
             </p>
-
-            {/* Stat row */}
-            <div
-              className="animate-fade-up delay-5 pt-8 flex flex-wrap gap-10 mt-auto"
-              style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
-            >
-              {[
-                { label: 'Ejecución',          value: '24 / 7' },
-                { label: 'Tipo de estrategia', value: 'Basada en reglas' },
-                { label: 'Enfoque',            value: 'Sistemático' },
-              ].map((s) => (
-                <div key={s.label}>
-                  <p
-                    className="text-xs tracking-[0.15em] uppercase mb-1"
-                    style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}
-                  >
-                    {s.label}
-                  </p>
-                  <p
-                    className="text-sm font-medium"
-                    style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}
-                  >
-                    {s.value}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right: performance card + form */}
-          <div className="flex flex-col gap-6">
-            {/* Performance card */}
-            <div className="animate-fade-in delay-4">
-              <PerformanceCard />
-            </div>
-
-            {/* Lead form */}
-            <div className="animate-fade-up delay-5">
-              <div
-                className="px-6 py-6"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
-              >
-                <HeroForm />
-              </div>
-            </div>
+          {/* Right: performance card */}
+          <div className="animate-fade-in delay-3">
+            <PerformanceCard />
           </div>
-
         </div>
+
+        {/* Bottom: full-width form */}
+        <div className="animate-fade-up delay-4 mb-10">
+          <div
+            className="px-6 py-6"
+            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <HeroForm />
+          </div>
+        </div>
+
+        {/* Stat row */}
+        <div
+          className="animate-fade-up delay-5 pt-8 flex flex-wrap gap-10"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+        >
+          {[
+            { label: 'Ejecución',          value: '24 / 7' },
+            { label: 'Tipo de estrategia', value: 'Basada en reglas' },
+            { label: 'Enfoque',            value: 'Sistemático' },
+          ].map((s) => (
+            <div key={s.label}>
+              <p
+                className="text-xs tracking-[0.15em] uppercase mb-1"
+                style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}
+              >
+                {s.label}
+              </p>
+              <p
+                className="text-sm font-medium"
+                style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}
+              >
+                {s.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
       </div>
       </div>
     </section>
