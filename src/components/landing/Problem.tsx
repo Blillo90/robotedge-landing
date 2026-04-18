@@ -33,10 +33,11 @@ const problems = [
 
 export default function Problem() {
   return (
-    <section
-      className="py-28 px-4 sm:px-6 relative overflow-hidden"
-      style={{ background: '#0C1521' }}
-    >
+    <section className="py-6 px-4 sm:px-6">
+      <div
+        className="relative max-w-[1400px] mx-auto overflow-hidden"
+        style={{ background: '#0C1521', borderRadius: '12px' }}
+      >
       {/* Grid lines — same as Hero */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -56,7 +57,7 @@ export default function Problem() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="relative z-10 px-8 md:px-14 py-16 md:py-20 max-w-6xl mx-auto">
         <div className="mb-16 max-w-2xl">
           <div className="flex items-center gap-3 mb-5">
             <span className="block w-6 h-px" style={{ background: '#EF4444', opacity: 0.6 }} />
@@ -113,6 +114,7 @@ export default function Problem() {
             persona que reacciona a los movimientos del mercado.
           </p>
         </div>
+      </div>
       </div>
     </section>
   )
