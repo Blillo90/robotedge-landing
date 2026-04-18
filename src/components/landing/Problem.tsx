@@ -72,16 +72,16 @@ export default function Problem() {
             className="font-display font-bold leading-tight mb-5"
             style={{ fontSize: 'clamp(26px, 3.5vw, 44px)', color: '#F0F4F8' }}
           >
-            Por qué la mayoría pierde dinero en trading
+            La razón real por la que sigues perdiendo
             <br />
             <span style={{ fontSize: '0.85em', fontWeight: 500, color: '#5A7A95' }}>
-              — y no es por falta de esfuerzo
+              — y no tiene nada que ver con el mercado
             </span>
           </h2>
           <p className="leading-relaxed" style={{ maxWidth: '56ch', color: '#5A7A95' }}>
-            Si llevas tiempo operando en los mercados, probablemente ya conoces este
-            patrón. No es mala suerte. Es el sistema roto con el que opera la mayoría
-            de traders.
+            Si llevas tiempo en los mercados, ya conoces este patrón: días buenos,
+            semanas malas, sin saber por qué. No es el mercado. Es que estás jugando
+            con las reglas equivocadas.
           </p>
         </div>
 
@@ -109,9 +109,10 @@ export default function Problem() {
           style={{ background: 'rgba(20,138,255,0.05)', border: '1px solid rgba(20,138,255,0.1)' }}
         >
           <p className="text-sm leading-relaxed" style={{ color: '#5A7A95' }}>
-            <span className="font-semibold" style={{ color: '#F0F4F8' }}>El problema no eres tú.</span>{' '}
-            El problema es que nadie te enseñó a operar como un sistema, no como una
-            persona que reacciona a los movimientos del mercado.
+            <span className="font-semibold" style={{ color: '#F0F4F8' }}>No fracasaste por ser malo en esto.</span>{' '}
+            Fracasaste porque nadie te enseñó que el trading emocional es un juego
+            amañado desde el principio. Los que ganan de forma consistente no son más
+            inteligentes — tienen un sistema que opera sin ellos.
           </p>
         </div>
       </div>

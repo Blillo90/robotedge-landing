@@ -95,7 +95,7 @@ export default function Hero() {
                 className="text-xs tracking-[0.22em] uppercase"
                 style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
               >
-                Curso de Trading Algorítmico
+                Para traders que ya están hartos de perder
               </span>
             </div>
 
@@ -104,8 +104,8 @@ export default function Hero() {
               className="animate-fade-up delay-2 font-display font-extrabold leading-[1.05] tracking-tight mb-8"
               style={{ fontSize: 'clamp(34px, 4.5vw, 64px)', color: '#F0F4F8' }}
             >
-              Aprende trading algorítmico y deja que tus sistemas operen mientras{' '}
-              <span style={{ color: '#148AFF' }}>tú vives tu vida.</span>
+              Deja de operar con el estómago.{' '}
+              <span style={{ color: '#148AFF' }}>Construye el robot que opera por ti.</span>
             </h1>
 
             {/* Body */}
@@ -113,9 +113,9 @@ export default function Hero() {
               className="animate-fade-up delay-3 leading-relaxed"
               style={{ fontSize: '1.1rem', maxWidth: '46ch', color: '#5A7A95' }}
             >
-              La mayoría de traders pierde porque opera con emociones. Tú vas a
-              operar con datos, reglas y matemáticas. Este es el método que
-              transforma cómo te relacionas con los mercados.
+              Llevas meses —o años— haciendo lo mismo y obteniendo los mismos
+              resultados. El mercado no está en tu contra. Estás usando el
+              método equivocado.
             </p>
           </div>
 

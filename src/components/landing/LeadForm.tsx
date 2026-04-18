@@ -69,16 +69,15 @@ export default function LeadForm() {
           className="font-display font-bold leading-tight mb-4"
           style={{ fontSize: 'clamp(24px, 4vw, 44px)', color: '#F0F4F8' }}
         >
-          Empieza hoy. Tu primer sistema, paso a paso.
+          Para de improvisar. Construye tu primer robot de trading ahora.
         </h2>
         <p
           className="mb-10 leading-relaxed mx-auto"
           style={{ color: '#5A7A95', maxWidth: '48ch' }}
         >
-          Descarga la guía gratuita y aprende, desde cero, cómo crear tu primer
-          robot de trading algorítmico: desde la idea hasta el bot operando en
-          cuenta real. Sin experiencia en programación. Sin atajos que no
-          funcionan.
+          Guía gratuita: de cero al primer bot operando en cuenta real. Sin
+          experiencia previa en programación. Sin promesas absurdas. Solo el
+          proceso exacto, paso a paso.
         </p>
 
         {status === 'success' ? (
@@ -136,7 +135,7 @@ export default function LeadForm() {
                 onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#0E6FD4' }}
                 onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#148AFF' }}
               >
-                {status === 'loading' ? 'Enviando…' : 'Quiero la guía →'}
+                {status === 'loading' ? 'Enviando…' : 'Quiero empezar ya →'}
               </button>
             </div>
 
@@ -150,7 +149,7 @@ export default function LeadForm() {
               className="mt-4 text-xs"
               style={{ color: '#3A5270', fontFamily: 'var(--font-mono)' }}
             >
-              Sin spam. Puedes darte de baja cuando quieras.
+              Gratis. Sin spam. Sin excusas para no empezar.
             </p>
           </form>
         )}

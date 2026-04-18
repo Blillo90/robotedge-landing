@@ -124,7 +124,7 @@ export default function HeroForm() {
           onMouseEnter={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#0E6FD4' }}
           onMouseLeave={(e) => { if (status !== 'loading') e.currentTarget.style.background = '#148AFF' }}
         >
-          {status === 'loading' ? '…' : 'Empezar →'}
+          {status === 'loading' ? '…' : 'Quiero montarlo ya →'}
         </button>
       </div>
 
@@ -135,7 +135,7 @@ export default function HeroForm() {
       )}
 
       <p className="mt-3 text-xs" style={{ color: '#3A5270', fontFamily: 'var(--font-mono)' }}>
-        Gratis. Sin spam. Baja cuando quieras.
+        Gratis. Sin paja. Sin excusas.
       </p>
     </form>
   )

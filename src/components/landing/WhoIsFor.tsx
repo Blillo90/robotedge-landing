@@ -42,7 +42,7 @@ export default function WhoIsFor() {
             className="font-display font-bold leading-tight"
             style={{ fontSize: 'clamp(26px, 3.5vw, 44px)', color: '#F0F4F8' }}
           >
-            Este método es para ti si…
+            Antes de continuar: sé honesto contigo mismo.
           </h2>
         </div>
 

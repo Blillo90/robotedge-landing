@@ -107,12 +107,13 @@ export default function Features() {
               className="font-display font-bold leading-tight mb-4"
               style={{ fontSize: 'clamp(26px, 3.5vw, 44px)', color: '#F0F4F8' }}
             >
-              El método que usan los traders algorítmicos profesionales
+              Este es el método. Y funciona porque{' '}
+              <span style={{ color: '#10B981' }}>los números no mienten.</span>
             </h2>
             <p className="leading-relaxed" style={{ maxWidth: '52ch', color: '#5A7A95' }}>
-              El trading algorítmico no es ciencia ficción. Es un proceso estructurado
-              de diseño, validación y automatización. Esto es lo que lo diferencia
-              del trading discrecional.
+              No es intuición. No son señales. Es un robot que opera con reglas
+              matemáticas exactas — las mismas que defines y validas tú antes de
+              arriesgar un solo euro.
             </p>
           </div>
           {/* Decorative candles */}
