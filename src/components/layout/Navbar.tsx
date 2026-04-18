@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Blog',      href: '/blog' },
   { label: 'Curso',     href: '/#curso' },
   { label: 'Acerca de', href: '/#about' },
   { label: 'FAQ',       href: '/#faq' },
@@ -69,28 +68,31 @@ export default function Navbar() {
             <Link
               key={l.label}
               href={l.href}
-              className="px-4 py-2 text-xs tracking-[0.14em] uppercase transition-colors rounded-lg"
-              style={{
-                fontFamily: 'var(--font-mono)',
-                color: l.label === 'Blog' ? '#148AFF' : undefined,
-                fontWeight: l.label === 'Blog' ? 700 : undefined,
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = l.label === 'Blog' ? 'rgba(20,138,255,0.08)' : 'rgba(0,0,0,0.04)' }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent' }}
+              className="px-4 py-2 text-xs tracking-[0.14em] uppercase text-ink-2 hover:text-ink-1 transition-colors rounded-lg hover:bg-black/[0.04]"
+              style={{ fontFamily: 'var(--font-mono)' }}
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center shrink-0">
+        {/* Desktop CTAs */}
+        <div className="hidden md:flex items-center gap-3 shrink-0">
+          <Link
+            href="/blog"
+            className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg transition-colors"
+            style={{ fontFamily: 'var(--font-mono)', background: '#148AFF', color: '#fff' }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
+          >
+            Blog
+          </Link>
           <Link
             href="/#guia-gratuita"
             className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg text-white transition-colors"
-            style={{ fontFamily: 'var(--font-mono)', background: '#148AFF' }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
+            style={{ fontFamily: 'var(--font-mono)', background: '#0C1521', border: '1px solid rgba(255,255,255,0.15)' }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#1a2a3a')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#0C1521')}
           >
             Empezar →
           </Link>
@@ -126,9 +128,16 @@ export default function Navbar() {
           ))}
           <div className="flex flex-col gap-3 pt-5">
             <Link
-              href="/#guia-gratuita"
+              href="/blog"
               className="block text-center text-sm font-medium py-3 px-6 rounded-xl text-white"
               style={{ background: '#148AFF', fontFamily: 'var(--font-mono)' }}
+            >
+              Blog
+            </Link>
+            <Link
+              href="/#guia-gratuita"
+              className="block text-center text-sm font-medium py-3 px-6 rounded-xl"
+              style={{ background: '#0C1521', color: '#fff', fontFamily: 'var(--font-mono)', border: '1px solid rgba(0,0,0,0.15)' }}
             >
               Empezar →
             </Link>
