@@ -137,7 +137,7 @@ export default function Navbar() {
             <Link
               href="/#guia-gratuita"
               className="block text-center text-sm font-medium py-3 px-6 rounded-xl"
-              style={{ background: '#0C1521', color: '#fff', fontFamily: 'var(--font-mono)', border: '1px solid rgba(0,0,0,0.15)' }}
+              style={{ background: '#148AFF', fontFamily: 'var(--font-mono)' }}
             >
               Empezar →
             </Link>
