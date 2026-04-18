@@ -1,63 +1,7 @@
-import Link from 'next/link'
+import Image from 'next/image'
 import HeroForm from './HeroForm'
 
-function EquityCurve() {
-  return (
-    <svg
-      viewBox="0 0 320 130"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-full"
-      aria-hidden
-    >
-      <defs>
-        <linearGradient id="eq-fill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#10B981" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M0 110 C25 105 45 96 65 84 C80 75 85 82 100 70 C118 56 130 48 152 38 C165 32 170 40 184 30 C200 19 220 13 242 8 C262 4 285 3 320 1 L320 130 L0 130 Z"
-        fill="url(#eq-fill)"
-      />
-      <path
-        d="M0 110 C25 105 45 96 65 84 C80 75 85 82 100 70 C118 56 130 48 152 38 C165 32 170 40 184 30 C200 19 220 13 242 8 C262 4 285 3 320 1"
-        stroke="#10B981"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="320" cy="1" r="3.5" fill="#10B981" />
-    </svg>
-  )
-}
-
-function Donut({ pct, color, size = 52 }: { pct: number; color: string; size?: number }) {
-  const r = (size - 8) / 2
-  const circ = 2 * Math.PI * r
-  const dash = Math.min(pct / 100, 1) * circ
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden>
-      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="5"/>
-      <circle
-        cx={size/2} cy={size/2} r={r}
-        fill="none" stroke={color} strokeWidth="5"
-        strokeDasharray={`${dash} ${circ}`}
-        strokeLinecap="round"
-        transform={`rotate(-90 ${size/2} ${size/2})`}
-      />
-    </svg>
-  )
-}
-
 function PerformanceCard() {
-  const metrics = [
-    { label: 'Profit',          sublabel: 'All Time', value: '+48.26%', pct: 48,   color: '#10B981', valueColor: '#10B981' },
-    { label: 'Winning Trades',  sublabel: 'All Time', value: '64.94%',  pct: 64.9, color: '#10B981', valueColor: '#F0F4F8' },
-    { label: 'Avg Gain in $',   sublabel: 'All Time', value: '$17',     pct: 72,   color: '#06B6D4', valueColor: '#F0F4F8' },
-    { label: 'Avg Gain in %',   sublabel: 'All Time', value: '+1.34%',  pct: 68,   color: '#10B981', valueColor: '#10B981' },
-  ]
-
   return (
     <div
       className="w-full overflow-hidden shadow-2xl"
@@ -73,31 +17,21 @@ function PerformanceCard() {
         </span>
         <span className="flex items-center gap-2 px-3 py-1 rounded-full ml-auto" style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.25)' }}>
           <span className="w-2 h-2 rounded-full shrink-0" style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }} />
-          <span className="text-xs font-medium" style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}>Live</span>
+          <span className="text-xs font-medium" style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}>Verificado</span>
         </span>
       </div>
 
-      {/* Equity curve */}
-      <div className="px-4 sm:px-6 pt-5 pb-3" style={{ height: 90 }}>
-        <EquityCurve />
+      {/* Results image */}
+      <div className="relative w-full">
+        <Image
+          src="/images/resultados.jpg"
+          alt="Resultados verificados de trading algorítmico — Pablo, RobotEdge"
+          width={1024}
+          height={768}
+          className="w-full h-auto"
+          priority
+        />
       </div>
-
-      {/* Metric grid */}
-      <div className="grid grid-cols-2 gap-px mx-3 sm:mx-6 mb-4 sm:mb-5" style={{ background: 'rgba(255,255,255,0.06)' }}>
-        {metrics.map((m) => (
-          <div key={m.label} className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4" style={{ background: '#111C28' }}>
-            <div className="relative shrink-0 hidden sm:block">
-              <Donut pct={m.pct} color={m.color} size={40} />
-            </div>
-            <div className="min-w-0">
-              <p className="text-[10px] sm:text-xs mb-0.5 truncate" style={{ fontFamily: 'var(--font-mono)', color: '#5A7A95' }}>{m.label}</p>
-              <p className="text-[10px] sm:text-xs mb-1" style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}>{m.sublabel}</p>
-              <p className="text-sm sm:text-base font-bold leading-none" style={{ fontFamily: 'var(--font-mono)', color: m.valueColor }}>{m.value}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
     </div>
   )
 }
