@@ -96,7 +96,7 @@ export default function Navbar() {
             Blog
           </Link>
           <Link
-            href="/#curso"
+            href="/#guia-gratuita"
             className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg text-white transition-colors"
             style={{ fontFamily: 'var(--font-mono)', background: '#148AFF' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
@@ -147,7 +147,7 @@ export default function Navbar() {
               Blog
             </Link>
             <Link
-              href="/#curso"
+              href="/#guia-gratuita"
               className="block text-center text-sm font-medium py-3 px-6 rounded-xl text-white"
               style={{ background: '#148AFF', fontFamily: 'var(--font-mono)' }}
             >
