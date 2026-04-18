@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
+  { label: 'Blog',      href: '/blog' },
   { label: 'Curso',     href: '/#curso' },
   { label: 'Acerca de', href: '/#about' },
   { label: 'FAQ',       href: '/#faq' },
@@ -68,33 +69,22 @@ export default function Navbar() {
             <Link
               key={l.label}
               href={l.href}
-              className="px-4 py-2 text-xs tracking-[0.14em] uppercase text-ink-2 hover:text-ink-1 transition-colors rounded-lg hover:bg-black/[0.04]"
-              style={{ fontFamily: 'var(--font-mono)' }}
+              className="px-4 py-2 text-xs tracking-[0.14em] uppercase transition-colors rounded-lg"
+              style={{
+                fontFamily: 'var(--font-mono)',
+                color: l.label === 'Blog' ? '#148AFF' : undefined,
+                fontWeight: l.label === 'Blog' ? 700 : undefined,
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = l.label === 'Blog' ? 'rgba(20,138,255,0.08)' : 'rgba(0,0,0,0.04)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent' }}
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        {/* Desktop CTAs */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
-          <Link
-            href="/blog"
-            className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg transition-colors"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              border: '1px solid rgba(20,138,255,0.35)',
-              color: '#148AFF',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(20,138,255,0.08)'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'transparent'
-            }}
-          >
-            Blog
-          </Link>
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center shrink-0">
           <Link
             href="/#guia-gratuita"
             className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg text-white transition-colors"
@@ -135,17 +125,6 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="flex flex-col gap-3 pt-5">
-            <Link
-              href="/blog"
-              className="text-center text-sm font-medium py-3 px-6 rounded-xl transition-colors"
-              style={{
-                border: '1px solid rgba(20,138,255,0.35)',
-                color: '#148AFF',
-                fontFamily: 'var(--font-mono)',
-              }}
-            >
-              Blog
-            </Link>
             <Link
               href="/#guia-gratuita"
               className="block text-center text-sm font-medium py-3 px-6 rounded-xl text-white"
