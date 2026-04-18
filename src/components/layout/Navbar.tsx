@@ -63,7 +63,16 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1 flex-1" aria-label="Navegación principal">
+        <nav className="hidden md:flex items-center gap-2 flex-1" aria-label="Navegación principal">
+          <Link
+            href="/blog"
+            className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg text-white transition-colors"
+            style={{ fontFamily: 'var(--font-mono)', background: '#148AFF' }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
+          >
+            Blog
+          </Link>
           {resolvedLinks.map((l) => (
             <Link
               key={l.label}
@@ -76,23 +85,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop CTAs */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
-          <Link
-            href="/blog"
-            className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg transition-colors"
-            style={{ fontFamily: 'var(--font-mono)', background: '#148AFF', color: '#fff' }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
-          >
-            Blog
-          </Link>
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center shrink-0">
           <Link
             href="/#guia-gratuita"
             className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg text-white transition-colors"
-            style={{ fontFamily: 'var(--font-mono)', background: '#0C1521', border: '1px solid rgba(255,255,255,0.15)' }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#1a2a3a')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = '#0C1521')}
+            style={{ fontFamily: 'var(--font-mono)', background: '#148AFF' }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
           >
             Empezar →
           </Link>
