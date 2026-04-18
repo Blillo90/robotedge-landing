@@ -16,7 +16,7 @@ const forNo = [
 export default function WhoIsFor() {
   return (
     <section
-      className="py-28 px-6 relative overflow-hidden"
+      className="pt-10 pb-28 px-6 relative overflow-hidden"
       style={{ background: '#0C1521' }}
     >
       <div
