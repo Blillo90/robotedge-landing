@@ -60,7 +60,7 @@ function PerformanceCard() {
 
   return (
     <div
-      className="w-full max-w-[600px] overflow-hidden shadow-2xl"
+      className="w-full overflow-hidden shadow-2xl"
       style={{ borderRadius: '12px', background: '#111C28', border: '1px solid rgba(255,255,255,0.08)' }}
     >
       {/* Header */}
@@ -69,7 +69,7 @@ function PerformanceCard() {
         style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: '#0C1521' }}
       >
         <span className="text-sm tracking-[0.16em] uppercase font-semibold" style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}>
-          Estrategia Demo
+          Nuestros Resultados
         </span>
         <span className="flex items-center gap-2 px-3 py-1 rounded-full ml-auto" style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.25)' }}>
           <span className="w-2 h-2 rounded-full shrink-0" style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }} />
@@ -148,81 +148,78 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 px-8 md:px-14 py-16 md:py-20 w-full">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-16 items-center">
+        <div className="max-w-2xl">
 
-          {/* Left: copy */}
-          <div>
-            {/* Eyebrow tag */}
-            <div className="animate-fade-up delay-1 flex items-center gap-3 mb-8">
-              <span className="block w-8 h-px" style={{ background: '#148AFF' }} />
-              <span
-                className="text-xs tracking-[0.22em] uppercase"
-                style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
-              >
-                Curso de Trading Algorítmico
-              </span>
-            </div>
-
-            {/* Headline */}
-            <h1
-              className="animate-fade-up delay-2 font-display font-extrabold leading-[1.05] tracking-tight mb-8"
-              style={{ fontSize: 'clamp(34px, 5vw, 68px)', maxWidth: '18ch', color: '#F0F4F8' }}
+          {/* Eyebrow tag */}
+          <div className="animate-fade-up delay-1 flex items-center gap-3 mb-8">
+            <span className="block w-8 h-px" style={{ background: '#148AFF' }} />
+            <span
+              className="text-xs tracking-[0.22em] uppercase"
+              style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
             >
-              Aprende trading algorítmico y deja que tus sistemas operen mientras{' '}
-              <span style={{ color: '#148AFF' }}>tú vives tu vida.</span>
-            </h1>
+              Curso de Trading Algorítmico
+            </span>
+          </div>
 
-            {/* Body */}
-            <p
-              className="animate-fade-up delay-3 leading-relaxed mb-10"
-              style={{ fontSize: '1.1rem', maxWidth: '48ch', color: '#5A7A95' }}
-            >
-              La mayoría de traders pierde porque opera con emociones. Tú vas a
-              operar con datos, reglas y matemáticas. Este es el método que
-              transforma cómo te relacionas con los mercados.
-            </p>
+          {/* Headline */}
+          <h1
+            className="animate-fade-up delay-2 font-display font-extrabold leading-[1.05] tracking-tight mb-8"
+            style={{ fontSize: 'clamp(34px, 5vw, 68px)', maxWidth: '18ch', color: '#F0F4F8' }}
+          >
+            Aprende trading algorítmico y deja que tus sistemas operen mientras{' '}
+            <span style={{ color: '#148AFF' }}>tú vives tu vida.</span>
+          </h1>
 
-            {/* Lead form */}
-            <div className="animate-fade-up delay-4 mb-16">
-              <div
-                className="px-6 py-6"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
-              >
-                <HeroForm />
-              </div>
-            </div>
+          {/* Body */}
+          <p
+            className="animate-fade-up delay-3 leading-relaxed mb-10"
+            style={{ fontSize: '1.1rem', maxWidth: '48ch', color: '#5A7A95' }}
+          >
+            La mayoría de traders pierde porque opera con emociones. Tú vas a
+            operar con datos, reglas y matemáticas. Este es el método que
+            transforma cómo te relacionas con los mercados.
+          </p>
 
-            {/* Stat row */}
+          {/* Lead form */}
+          <div className="animate-fade-up delay-4 mb-8">
             <div
-              className="animate-fade-up delay-5 pt-8 flex flex-wrap gap-10"
-              style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+              className="px-6 py-6"
+              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
             >
-              {[
-                { label: 'Ejecución',          value: '24 / 7' },
-                { label: 'Tipo de estrategia', value: 'Basada en reglas' },
-                { label: 'Enfoque',            value: 'Sistemático' },
-              ].map((s) => (
-                <div key={s.label}>
-                  <p
-                    className="text-xs tracking-[0.15em] uppercase mb-1"
-                    style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}
-                  >
-                    {s.label}
-                  </p>
-                  <p
-                    className="text-sm font-medium"
-                    style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}
-                  >
-                    {s.value}
-                  </p>
-                </div>
-              ))}
+              <HeroForm />
             </div>
           </div>
 
-          {/* Right: performance card */}
-          <div className="animate-fade-in delay-3 hidden lg:flex justify-end">
+          {/* Performance card */}
+          <div className="animate-fade-in delay-4 mb-12">
             <PerformanceCard />
+          </div>
+
+          {/* Stat row */}
+          <div
+            className="animate-fade-up delay-5 pt-8 flex flex-wrap gap-10"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            {[
+              { label: 'Ejecución',          value: '24 / 7' },
+              { label: 'Tipo de estrategia', value: 'Basada en reglas' },
+              { label: 'Enfoque',            value: 'Sistemático' },
+            ].map((s) => (
+              <div key={s.label}>
+                <p
+                  className="text-xs tracking-[0.15em] uppercase mb-1"
+                  style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}
+                >
+                  {s.label}
+                </p>
+                <p
+                  className="text-sm font-medium"
+                  style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}
+                >
+                  {s.value}
+                </p>
+              </div>
+            ))}
           </div>
 
         </div>
