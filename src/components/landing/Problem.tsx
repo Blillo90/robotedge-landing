@@ -33,12 +33,26 @@ const problems = [
 
 export default function Problem() {
   return (
-    <section className="py-28 px-6 relative overflow-hidden">
+    <section
+      className="py-28 px-4 sm:px-6 relative overflow-hidden"
+      style={{ background: '#0C1521' }}
+    >
+      {/* Grid lines — same as Hero */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
+      {/* Subtle red glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse 60% 40% at 50% 100%, rgba(239,68,68,0.03) 0%, transparent 60%)',
+            'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(239,68,68,0.05) 0%, transparent 60%)',
         }}
       />
 
@@ -54,28 +68,28 @@ export default function Problem() {
             </span>
           </div>
           <h2
-            className="font-display font-bold text-ink-1 leading-tight mb-5"
-            style={{ fontSize: 'clamp(26px, 3.5vw, 44px)' }}
+            className="font-display font-bold leading-tight mb-5"
+            style={{ fontSize: 'clamp(26px, 3.5vw, 44px)', color: '#F0F4F8' }}
           >
             Por qué la mayoría pierde dinero en trading
             <br />
-            <span className="text-ink-3" style={{ fontSize: '0.85em', fontWeight: 500 }}>
+            <span style={{ fontSize: '0.85em', fontWeight: 500, color: '#5A7A95' }}>
               — y no es por falta de esfuerzo
             </span>
           </h2>
-          <p className="text-ink-2 leading-relaxed" style={{ maxWidth: '56ch' }}>
+          <p className="leading-relaxed" style={{ maxWidth: '56ch', color: '#5A7A95' }}>
             Si llevas tiempo operando en los mercados, probablemente ya conoces este
             patrón. No es mala suerte. Es el sistema roto con el que opera la mayoría
             de traders.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px" style={{ background: 'rgba(0,0,0,0.06)' }}>
+        <div className="grid md:grid-cols-3 gap-px" style={{ background: 'rgba(255,255,255,0.05)' }}>
           {problems.map((p) => (
             <div
               key={p.title}
               className="p-8 flex flex-col gap-4"
-              style={{ background: 'rgba(255,255,255,0.72)' }}
+              style={{ background: '#111C28' }}
             >
               <div
                 className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
@@ -83,18 +97,18 @@ export default function Problem() {
               >
                 {p.icon}
               </div>
-              <h3 className="text-sm font-semibold text-ink-1">{p.title}</h3>
-              <p className="text-sm text-ink-2 leading-relaxed">{p.description}</p>
+              <h3 className="text-sm font-semibold" style={{ color: '#F0F4F8' }}>{p.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#5A7A95' }}>{p.description}</p>
             </div>
           ))}
         </div>
 
         <div
-          className="mt-10 px-8 py-5 rounded-xl"
-          style={{ background: 'rgba(20,138,255,0.05)', border: '1px solid rgba(20,138,255,0.12)' }}
+          className="mt-6 px-8 py-5"
+          style={{ background: 'rgba(20,138,255,0.05)', border: '1px solid rgba(20,138,255,0.1)' }}
         >
-          <p className="text-sm text-ink-2 leading-relaxed">
-            <span className="font-semibold text-ink-1">El problema no eres tú.</span>{' '}
+          <p className="text-sm leading-relaxed" style={{ color: '#5A7A95' }}>
+            <span className="font-semibold" style={{ color: '#F0F4F8' }}>El problema no eres tú.</span>{' '}
             El problema es que nadie te enseñó a operar como un sistema, no como una
             persona que reacciona a los movimientos del mercado.
           </p>
