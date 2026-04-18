@@ -78,21 +78,21 @@ function PerformanceCard() {
       </div>
 
       {/* Equity curve */}
-      <div className="px-6 pt-5 pb-3" style={{ height: 100 }}>
+      <div className="px-4 sm:px-6 pt-5 pb-3" style={{ height: 90 }}>
         <EquityCurve />
       </div>
 
       {/* Metric grid */}
-      <div className="grid grid-cols-2 gap-px mx-6 mb-5" style={{ background: 'rgba(255,255,255,0.06)' }}>
+      <div className="grid grid-cols-2 gap-px mx-3 sm:mx-6 mb-4 sm:mb-5" style={{ background: 'rgba(255,255,255,0.06)' }}>
         {metrics.map((m) => (
-          <div key={m.label} className="flex items-center gap-3 p-4" style={{ background: '#111C28' }}>
-            <div className="relative shrink-0">
-              <Donut pct={m.pct} color={m.color} size={52} />
+          <div key={m.label} className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4" style={{ background: '#111C28' }}>
+            <div className="relative shrink-0 hidden sm:block">
+              <Donut pct={m.pct} color={m.color} size={40} />
             </div>
             <div className="min-w-0">
-              <p className="text-xs mb-0.5 truncate" style={{ fontFamily: 'var(--font-mono)', color: '#5A7A95' }}>{m.label}</p>
-              <p className="text-xs mb-1" style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}>{m.sublabel}</p>
-              <p className="text-base font-bold leading-none" style={{ fontFamily: 'var(--font-mono)', color: m.valueColor }}>{m.value}</p>
+              <p className="text-[10px] sm:text-xs mb-0.5 truncate" style={{ fontFamily: 'var(--font-mono)', color: '#5A7A95' }}>{m.label}</p>
+              <p className="text-[10px] sm:text-xs mb-1" style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}>{m.sublabel}</p>
+              <p className="text-sm sm:text-base font-bold leading-none" style={{ fontFamily: 'var(--font-mono)', color: m.valueColor }}>{m.value}</p>
             </div>
           </div>
         ))}
