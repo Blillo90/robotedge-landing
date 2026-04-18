@@ -210,21 +210,21 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: form + performance card */}
+          {/* Right: performance card + form */}
           <div className="flex flex-col gap-6">
+            {/* Performance card */}
+            <div className="animate-fade-in delay-4">
+              <PerformanceCard />
+            </div>
+
             {/* Lead form */}
-            <div className="animate-fade-up delay-4">
+            <div className="animate-fade-up delay-5">
               <div
                 className="px-6 py-6"
                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
               >
                 <HeroForm />
               </div>
-            </div>
-
-            {/* Performance card */}
-            <div className="animate-fade-in delay-5">
-              <PerformanceCard />
             </div>
           </div>
 
