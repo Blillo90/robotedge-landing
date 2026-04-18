@@ -150,7 +150,7 @@ export default function Hero() {
       <div className="relative z-10 px-8 md:px-14 py-16 md:py-20 w-full">
 
         {/* Top: copy + performance card */}
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start mb-10">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center mb-10">
 
           {/* Left: copy */}
           <div>
