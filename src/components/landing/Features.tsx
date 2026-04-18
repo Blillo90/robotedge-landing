@@ -1,31 +1,31 @@
 const features = [
   {
     number: '01',
-    title: 'Sistemas Basados en Reglas',
+    title: 'Basado en Datos',
     description:
-      'Cada estrategia de trading automatizado funciona con lógica explícita y verificable — sin improvisación, sin decisiones emocionales. Solo ejecución consistente y repetible.',
-    tag: 'Sin discrecionalidad',
+      'Cada decisión tiene un fundamento histórico. Antes de arriesgar un euro real, sabes cómo se habría comportado tu estrategia en miles de escenarios pasados. Sin suposiciones, solo evidencia.',
+    tag: 'Data-driven',
   },
   {
     number: '02',
-    title: 'Backtesting con Datos Reales',
+    title: 'Probabilístico',
     description:
-      'Antes de que un bot opere en vivo, se somete a pruebas rigurosas contra datos históricos con métodos estadísticos serios. Conoce tu ventaja antes de arriesgar un euro.',
-    tag: 'Validación estadística',
+      'No buscamos certezas. Buscamos ventaja estadística: estrategias con esperanza matemática positiva, ejecutadas con la disciplina suficiente para que el edge se materialice en el tiempo.',
+    tag: 'Estadística aplicada',
   },
   {
     number: '03',
-    title: 'Gestión de Riesgo Integrada',
+    title: 'Automatizado',
     description:
-      'Tamaño de posición, límites de drawdown y gestión de capital integrados directamente en tus algoritmos — porque proteger el capital es tan crítico como generar retornos.',
-    tag: 'Capital protegido',
+      'Una vez validado, el sistema opera solo. Sin necesidad de estar pegado a la pantalla ni tomar decisiones bajo presión. El robot ejecuta las reglas; tú supervisas el proceso.',
+    tag: 'Sin intervención manual',
   },
   {
     number: '04',
-    title: 'Despliegue del Bot en Vivo',
+    title: 'Replicable y Escalable',
     description:
-      'De la estrategia con backtesting al bot operativo: conexión con brokers, monitorización en tiempo real y optimización continua — explicado paso a paso.',
-    tag: 'Broker conectado',
+      'Un sistema bien construido puede gestionarse, duplicarse y mejorarse con el tiempo. Aprendes a operar como un negocio, no como un apostador con suerte variable.',
+    tag: 'Proceso sistematizado',
   },
 ]
 
@@ -100,18 +100,19 @@ export default function Features() {
                 className="text-xs tracking-[0.22em] uppercase"
                 style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}
               >
-                Metodología
+                El Método
               </span>
             </div>
             <h2
               className="font-display font-bold leading-tight mb-4"
               style={{ fontSize: 'clamp(26px, 3.5vw, 44px)', color: '#F0F4F8' }}
             >
-              Los pilares del trading algorítmico
+              El método que usan los traders algorítmicos profesionales
             </h2>
             <p className="leading-relaxed" style={{ maxWidth: '52ch', color: '#5A7A95' }}>
-              El trading automatizado no tiene por qué ser una caja negra. Desglosamos
-              cada componente para que entiendas exactamente cómo funciona tu sistema.
+              El trading algorítmico no es ciencia ficción. Es un proceso estructurado
+              de diseño, validación y automatización. Esto es lo que lo diferencia
+              del trading discrecional.
             </p>
           </div>
           {/* Decorative candles */}

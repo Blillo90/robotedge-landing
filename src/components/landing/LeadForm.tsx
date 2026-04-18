@@ -69,14 +69,16 @@ export default function LeadForm() {
           className="font-display font-bold leading-tight mb-4"
           style={{ fontSize: 'clamp(24px, 4vw, 44px)', color: '#F0F4F8' }}
         >
-          Construye tu primer robot de trading
+          Empieza hoy. Tu primer sistema, paso a paso.
         </h2>
         <p
           className="mb-10 leading-relaxed mx-auto"
-          style={{ color: '#5A7A95', maxWidth: '44ch' }}
+          style={{ color: '#5A7A95', maxWidth: '48ch' }}
         >
-          Recibe la guía gratuita paso a paso: desde la idea hasta el bot
-          funcionando en cuenta real. Sin código mágico, sin promesas vacías.
+          Descarga la guía gratuita y aprende, desde cero, cómo crear tu primer
+          robot de trading algorítmico: desde la idea hasta el bot operando en
+          cuenta real. Sin experiencia en programación. Sin atajos que no
+          funcionan.
         </p>
 
         {status === 'success' ? (

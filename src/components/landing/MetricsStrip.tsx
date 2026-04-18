@@ -1,23 +1,23 @@
 const metrics = [
   {
+    value: '+48.26%',
+    label: 'Rentabilidad acumulada',
+    sub: 'estrategia demo en activo',
+  },
+  {
+    value: '64.94%',
+    label: 'Operaciones ganadoras',
+    sub: 'win rate histórico',
+  },
+  {
     value: '< 15%',
-    label: 'Drawdown máximo objetivo',
-    sub: 'capital protegido',
+    label: 'Drawdown máximo',
+    sub: 'capital siempre protegido',
   },
   {
-    value: '24 / 7',
-    label: 'Ejecución automática',
-    sub: 'sin supervisión constante',
-  },
-  {
-    value: '100%',
-    label: 'Basado en reglas y datos',
-    sub: 'cero improvisación',
-  },
-  {
-    value: '0',
-    label: 'Decisiones emocionales',
-    sub: 'matemáticas, no instinto',
+    value: '3 meses',
+    label: 'Primer sistema en live',
+    sub: 'con dedicación consistente',
   },
 ]
 

@@ -24,16 +24,17 @@ export default function BlogCTA() {
           className="font-display font-extrabold text-ink-1 leading-tight mb-6"
           style={{ fontSize: 'clamp(30px, 5vw, 56px)' }}
         >
-          Empieza a construir tu ventaja
+          El trading sin sistema es solo apuesta.<br />
+          <span style={{ color: '#148AFF' }}>Con sistema, es ventaja.</span>
         </h2>
 
         <p
           className="text-ink-2 leading-relaxed mb-10 mx-auto"
           style={{ maxWidth: '46ch' }}
         >
-          Explora nuestras últimas guías sobre estrategias de trading
-          automatizado, desarrollo de bots y gestión de riesgo — todo lo que
-          necesitas para operar de forma sistemática, no emocional.
+          Explora nuestras guías sobre estrategias de trading automático,
+          backtesting y gestión de riesgo. Todo lo que necesitas para dejar
+          de improvisar y empezar a operar con un proceso real.
         </p>
 
         <Link

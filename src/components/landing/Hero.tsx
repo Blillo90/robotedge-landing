@@ -159,27 +159,27 @@ export default function Hero() {
                 className="text-xs tracking-[0.22em] uppercase"
                 style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
               >
-                Trading Algorítmico &amp; Automatizado
+                Curso de Trading Algorítmico
               </span>
             </div>
 
             {/* Headline */}
             <h1
               className="animate-fade-up delay-2 font-display font-extrabold leading-[1.05] tracking-tight mb-8"
-              style={{ fontSize: 'clamp(40px, 6.5vw, 86px)', maxWidth: '14ch', color: '#F0F4F8' }}
+              style={{ fontSize: 'clamp(34px, 5vw, 68px)', maxWidth: '18ch', color: '#F0F4F8' }}
             >
-              Que tus robots de trading trabajen para{' '}
-              <span style={{ color: '#148AFF' }}>ti.</span>
+              Aprende trading algorítmico y deja que tus sistemas operen mientras{' '}
+              <span style={{ color: '#148AFF' }}>tú vives tu vida.</span>
             </h1>
 
             {/* Body */}
             <p
               className="animate-fade-up delay-3 leading-relaxed mb-10"
-              style={{ fontSize: '1.1rem', maxWidth: '46ch', color: '#5A7A95' }}
+              style={{ fontSize: '1.1rem', maxWidth: '48ch', color: '#5A7A95' }}
             >
-              Estrategias de trading automatizadas basadas en datos, no en emociones.
-              Aprende a diseñar, hacer backtesting y desplegar bots que operan con
-              precisión — las 24 horas del día.
+              La mayoría de traders pierde porque opera con emociones. Tú vas a
+              operar con datos, reglas y matemáticas. Este es el método que
+              transforma cómo te relacionas con los mercados.
             </p>
 
             {/* Lead form */}
