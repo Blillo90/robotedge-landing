@@ -1,19 +1,19 @@
 const trustPoints = [
   {
     label: 'Resultados verificables',
-    value: 'Sistemas en activo, métricas reales',
+    value: 'Track record auditado y público',
   },
   {
-    label: 'Fundamento matemático',
-    value: 'Probabilidad aplicada, no opinión',
+    label: 'Enseña lo que aplica',
+    value: 'Sistemas reales en operativa diaria',
   },
   {
     label: 'Sin promesas vacías',
     value: 'Proceso riguroso, no atajos',
   },
   {
-    label: 'Traders activos',
-    value: 'Enseñamos lo que aplicamos',
+    label: 'Acompañamiento real',
+    value: 'Sesiones en directo con Pablo',
   },
 ]
 
@@ -30,26 +30,30 @@ export default function About() {
               className="text-xs tracking-[0.22em] uppercase"
               style={{ color: '#148AFF', fontFamily: 'var(--font-mono)' }}
             >
-              Por qué confiar en este método
+              Quién enseña esto
             </span>
           </div>
           <h2
             className="font-display font-bold text-ink-1 leading-tight mb-6"
             style={{ fontSize: 'clamp(26px, 3.5vw, 44px)' }}
           >
-            Fundamentado en matemáticas, no en opiniones
+            Soy Pablo Carbonell:{' '}
+            <span style={{ color: '#148AFF' }}>trader algorítmico con amplia experiencia</span>{' '}
+            en los mercados.
           </h2>
           <p className="text-ink-2 leading-relaxed mb-5">
-            RobotEdge es una academia especializada en trading algorítmico y cuantitativo.
-            No enseñamos indicadores genéricos ni estrategias sacadas de foros. Enseñamos
-            el proceso que usan los traders sistemáticos reales: diseño, validación
-            estadística, gestión de riesgo y automatización.
+            Pablo Carbonell lleva muchos años operando en los mercados con sistemas de trading
+            algorítmico. Con resultados verificados y públicos, ha demostrado su capacidad para
+            dominar las herramientas más avanzadas del mercado. Su amplia experiencia y
+            conocimiento te guiarán a lo largo del curso para que también puedas dominar cada
+            una de las herramientas que aprenderás.
           </p>
           <p className="text-ink-2 leading-relaxed">
-            Los sistemas que enseñamos no son teóricos. Las métricas que mostramos
-            provienen de estrategias reales, ejecutadas en condiciones de mercado reales.
-            Cuando una estrategia tiene ventaja estadística y se ejecuta con disciplina,
-            los resultados se dan. Esto no es filosofía, es probabilidad aplicada.
+            En el curso tendrás la oportunidad de participar en sesiones en directo con Pablo,
+            donde podrás interactuar directamente, hacer preguntas y resolver todas tus dudas.
+            No enseña teoría: enseña lo que está haciendo y lo que funciona de verdad.
+            Adquirirás las habilidades para desarrollar tus propias estrategias automatizadas
+            que competirán al más alto nivel.
           </p>
         </div>
 
