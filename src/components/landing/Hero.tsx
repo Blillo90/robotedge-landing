@@ -114,7 +114,7 @@ export default function Hero() {
               style={{ fontSize: '1.1rem', maxWidth: '46ch', color: '#5A7A95' }}
             >
               ¿Te gustaría sentirte como un trader profesional con dominio total
-              de tus estrategias? Soy Pablo Carbonell y llevo mucho tiempo
+              de tus estrategias? Soy Pablo Llobregat y llevo mucho tiempo
               dominando los mercados con sistemas algorítmicos. Te enseño
               exactamente lo que aplico en real todos los días.
             </p>

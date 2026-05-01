@@ -35,7 +35,7 @@ const faqs = [
     a: 'Sí. El curso está diseñado para que puedas avanzar a tu ritmo, sin presión y con acompañamiento real. Tienes acceso completo al contenido desde el primer día y puedes verlo cuando quieras.',
   },
   {
-    q: '¿Tendré contacto directo con Pablo Carbonell?',
+    q: '¿Tendré contacto directo con Pablo Llobregat?',
     a: 'Sí. Pablo realiza sesiones en directo con los alumnos donde podrás interactuar directamente, hacer preguntas y resolver dudas sobre tu caso concreto. El acompañamiento personalizado es una parte fundamental del método.',
   },
   {
