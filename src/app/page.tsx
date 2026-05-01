@@ -11,6 +11,7 @@ import About from '@/components/landing/About'
 import FAQ from '@/components/landing/FAQ'
 import LeadForm from '@/components/landing/LeadForm'
 import GuiaCTA from '@/components/landing/GuiaCTA'
+import GuiaBanner from '@/components/landing/GuiaBanner'
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <Hero />
+        <GuiaBanner />
         <Problem />
         <Features />
         <WhoIsFor />
