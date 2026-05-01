@@ -3,7 +3,17 @@
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import type { Post } from '@/types'
+type Post = {
+  id: string
+  title: string
+  slug: string
+  excerpt: string | null
+  content: string
+  cover_image: string | null
+  published: boolean
+  created_at: string
+  updated_at: string
+}
 
 interface PostFormProps {
   post?: Post

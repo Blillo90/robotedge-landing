@@ -1,9 +1,19 @@
 import Link from 'next/link'
-import { getAllPosts } from '@/lib/posts'
+import { createClient } from '@/lib/supabase/server'
 import AdminLogout from '@/components/admin/AdminLogout'
 
+type Post = {
+  id: string
+  title: string
+  slug: string
+  published: boolean
+  created_at: string
+}
+
 export default async function AdminDashboard() {
-  const posts = await getAllPosts()
+  const supabase = await createClient()
+  const { data } = await supabase.from('posts').select('id,title,slug,published,created_at').order('created_at', { ascending: false })
+  const posts: Post[] = data ?? []
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
