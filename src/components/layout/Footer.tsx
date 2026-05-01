@@ -21,11 +21,11 @@ export default function Footer() {
 
         <nav className="flex items-center gap-8">
           <Link
-            href="/blog"
+            href="/guia"
             className="text-xs tracking-[0.14em] uppercase text-ink-3 hover:text-ink-1 transition-colors"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            Blog
+            Guía
           </Link>
           <Link
             href="/#about"

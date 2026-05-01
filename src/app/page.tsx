@@ -10,7 +10,7 @@ import Testimonials from '@/components/landing/Testimonials'
 import About from '@/components/landing/About'
 import FAQ from '@/components/landing/FAQ'
 import LeadForm from '@/components/landing/LeadForm'
-import BlogCTA from '@/components/landing/BlogCTA'
+import GuiaCTA from '@/components/landing/GuiaCTA'
 
 export default function HomePage() {
   return (
@@ -27,7 +27,7 @@ export default function HomePage() {
         <About />
         <FAQ />
         <LeadForm />
-        <BlogCTA />
+        <GuiaCTA />
       </main>
       <Footer />
     </>

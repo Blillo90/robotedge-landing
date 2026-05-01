@@ -28,7 +28,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // On inner pages (blog, etc.) anchor links go back to home
+  // On inner pages (guia, etc.) anchor links go back to home
   const resolvedLinks = navLinks.map((l) => ({
     ...l,
     href: pathname === '/' ? l.href.replace('/', '') : l.href,
@@ -65,13 +65,13 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-2 flex-1" aria-label="Navegación principal">
           <Link
-            href="/blog"
+            href="/guia"
             className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg text-white transition-colors"
             style={{ fontFamily: 'var(--font-mono)', background: '#148AFF' }}
             onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
             onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
           >
-            Blog
+            Guía
           </Link>
           {resolvedLinks.map((l) => (
             <Link
@@ -128,11 +128,11 @@ export default function Navbar() {
           ))}
           <div className="flex flex-col gap-3 pt-5">
             <Link
-              href="/blog"
+              href="/guia"
               className="block text-center text-sm font-medium py-3 px-6 rounded-xl text-white"
               style={{ background: '#148AFF', fontFamily: 'var(--font-mono)' }}
             >
-              Blog
+              Guía
             </Link>
             <Link
               href="/#guia-gratuita"
