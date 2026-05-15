@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Curso',     href: '/#curso' },
+  { label: 'Blog',      href: '/blog' },
   { label: 'Acerca de', href: '/#about' },
   { label: 'FAQ',       href: '/#faq' },
 ]
@@ -28,10 +29,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // On inner pages (guia, etc.) anchor links go back to home
+  // On the homepage, anchor links like /#curso become #curso.
+  // Absolute links like /blog are always kept as-is.
   const resolvedLinks = navLinks.map((l) => ({
     ...l,
-    href: pathname === '/' ? l.href.replace('/', '') : l.href,
+    href: pathname === '/' && l.href.startsWith('/#') ? l.href.slice(1) : l.href,
   }))
 
   return (

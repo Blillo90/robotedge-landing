@@ -10,10 +10,19 @@ type Post = {
   excerpt: string | null
   content: string
   cover_image: string | null
+  silo: string
+  read_time: number
   published: boolean
   created_at: string
   updated_at: string
 }
+
+const SILO_OPTIONS = [
+  { value: 'trading-algoritmico', label: 'Trading Algorítmico' },
+  { value: 'ninjatrader-tecnico', label: 'NinjaTrader Técnico' },
+  { value: 'comparativas',        label: 'Comparativas' },
+  { value: 'estrategias-reales',  label: 'Estrategias Reales' },
+]
 
 interface PostFormProps {
   post?: Post
@@ -36,6 +45,8 @@ export default function PostForm({ post, action }: PostFormProps) {
   const [content, setContent] = useState(post?.content ?? '')
   const [coverImage, setCoverImage] = useState(post?.cover_image ?? '')
   const [imagePreview, setImagePreview] = useState(post?.cover_image ?? '')
+  const [silo, setSilo] = useState(post?.silo ?? 'trading-algoritmico')
+  const [readTime, setReadTime] = useState(post?.read_time ?? 5)
   const [uploading, setUploading] = useState(false)
   const [published, setPublished] = useState(post?.published ?? false)
   const [error, setError] = useState('')
@@ -91,6 +102,8 @@ export default function PostForm({ post, action }: PostFormProps) {
     formData.set('excerpt', excerpt)
     formData.set('content', content)
     formData.set('cover_image', coverImage)
+    formData.set('silo', silo)
+    formData.set('read_time', String(readTime))
     formData.set('published', String(published))
 
     const result = await action(formData)
@@ -148,6 +161,34 @@ export default function PostForm({ post, action }: PostFormProps) {
           className={`${inputClass} resize-none`}
           placeholder="Short description shown in post listings"
         />
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">Silo</label>
+          <select
+            value={silo}
+            onChange={(e) => setSilo(e.target.value)}
+            className={inputClass}
+          >
+            {SILO_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>{o.label}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
+            Tiempo de lectura <span className="font-normal text-slate-400">(minutos)</span>
+          </label>
+          <input
+            type="number"
+            min={1}
+            max={60}
+            value={readTime}
+            onChange={(e) => setReadTime(Number(e.target.value))}
+            className={inputClass}
+          />
+        </div>
       </div>
 
       {/* Cover image upload */}
