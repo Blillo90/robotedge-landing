@@ -29,7 +29,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://robotedge-landing.
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'RobotEdge — Academia de Trading Algorítmico',
+    default: 'Curso de Trading Algorítmico | Aprende a crear robots de trading | RobotEdge',
     template: '%s | RobotEdge',
   },
   description:
