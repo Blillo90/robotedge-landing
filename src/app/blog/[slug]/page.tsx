@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function stripLeadingH1(html: string): string {
-  return html.replace(/^(\s*<article[^>]*>\s*)?<h1[^>]*>.*?<\/h1>/is, '$1').trimStart()
+  return html.replace(/<h1[^>]*>[\s\S]*?<\/h1>/, '').trimStart()
 }
 
 function hasFaqs(html: string): boolean {
