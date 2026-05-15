@@ -54,6 +54,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+function stripLeadingH1(html: string): string {
+  return html.replace(/^(\s*<article[^>]*>\s*)?<h1[^>]*>.*?<\/h1>/is, '$1').trimStart()
+}
+
 function hasFaqs(html: string): boolean {
   return /<h[23][^>]*>.*?(¿|preguntas frecuentes)/i.test(html)
 }
@@ -206,7 +210,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Article body */}
         <article
           className="px-6 py-12 max-w-3xl mx-auto prose prose-stone max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-ink-1 prose-h2:text-2xl prose-h3:text-xl prose-p:text-ink-2 prose-p:leading-relaxed prose-a:text-[#059669] prose-a:no-underline hover:prose-a:underline prose-strong:text-ink-1 prose-table:text-sm prose-th:bg-bg-elevated prose-th:text-ink-1 prose-td:text-ink-2 prose-li:text-ink-2"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: stripLeadingH1(post.content) }}
         />
 
         {/* Bottom nav */}

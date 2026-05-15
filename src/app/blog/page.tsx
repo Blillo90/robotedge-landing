@@ -167,25 +167,15 @@ export default async function BlogPage({ searchParams }: Props) {
             </div>
           ) : (
             <div className="space-y-6">
-              {/* Featured post */}
+              {/* Featured post — full width horizontal card */}
               {featured && (
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                  <div className="lg:col-span-3">
-                    <PostCard post={featured} featured />
-                  </div>
-                  {/* Side: next 2 posts */}
-                  <div className="lg:col-span-2 flex flex-col gap-6">
-                    {rest.slice(0, 2).map((post) => (
-                      <PostCard key={post.id} post={post} />
-                    ))}
-                  </div>
-                </div>
+                <PostCard post={featured} featured />
               )}
 
-              {/* Remaining posts grid */}
-              {rest.length > 2 && (
+              {/* All other posts — uniform 3-col grid */}
+              {rest.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {rest.slice(2).map((post) => (
+                  {rest.map((post) => (
                     <PostCard key={post.id} post={post} />
                   ))}
                 </div>
