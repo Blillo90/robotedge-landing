@@ -14,6 +14,7 @@ async function createPost(formData: FormData): Promise<{ error?: string }> {
     cover_image: (formData.get('cover_image') as string) || null,
     silo: (formData.get('silo') as string) || 'trading-algoritmico',
     read_time: Number(formData.get('read_time')) || 5,
+    tags: ((formData.get('tags') as string) || '').split(',').map(t => t.trim()).filter(Boolean),
     published: formData.get('published') === 'true',
   })
 

@@ -47,6 +47,7 @@ export default function PostForm({ post, action }: PostFormProps) {
   const [imagePreview, setImagePreview] = useState(post?.cover_image ?? '')
   const [silo, setSilo] = useState(post?.silo ?? 'trading-algoritmico')
   const [readTime, setReadTime] = useState(post?.read_time ?? 5)
+  const [tags, setTags] = useState<string>((post as Post & { tags?: string[] })?.tags?.join(', ') ?? '')
   const [uploading, setUploading] = useState(false)
   const [published, setPublished] = useState(post?.published ?? false)
   const [error, setError] = useState('')
@@ -104,6 +105,7 @@ export default function PostForm({ post, action }: PostFormProps) {
     formData.set('cover_image', coverImage)
     formData.set('silo', silo)
     formData.set('read_time', String(readTime))
+    formData.set('tags', tags)
     formData.set('published', String(published))
 
     const result = await action(formData)
@@ -189,6 +191,20 @@ export default function PostForm({ post, action }: PostFormProps) {
             className={inputClass}
           />
         </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          Tags <span className="font-normal text-slate-400">(separados por coma)</span>
+        </label>
+        <input
+          type="text"
+          value={tags}
+          onChange={(e) => setTags(e.target.value)}
+          className={inputClass}
+          placeholder="NinjaTrader, Backtesting, Futuros CME"
+        />
+        <p className="text-xs text-slate-400 mt-1">Ej: NinjaTrader, Backtesting, Gestión de riesgo</p>
       </div>
 
       {/* Cover image upload */}
