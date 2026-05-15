@@ -15,6 +15,7 @@ import FAQ from '@/components/landing/FAQ'
 import LeadForm from '@/components/landing/LeadForm'
 import GuiaCTA from '@/components/landing/GuiaCTA'
 import GuiaBanner from '@/components/landing/GuiaBanner'
+import Glossary from '@/components/landing/Glossary'
 
 export default function HomePage() {
   return (
@@ -35,6 +36,7 @@ export default function HomePage() {
         <Objections />
         <FAQ />
         <LeadForm />
+        <Glossary />
         <GuiaCTA />
       </main>
       <Footer />

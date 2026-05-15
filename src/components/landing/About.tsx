@@ -39,22 +39,18 @@ export default function About() {
           >
             Soy Pablo Llobregat:{' '}
             <span style={{ color: '#148AFF' }}>ingeniero de datos y trader algorítmico</span>{' '}
-            con amplia experiencia en los mercados.
+            con sistemas reales operando en futuros del CME.
           </h2>
           <p className="text-ink-2 leading-relaxed mb-5">
-            Pablo Llobregat es ingeniero de datos y lleva muchos años operando en los mercados
-            con sistemas de trading algorítmico. Su formación técnica le permite construir y
-            validar estrategias con rigor estadístico real. Con resultados verificados y públicos,
-            ha demostrado su capacidad para dominar las herramientas más avanzadas del mercado.
-            Su experiencia te guiará a lo largo del curso para que puedas dominar cada
-            una de las herramientas que aprenderás.
+            <strong>Pablo Llobregat opera algoritmos en vivo sobre futuros NQ (Nasdaq-100), ES (S&amp;P 500) y GC (Gold) con NinjaTrader 8.</strong>{' '}
+            Su formación como ingeniero de datos le permite construir y validar estrategias con rigor estadístico real,
+            no con intuición. Los resultados están verificados y son públicos — no son capturas de pantalla ni backtests de escaparate.
           </p>
           <p className="text-ink-2 leading-relaxed">
-            En el curso tendrás la oportunidad de participar en sesiones en directo con Pablo,
-            donde podrás interactuar directamente, hacer preguntas y resolver todas tus dudas.
-            No enseña teoría: enseña lo que está haciendo y lo que funciona de verdad.
-            Adquirirás las habilidades para desarrollar tus propias estrategias automatizadas
-            que competirán al más alto nivel.
+            En el curso tendrás acceso a sesiones en directo con Pablo donde podrás preguntar sobre tu sistema concreto.
+            No enseña teoría genérica: enseña el mismo proceso que usa para diseñar, validar con Walk-Forward Analysis
+            y desplegar algoritmos con capital real. Los brokers que se trabajan en el curso incluyen
+            Interactive Brokers, NinjaTrader Brokerage y Dorman Trading. Capital mínimo para empezar con micro-contratos CME: desde 500–1.000 €.
           </p>
         </div>
 

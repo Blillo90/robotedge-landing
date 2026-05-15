@@ -111,9 +111,8 @@ export default function Features() {
               <span style={{ color: '#10B981' }}>los números no mienten.</span>
             </h2>
             <p className="leading-relaxed" style={{ maxWidth: '52ch', color: '#5A7A95' }}>
-              No es intuición. No son señales. Es un robot que opera con reglas
-              matemáticas exactas — las mismas que defines y validas tú antes de
-              arriesgar un solo euro.
+              <strong style={{ color: '#F0F4F8' }}>No es intuición ni señales: es un robot construido en NinjaTrader 8 que opera futuros NQ, ES o GC con reglas matemáticas exactas</strong>{' '}
+              — las mismas que defines y validas tú con backtesting tick-by-tick antes de arriesgar un euro real.
             </p>
           </div>
           {/* Decorative candles */}

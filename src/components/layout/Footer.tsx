@@ -1,5 +1,31 @@
 import Link from 'next/link'
 
+function InstagramIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <defs>
+        <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+          <stop offset="0%" stopColor="#ffd600" />
+          <stop offset="20%" stopColor="#ff7a00" />
+          <stop offset="45%" stopColor="#ff0069" />
+          <stop offset="75%" stopColor="#d300c5" />
+          <stop offset="100%" stopColor="#7638fa" />
+        </radialGradient>
+      </defs>
+      <rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig-grad)" strokeWidth="2" />
+      <circle cx="12" cy="12" r="4.5" stroke="url(#ig-grad)" strokeWidth="2" />
+      <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig-grad)" />
+    </svg>
+  )
+}
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -34,6 +60,15 @@ export default function Footer() {
           >
             Acerca de
           </Link>
+          <a
+            href="https://www.instagram.com/pablo.robotedge/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Pablo Llobregat — RobotEdge"
+            className="text-ink-3 hover:opacity-80 transition-opacity flex items-center"
+          >
+            <InstagramIcon />
+          </a>
         </nav>
 
         <p
