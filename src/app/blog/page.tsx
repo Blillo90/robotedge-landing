@@ -53,7 +53,7 @@ export default async function BlogPage({ searchParams }: Props) {
   const supabase = createPublicClient()
   let query = supabase
     .from('posts')
-    .select('id, title, slug, excerpt, silo, read_time, created_at, tags')
+    .select('id, title, slug, excerpt, silo, read_time, created_at')
     .eq('published', true)
     .order('created_at', { ascending: false })
 
