@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-const jsonLd = {
+const orgJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
   name: 'RobotEdge',
@@ -68,14 +68,34 @@ const jsonLd = {
   teaches: 'Algorithmic Trading, Quantitative Finance, Trading Bot Development',
 }
 
+const courseJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'RobotEdge — Curso de Trading Algorítmico',
+  description: 'Aprende a diseñar, hacer backtesting y desplegar estrategias de trading automatizadas. Sin experiencia previa en programación.',
+  provider: { '@type': 'Organization', name: 'RobotEdge', url: BASE_URL },
+  teaches: ['Trading algorítmico', 'Backtesting', 'Automatización de estrategias', 'Gestión de riesgo', 'Robots de trading'],
+}
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: '¿Necesito saber programar para hacer esto?', acceptedAnswer: { '@type': 'Answer', text: 'No es necesario tener experiencia previa en programación. El método está diseñado para que entiendas la lógica antes del código. Hay partes donde aprenderás sintaxis básica, pero es algo que cualquier persona con mentalidad analítica puede dominar en semanas.' } },
+    { '@type': 'Question', name: '¿Esto realmente funciona o es otro producto de "hazte rico con trading"?', acceptedAnswer: { '@type': 'Answer', text: 'Lo que enseñamos no es una estrategia mágica, es un método de trabajo: cómo diseñar hipótesis, validarlas estadísticamente, medir el riesgo real y automatizar lo que funciona. Un sistema algorítmico bien construido no garantiza ganancias. Lo que sí garantiza es consistencia, control y decisiones basadas en datos.' } },
+    { '@type': 'Question', name: '¿Cuánto tiempo necesito para tener un sistema operativo?', acceptedAnswer: { '@type': 'Answer', text: 'La hoja de ruta realista es: primeras 4 semanas para fundamentos; semanas 4 a 8 para diseño y backtesting de tu primera estrategia; semanas 8 a 12 para optimización y despliegue. A partir del mes 3, con dedicación consistente, puedes tener tu primer robot operando en cuenta real.' } },
+    { '@type': 'Question', name: '¿Cuánto capital necesito para empezar?', acceptedAnswer: { '@type': 'Answer', text: 'Puedes empezar en paper trading sin capital. Para operar en live, muchos brokers permiten cuentas desde 500–1.000 €. Lo más importante es validar bien la estrategia antes de arriesgar dinero real.' } },
+    { '@type': 'Question', name: '¿Qué mercados puedo operar con estos sistemas?', acceptedAnswer: { '@type': 'Answer', text: 'Los conceptos son aplicables a cualquier mercado: futuros, forex, acciones, criptomonedas. Cubrimos principalmente futuros (CME), forex y cripto (Binance, Bybit).' } },
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${bricolage.variable} ${ibmPlexMono.variable} ${figtree.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       </head>
       <body className="antialiased">
         {/* Accessibility: skip to main content */}
