@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: '%s | RobotEdge',
   },
   description:
-    'Aprende trading algorítmico desde cero. Crea robots de trading con NinjaTrader, valida estrategias y opera con sistemas reales.',
+    'Aprende a diseñar, hacer backtesting y desplegar estrategias de trading automatizadas. RobotEdge es una academia de trading algorítmico y cuantitativo.',
   keywords: [
     'trading algorítmico', 'bots de trading', 'automatización trading',
     'backtesting', 'trading cuantitativo', 'robots trading', 'trading sistemático',
