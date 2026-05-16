@@ -88,15 +88,16 @@ export default function Hero() {
 
           {/* Left: copy */}
           <div>
-            {/* Eyebrow tag */}
-            <div className="animate-fade-up delay-1 flex items-center gap-3 mb-8">
-              <span className="block w-8 h-px" style={{ background: '#148AFF' }} />
-              <span
-                className="text-sm tracking-[0.22em] uppercase"
-                style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
-              >
-                Curso de trading algorítmico con NinjaTrader
-              </span>
+            {/* Logo */}
+            <div className="animate-fade-up delay-1 mb-8">
+              <Image
+                src="/logos/Robotedge_LOGO.png"
+                alt="RobotEdge"
+                width={180}
+                height={60}
+                className="h-12 w-auto object-contain"
+                priority
+              />
             </div>
 
             {/* Headline */}
