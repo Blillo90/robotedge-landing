@@ -89,13 +89,13 @@ export default function Hero() {
           {/* Left: copy */}
           <div>
             {/* Logo */}
-            <div className="animate-fade-up delay-1 mb-8">
+            <div className="animate-fade-up delay-1 mb-8 flex justify-center">
               <Image
                 src="/logos/LOGO_3.svg"
                 alt="RobotEdge"
-                width={320}
-                height={100}
-                className="h-10 w-auto object-contain"
+                width={612}
+                height={186}
+                className="w-full h-auto object-contain"
                 priority
               />
             </div>
