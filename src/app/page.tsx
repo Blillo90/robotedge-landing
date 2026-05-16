@@ -11,7 +11,6 @@ import HowItWorks from '@/components/landing/HowItWorks'
 import Testimonials from '@/components/landing/Testimonials'
 import About from '@/components/landing/About'
 import Objections from '@/components/landing/Objections'
-import FAQ from '@/components/landing/FAQ'
 import LeadForm from '@/components/landing/LeadForm'
 import GuiaCTA from '@/components/landing/GuiaCTA'
 import GuiaBanner from '@/components/landing/GuiaBanner'
@@ -34,7 +33,6 @@ export default function HomePage() {
         <Testimonials />
         <About />
         <Objections />
-        <FAQ />
         <LeadForm />
         <Glossary />
         <GuiaCTA />
