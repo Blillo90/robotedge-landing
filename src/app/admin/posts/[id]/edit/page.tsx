@@ -1,6 +1,7 @@
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import PostForm from '@/components/admin/PostForm'
+import DeletePostButton from '@/components/admin/DeletePostButton'
 import { createClient } from '@/lib/supabase/server'
 
 type Props = { params: Promise<{ id: string }> }
@@ -37,13 +38,6 @@ export default async function EditPostPage({ params }: Props) {
     return {}
   }
 
-  async function deletePost() {
-    'use server'
-    const supabase = await createClient()
-    await supabase.from('posts').delete().eq('id', id)
-    redirect('/admin')
-  }
-
   return (
     <div className="max-w-2xl mx-auto px-6 py-10">
       <div className="mb-8">
@@ -63,20 +57,7 @@ export default async function EditPostPage({ params }: Props) {
         <p className="text-xs text-slate-400 mb-3 uppercase tracking-widest font-medium">
           Danger zone
         </p>
-        <form action={deletePost}>
-          <button
-            type="submit"
-            formAction={deletePost}
-            className="text-sm text-red-500 hover:text-red-700 transition-colors"
-            onClick={(e) => {
-              if (!confirm('Delete this post permanently? This cannot be undone.')) {
-                e.preventDefault()
-              }
-            }}
-          >
-            Delete post
-          </button>
-        </form>
+        <DeletePostButton postId={id} variant="danger" />
       </div>
     </div>
   )

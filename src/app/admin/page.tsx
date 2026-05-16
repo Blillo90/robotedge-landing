@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import AdminLogout from '@/components/admin/AdminLogout'
+import DeletePostButton from '@/components/admin/DeletePostButton'
 
 type Post = {
   id: string
@@ -92,12 +93,15 @@ export default async function AdminDashboard() {
                     })}
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <Link
-                      href={`/admin/posts/${post.id}/edit`}
-                      className="text-slate-500 hover:text-slate-900 transition-colors font-medium"
-                    >
-                      Edit
-                    </Link>
+                    <div className="flex items-center justify-end gap-4">
+                      <Link
+                        href={`/admin/posts/${post.id}/edit`}
+                        className="text-slate-500 hover:text-slate-900 transition-colors font-medium text-sm"
+                      >
+                        Edit
+                      </Link>
+                      <DeletePostButton postId={post.id} />
+                    </div>
                   </td>
                 </tr>
               ))}

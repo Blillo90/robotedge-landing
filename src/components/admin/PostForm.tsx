@@ -165,32 +165,18 @@ export default function PostForm({ post, action }: PostFormProps) {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">Silo</label>
-          <select
-            value={silo}
-            onChange={(e) => setSilo(e.target.value)}
-            className={inputClass}
-          >
-            {SILO_OPTIONS.map((o) => (
-              <option key={o.value} value={o.value}>{o.label}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1.5">
-            Tiempo de lectura <span className="font-normal text-slate-400">(minutos)</span>
-          </label>
-          <input
-            type="number"
-            min={1}
-            max={60}
-            value={readTime}
-            onChange={(e) => setReadTime(Number(e.target.value))}
-            className={inputClass}
-          />
-        </div>
+      <div>
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">Categoría</label>
+        <select
+          value={silo}
+          onChange={(e) => setSilo(e.target.value)}
+          className={inputClass}
+        >
+          {SILO_OPTIONS.map((o) => (
+            <option key={o.value} value={o.value}>{o.label}</option>
+          ))}
+        </select>
+        <p className="text-xs text-slate-400 mt-1">Agrupa el post por temática dentro del blog.</p>
       </div>
 
       <div>
@@ -205,6 +191,20 @@ export default function PostForm({ post, action }: PostFormProps) {
           placeholder="NinjaTrader, Backtesting, Futuros CME"
         />
         <p className="text-xs text-slate-400 mt-1">Ej: NinjaTrader, Backtesting, Gestión de riesgo</p>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+          Tiempo de lectura <span className="font-normal text-slate-400">(minutos)</span>
+        </label>
+        <input
+          type="number"
+          min={1}
+          max={60}
+          value={readTime}
+          onChange={(e) => setReadTime(Number(e.target.value))}
+          className={`${inputClass} w-28`}
+        />
       </div>
 
       {/* Cover image upload */}
