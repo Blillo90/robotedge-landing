@@ -46,7 +46,7 @@ const phases = [
 export default function HowItWorks() {
   return (
     <section
-      id="curso"
+      id="metodo"
       className="py-28 px-6 relative overflow-hidden"
     >
       <div

@@ -8,6 +8,7 @@ import WhoIsFor from '@/components/landing/WhoIsFor'
 import MetricsStrip from '@/components/landing/MetricsStrip'
 import BeforeAfter from '@/components/landing/BeforeAfter'
 import HowItWorks from '@/components/landing/HowItWorks'
+import CourseSection from '@/components/landing/CourseSection'
 import Testimonials from '@/components/landing/Testimonials'
 import About from '@/components/landing/About'
 import Objections from '@/components/landing/Objections'
@@ -25,6 +26,7 @@ export default function HomePage() {
         <GuiaBanner />
         <Problem />
         <Bridge />
+        <CourseSection />
         <Features />
         <WhoIsFor />
         <MetricsStrip />
