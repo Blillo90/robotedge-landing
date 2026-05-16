@@ -1,33 +1,46 @@
-const problems = [
+const normal = [
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z" fill="#EF4444" fillOpacity="0.8"/>
-      </svg>
-    ),
-    title: 'Trading emocional',
-    description:
-      'Las decisiones se toman en caliente: por miedo, por euforia, por ego. Aguantas más de lo que deberías porque "seguro que rebota". Cierras con pérdida mayor de la prevista. Luego el precio va exactamente donde pensabas.',
+    title: 'Operas por corazonada',
+    body: 'Cada entrada depende de cómo te sientes ese día. Sin reglas claras, cada decisión es nueva y el resultado es impredecible.',
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" fill="#EF4444" fillOpacity="0.8"/>
-      </svg>
-    ),
-    title: 'Sin sistema validado',
-    description:
-      'Una idea sobre el mercado no es una estrategia. Sin reglas claras, sin backtesting, sin datos históricos, estás improvisando. Y la improvisación tiene un coste. Racha buena un mes, mala el siguiente, sin saber por qué.',
+    title: 'Aguantas pérdidas sin criterio',
+    body: '"Seguro que rebota." Y cuando no rebota, cierras tarde, con el doble de pérdida prevista. El ego manda más que el plan.',
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z" fill="#EF4444" fillOpacity="0.8"/>
-      </svg>
-    ),
-    title: 'Sin gestión de riesgo real',
-    description:
-      'No saber exactamente cuánto arriesgar en cada operación es la forma más rápida de destruir una cuenta. La posición correcta no es intuición, es matemática. Y sin esa matemática, un mes borra lo que tardaste un año en ganar.',
+    title: 'Sin historial verificable',
+    body: 'No puedes medir si tu estrategia funciona. Sin backtesting, sin datos, no hay forma honesta de saber si vas bien o mal.',
+  },
+  {
+    title: 'Dependes de estar mirando la pantalla',
+    body: 'Si te despistas, te pierdes la entrada. Si te vas de vacaciones, el mercado sigue. Tú no.',
+  },
+  {
+    title: 'Un mes bueno, tres malos, sin saber por qué',
+    body: 'La inconsistencia no es mala suerte. Es ausencia de sistema. Lo que no se mide no se puede mejorar.',
+  },
+]
+
+const algo = [
+  {
+    title: 'Cada operación sigue reglas definidas',
+    body: 'La entrada, la salida, el tamaño de posición y el stop están codificados. El mercado activa la orden. Tú no intervienes.',
+  },
+  {
+    title: 'El stop se ejecuta siempre, sin dudarlo',
+    body: 'No hay negociación interna. El algoritmo no tiene ego. Cuando el precio toca el nivel, la operación se cierra.',
+  },
+  {
+    title: 'Backtesting real sobre datos históricos',
+    body: 'Antes de arriesgar un euro, puedes ver cómo habría funcionado tu estrategia en los últimos 3 años, tick a tick.',
+  },
+  {
+    title: 'Opera 24/7 sin que estés delante',
+    body: 'El sistema no duerme, no se cansa, no se distrae. Si hay una señal a las 3 de la mañana, la ejecuta.',
+  },
+  {
+    title: 'Resultados medibles, repetibles y optimizables',
+    body: 'Cada parámetro es ajustable. Cada resultado es trazable. Sabes exactamente qué está funcionando y por qué.',
   },
 ]
 
@@ -38,84 +51,133 @@ export default function Problem() {
         className="relative max-w-[1400px] mx-auto overflow-hidden"
         style={{ background: '#0C1521', borderRadius: '12px' }}
       >
-      {/* Grid lines — same as Hero */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      {/* Subtle red glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(239,68,68,0.05) 0%, transparent 60%)',
-        }}
-      />
-
-      <div className="relative z-10 px-8 md:px-14 py-16 md:py-20 max-w-6xl mx-auto">
-        <div className="mb-16 max-w-2xl">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="block w-6 h-px" style={{ background: '#EF4444', opacity: 0.6 }} />
-            <span
-              className="text-xs tracking-[0.22em] uppercase"
-              style={{ fontFamily: 'var(--font-mono)', color: '#EF4444', opacity: 0.8 }}
-            >
-              El problema
-            </span>
-          </div>
-          <h2
-            className="font-display font-bold leading-tight mb-5"
-            style={{ fontSize: 'clamp(26px, 3.5vw, 44px)', color: '#F0F4F8' }}
-          >
-            La razón real por la que sigues perdiendo
-            <br />
-            <span style={{ fontSize: '0.85em', fontWeight: 500, color: '#5A7A95' }}>
-              — y no tiene nada que ver con el mercado
-            </span>
-          </h2>
-          <p className="leading-relaxed" style={{ maxWidth: '56ch', color: '#5A7A95' }}>
-            Si llevas tiempo en los mercados, ya conoces este patrón: días buenos,
-            semanas malas, sin saber por qué. No es el mercado. Es que estás jugando
-            con las reglas equivocadas.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-px" style={{ background: 'rgba(255,255,255,0.05)' }}>
-          {problems.map((p) => (
-            <div
-              key={p.title}
-              className="p-8 flex flex-col gap-4"
-              style={{ background: '#111C28' }}
-            >
-              <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.15)' }}
-              >
-                {p.icon}
-              </div>
-              <h3 className="text-sm font-semibold" style={{ color: '#F0F4F8' }}>{p.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: '#5A7A95' }}>{p.description}</p>
-            </div>
-          ))}
-        </div>
-
+        {/* Grid lines */}
         <div
-          className="mt-6 px-8 py-5"
-          style={{ background: 'rgba(20,138,255,0.05)', border: '1px solid rgba(20,138,255,0.1)' }}
-        >
-          <p className="text-sm leading-relaxed" style={{ color: '#5A7A95' }}>
-            <span className="font-semibold" style={{ color: '#F0F4F8' }}>No fracasaste por ser malo en esto.</span>{' '}
-            Fracasaste porque nadie te enseñó que el trading emocional es un juego
-            amañado desde el principio. Los que ganan de forma consistente no son más
-            inteligentes — tienen un sistema que opera sin ellos.
-          </p>
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }}
+        />
+
+        {/* Glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(20,138,255,0.05) 0%, transparent 60%)',
+          }}
+        />
+
+        <div className="relative z-10 px-8 md:px-14 py-16 md:py-20 max-w-6xl mx-auto">
+
+          {/* Header */}
+          <div className="mb-14 max-w-3xl">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="block w-6 h-px" style={{ background: '#148AFF', opacity: 0.6 }} />
+              <span
+                className="text-xs tracking-[0.22em] uppercase"
+                style={{ fontFamily: 'var(--font-mono)', color: '#148AFF', opacity: 0.8 }}
+              >
+                Trading normal vs. trading algorítmico
+              </span>
+            </div>
+            <h2
+              className="font-display font-bold leading-tight mb-5"
+              style={{ fontSize: 'clamp(26px, 3.5vw, 44px)', color: '#F0F4F8' }}
+            >
+              Todos estamos cansados de tener que adivinar el precio
+            </h2>
+            <p className="leading-relaxed" style={{ maxWidth: '60ch', color: '#5A7A95' }}>
+              El trading discrecional no es una estrategia: es una apuesta con pasos extra.
+              El trading algorítmico convierte tus reglas en un sistema que opera, mide y mejora
+              sin que el miedo o la euforia del momento lo distorsionen.
+            </p>
+          </div>
+
+          {/* Comparison grid */}
+          <div className="grid md:grid-cols-2 gap-px" style={{ background: 'rgba(255,255,255,0.05)' }}>
+
+            {/* Left: trading emocional */}
+            <div style={{ background: '#111C28' }}>
+              <div
+                className="px-8 py-4 flex items-center gap-3"
+                style={{ borderBottom: '1px solid rgba(239,68,68,0.15)', background: 'rgba(239,68,68,0.04)' }}
+              >
+                <span
+                  className="text-xs font-semibold tracking-[0.14em] uppercase"
+                  style={{ fontFamily: 'var(--font-mono)', color: '#EF4444' }}
+                >
+                  Trading emocional
+                </span>
+              </div>
+              <ul className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+                {normal.map((item) => (
+                  <li key={item.title} className="px-8 py-6 flex gap-4 items-start">
+                    <span
+                      className="mt-0.5 shrink-0 text-base leading-none"
+                      style={{ color: '#EF4444', opacity: 0.7 }}
+                      aria-hidden
+                    >
+                      ✗
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold mb-1" style={{ color: '#F0F4F8' }}>{item.title}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: '#5A7A95' }}>{item.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right: trading algorítmico */}
+            <div style={{ background: '#0E1E2E' }}>
+              <div
+                className="px-8 py-4 flex items-center gap-3"
+                style={{ borderBottom: '1px solid rgba(20,138,255,0.2)', background: 'rgba(20,138,255,0.05)' }}
+              >
+                <span
+                  className="text-xs font-semibold tracking-[0.14em] uppercase"
+                  style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
+                >
+                  Trading algorítmico con NinjaTrader
+                </span>
+              </div>
+              <ul className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+                {algo.map((item) => (
+                  <li key={item.title} className="px-8 py-6 flex gap-4 items-start">
+                    <span
+                      className="mt-0.5 shrink-0 text-base leading-none"
+                      style={{ color: '#10B981' }}
+                      aria-hidden
+                    >
+                      ✓
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold mb-1" style={{ color: '#F0F4F8' }}>{item.title}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: '#5A7A95' }}>{item.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Bottom note */}
+          <div
+            className="mt-6 px-8 py-5"
+            style={{ background: 'rgba(20,138,255,0.05)', border: '1px solid rgba(20,138,255,0.1)' }}
+          >
+            <p className="text-sm leading-relaxed" style={{ color: '#5A7A95' }}>
+              <span className="font-semibold" style={{ color: '#F0F4F8' }}>El trading algorítmico no elimina el riesgo.</span>{' '}
+              Te da algo mejor: control real sobre él. Backtesting honesto, reglas claras y ejecución automática con NinjaTrader.
+              Eso es lo que diferencia a un trader consistente del resto.
+            </p>
+          </div>
+
         </div>
-      </div>
       </div>
     </section>
   )
