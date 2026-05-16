@@ -1,60 +1,55 @@
-const terms = [
+const criteria = [
   {
-    term: 'Trading algorítmico',
-    definition:
-      'Automatización de operaciones en mercados financieros mediante reglas matemáticas programadas. Elimina el sesgo emocional y permite validar la estrategia sobre datos históricos antes de arriesgar capital real. En RobotEdge se implementa con NinjaTrader 8.',
-  },
-  {
-    term: 'NinjaTrader 8',
-    definition:
-      'Plataforma de trading y desarrollo de algoritmos basada en NinjaScript (C#). Gratuita para backtesting y paper trading ilimitado. Conectividad nativa con Interactive Brokers, NinjaTrader Brokerage y Dorman Trading, entre otros 50+ brokers.',
-  },
-  {
-    term: 'NinjaScript',
-    definition:
-      'Lenguaje de programación de NinjaTrader basado en C# para crear estrategias automatizadas e indicadores personalizados. Es el lenguaje principal del curso de RobotEdge — no requiere experiencia previa en programación para empezar.',
-  },
-  {
-    term: 'Backtesting',
-    definition:
-      'Validación de una estrategia sobre datos históricos reales antes de operar con capital. NinjaTrader 8 ofrece backtesting tick-by-tick — el más preciso — incluyendo comisiones y slippage reales para obtener resultados fiables.',
-  },
-  {
-    term: 'Drawdown',
-    definition:
-      'Caída máxima del capital desde un pico hasta el valle siguiente. Es la métrica de riesgo más importante de un sistema algorítmico. Un drawdown diseñado y conocido de antemano diferencia una estrategia robusta de una improvisada.',
-  },
-  {
-    term: 'Sharpe ratio',
-    definition:
-      'Rentabilidad ajustada al riesgo: compara el exceso de retorno de una estrategia frente a su volatilidad. Un Sharpe superior a 1 indica que el sistema genera más retorno por unidad de riesgo, señal de una ventaja estadística real.',
-  },
-  {
-    term: 'Profit factor',
-    definition:
-      'Cociente entre ganancias brutas y pérdidas brutas de una estrategia. Un profit factor superior a 1.5 indica ventaja estadística sólida. Es una de las métricas clave para evaluar la viabilidad de un algoritmo antes de pasarlo a vivo.',
+    term: 'Backtesting tick a tick',
+    standard:
+      'Un sistema de trading serio se valida sobre datos históricos reales al nivel de tick, no de barra. Cualquier otro método oculta errores de ejecución. En RobotEdge aprendes a hacer backtesting tick-by-tick con NinjaTrader 8 incluyendo comisiones y slippage reales.',
   },
   {
     term: 'Walk-Forward Analysis',
-    definition:
-      'Método de validación que divide los datos históricos en períodos de entrenamiento y prueba sucesivos. Detecta el overfitting y confirma que la ventaja estadística es real, no un artefacto de los datos pasados.',
+    standard:
+      'El backtest perfecto que falla en vivo tiene nombre: overfitting. La única forma de detectarlo antes de perder capital es el Walk-Forward Analysis. La mayoría de cursos no lo enseña. En RobotEdge es obligatorio antes de pasar cualquier estrategia a operativa real.',
   },
   {
-    term: 'Overfitting',
-    definition:
-      'Sobreoptimización de una estrategia a los datos históricos: resultados excelentes en backtest que fallan en operativa real. El error más común en trading algorítmico. El Walk-Forward Analysis es la herramienta principal para detectarlo y evitarlo.',
+    term: 'Profit factor verificado',
+    standard:
+      'Un sistema ganador tiene un profit factor superior a 1.5 sobre datos fuera de muestra, no sobre los mismos datos con los que se optimizó. Si un curso te muestra resultados sin especificar esto, los números no significan nada.',
   },
   {
-    term: 'Paper trading',
-    definition:
-      'Operativa simulada con datos en tiempo real sin capital real. Permite validar el comportamiento de un algoritmo en condiciones reales antes de activarlo en cuenta live. NinjaTrader 8 incluye un simulador de paper trading completamente gratuito.',
+    term: 'Drawdown definido antes de operar',
+    standard:
+      'El drawdown máximo no es una sorpresa: es un parámetro de diseño. Un sistema robusto tiene un drawdown conocido, aceptado y dimensionado antes de activarse. Si no sabes cuánto puede perder tu sistema, no tienes un sistema.',
+  },
+  {
+    term: 'Gestión de posición matemática',
+    standard:
+      'El tamaño de cada operación es una ecuación, no una intuición. La gestión de posición basada en el riesgo porcentual por operación es lo que separa cuentas que aguantan de cuentas que revientan en una racha mala.',
+  },
+  {
+    term: 'Paper trading antes de capital real',
+    standard:
+      'Ningún sistema pasa de backtest a cuenta live sin una fase de paper trading sobre datos en tiempo real. NinjaTrader 8 incluye un simulador completamente gratuito. En RobotEdge ese paso no es opcional.',
+  },
+  {
+    term: 'NinjaScript (sin experiencia previa)',
+    standard:
+      'NinjaScript es el estándar de la industria para traders algorítmicos independientes en futuros y divisas. El curso enseña a programar estrategias completas desde cero, con o sin experiencia en código. El lenguaje no es la barrera — el método lo es.',
+  },
+  {
+    term: 'Sharpe ratio como filtro de calidad',
+    standard:
+      'Una estrategia con buen retorno pero alta volatilidad es un sistema frágil. El Sharpe ratio mide rentabilidad ajustada al riesgo. En RobotEdge no se valida una estrategia sin analizar esta métrica junto al profit factor y el drawdown.',
+  },
+  {
+    term: 'Ejecución automática 24/7',
+    standard:
+      'Un sistema algorítmico que requiere que estés mirando la pantalla para ejecutar no es un sistema algorítmico. En RobotEdge aprendes a desplegar estrategias que operan de forma completamente autónoma, sin intervención humana en cada operación.',
   },
 ]
 
 export default function Glossary() {
   return (
     <section
-      id="glosario"
+      id="protocolo"
       className="py-24 px-6"
       style={{ background: '#F0EDE8' }}
     >
@@ -66,7 +61,7 @@ export default function Glossary() {
             className="text-xs tracking-[0.22em] uppercase"
             style={{ fontFamily: 'var(--font-mono)', color: '#059669' }}
           >
-            Glosario
+            Protocolo de calidad de RobotEdge
           </span>
         </div>
 
@@ -74,20 +69,30 @@ export default function Glossary() {
           className="font-display font-bold text-ink-1 leading-tight mb-3"
           style={{ fontSize: 'clamp(22px, 3vw, 36px)' }}
         >
-          Términos clave del trading algorítmico
+          Lo que define un sistema de trading ganador
         </h2>
-        <p className="text-sm text-ink-2 leading-relaxed mb-12" style={{ maxWidth: '52ch' }}>
-          <strong>Entender el vocabulario es el primer paso para construir sistemas sólidos.</strong>{' '}
-          Estos son los conceptos que usarás a diario en el curso y en tu operativa real con NinjaTrader 8.
+        <p className="text-sm text-ink-2 leading-relaxed mb-12" style={{ maxWidth: '56ch' }}>
+          Cualquier curso puede enseñar a dibujar líneas en un gráfico.{' '}
+          <strong>RobotEdge enseña a construir sistemas que cumplen estos criterios antes de arriesgar un euro.</strong>{' '}
+          Si el curso que estás considerando no cubre esto, no es un curso de trading algorítmico serio.
         </p>
 
         <dl className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: 'rgba(0,0,0,0.06)' }}>
-          {terms.map((t) => (
-            <div key={t.term} className="bg-white p-6 flex flex-col gap-2">
-              <dt className="font-display font-bold text-ink-1 text-sm">
-                <strong>{t.term}</strong>
-              </dt>
-              <dd className="text-sm text-ink-2 leading-relaxed">{t.definition}</dd>
+          {criteria.map((c) => (
+            <div key={c.term} className="bg-white p-6 flex flex-col gap-3">
+              <div className="flex items-start gap-2">
+                <span
+                  className="mt-0.5 shrink-0 text-sm font-bold"
+                  style={{ color: '#059669' }}
+                  aria-hidden
+                >
+                  ✓
+                </span>
+                <dt className="font-display font-bold text-ink-1 text-sm">
+                  {c.term}
+                </dt>
+              </div>
+              <dd className="text-sm text-ink-2 leading-relaxed">{c.standard}</dd>
             </div>
           ))}
         </dl>
