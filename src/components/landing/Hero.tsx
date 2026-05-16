@@ -92,7 +92,7 @@ export default function Hero() {
             <div className="animate-fade-up delay-1 flex items-center gap-3 mb-8">
               <span className="block w-8 h-px" style={{ background: '#148AFF' }} />
               <span
-                className="text-xs tracking-[0.22em] uppercase"
+                className="text-sm tracking-[0.22em] uppercase"
                 style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
               >
                 Curso de trading algorítmico con NinjaTrader
