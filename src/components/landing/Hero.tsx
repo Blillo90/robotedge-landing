@@ -93,9 +93,10 @@ export default function Hero() {
               <Image
                 src="/logos/Robotedge_LOGO.png"
                 alt="RobotEdge"
-                width={180}
-                height={60}
-                className="h-12 w-auto object-contain"
+                width={220}
+                height={220}
+                className="w-36 h-auto object-contain"
+                style={{ mixBlendMode: 'screen' }}
                 priority
               />
             </div>
