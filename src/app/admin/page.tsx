@@ -27,6 +27,12 @@ export default async function AdminDashboard() {
           </p>
         </div>
         <div className="flex items-center gap-4">
+          <Link
+            href="/"
+            className="text-xs text-slate-400 hover:text-slate-600 transition-colors"
+          >
+            ← Inicio
+          </Link>
           <AdminLogout />
           <Link
             href="/admin/posts/new"
