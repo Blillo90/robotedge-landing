@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
@@ -51,17 +52,15 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-[64px] flex items-center justify-between gap-8">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0" aria-label="RobotEdge — inicio">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden>
-            <rect width="30" height="30" rx="7" fill="#0C1521"/>
-            <path d="M7 18 L11 13 L15 15.5 L22 8" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <circle cx="22" cy="8" r="2" fill="#10B981"/>
-            <circle cx="7" cy="18" r="1.5" fill="#10B981" fillOpacity="0.4"/>
-            <line x1="7" y1="22" x2="23" y2="22" stroke="#10B981" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="2 2"/>
-          </svg>
-          <span className="font-display font-bold text-sm tracking-tight leading-none">
-            <span className="text-ink-1">Robot</span><span style={{ color: '#148AFF' }}>Edge</span>
-          </span>
+        <Link href="/" className="flex items-center shrink-0" aria-label="RobotEdge — inicio">
+          <Image
+            src="/logos/LOGO_3BLACK.png"
+            alt="RobotEdge"
+            width={160}
+            height={50}
+            className="h-8 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
