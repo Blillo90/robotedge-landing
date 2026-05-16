@@ -91,12 +91,11 @@ export default function Hero() {
             {/* Logo */}
             <div className="animate-fade-up delay-1 mb-8">
               <Image
-                src="/logos/Robotedge_LOGO.png"
+                src="/logos/LOGO_3.svg"
                 alt="RobotEdge"
-                width={220}
-                height={220}
-                className="w-36 h-auto object-contain"
-                style={{ mixBlendMode: 'screen' }}
+                width={320}
+                height={100}
+                className="h-10 w-auto object-contain"
                 priority
               />
             </div>
