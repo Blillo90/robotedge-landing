@@ -31,7 +31,7 @@ export default function PrivacidadPage() {
           <p>
             <strong>RobotEdge</strong> — Pablo Llobregat<br />
             Web: <a href="https://robotedge.es">robotedge.es</a><br />
-            Email: <a href="mailto:hola@robotedge.es">hola@robotedge.es</a>
+            Email: <a href="mailto:info@robotedge.tech">info@robotedge.tech</a>
           </p>
 
           <h2>2. Datos que tratamos</h2>
@@ -79,7 +79,7 @@ export default function PrivacidadPage() {
           </ul>
           <p>
             Para ejercer cualquiera de estos derechos escríbenos a{' '}
-            <a href="mailto:hola@robotedge.es">hola@robotedge.es</a>.
+            <a href="mailto:info@robotedge.tech">info@robotedge.tech</a>.
             También puedes reclamar ante la{' '}
             <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">
               Agencia Española de Protección de Datos (AEPD)
