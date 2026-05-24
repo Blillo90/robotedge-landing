@@ -67,7 +67,7 @@ export default function Footer() {
           >
             Privacidad
           </Link>
-          <
+          <a
             href="https://www.instagram.com/pablo.robotedge/"
             target="_blank"
             rel="noopener noreferrer"
