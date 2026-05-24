@@ -60,7 +60,14 @@ export default function Footer() {
           >
             Acerca de
           </Link>
-          <a
+          <Link
+            href="/privacidad"
+            className="text-xs tracking-[0.14em] uppercase text-ink-3 hover:text-ink-1 transition-colors"
+            style={{ fontFamily: 'var(--font-mono)' }}
+          >
+            Privacidad
+          </Link>
+          <
             href="https://www.instagram.com/pablo.robotedge/"
             target="_blank"
             rel="noopener noreferrer"

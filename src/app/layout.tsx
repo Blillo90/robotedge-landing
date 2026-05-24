@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Bricolage_Grotesque, IBM_Plex_Mono, Figtree } from 'next/font/google'
 import Script from 'next/script'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+import CookieBanner from '@/components/ui/CookieBanner'
 import './globals.css'
 
 const bricolage = Bricolage_Grotesque({
@@ -125,6 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <GoogleAnalytics />
         {children}
+        <CookieBanner />
         <Script
           id="schema-geo-org"
           type="application/ld+json"
