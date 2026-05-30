@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import HeroForm from './HeroForm'
 
 function PerformanceCard() {
@@ -129,13 +130,25 @@ export default function Hero() {
         </div>
 
         {/* Bottom: full-width form */}
-        <div className="animate-fade-up delay-4 mb-10">
+        <div className="animate-fade-up delay-4 mb-4">
           <div
             className="px-6 py-6"
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
           >
             <HeroForm />
           </div>
+        </div>
+
+        {/* Calculator CTA */}
+        <div className="animate-fade-up delay-4 mb-10 flex justify-center">
+          <Link
+            href="/calculadora"
+            className="inline-flex items-center gap-2 text-sm transition-colors hover:text-[#148AFF]"
+            style={{ fontFamily: 'var(--font-mono)', color: '#3A5270' }}
+          >
+            <span style={{ fontSize: '0.7em', opacity: 0.6 }}>▶</span>
+            Ver simulación de rentabilidad de la estrategia
+          </Link>
         </div>
 
         {/* Stat row */}
