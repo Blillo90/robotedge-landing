@@ -152,7 +152,6 @@ export default function Hero() {
               borderRadius: 8,
             }}
           >
-            <span style={{ fontSize: 15 }}>📈</span>
             Simula la rentabilidad de la estrategia
             <span className="transition-transform duration-200 group-hover:translate-x-1" style={{ opacity: 0.7 }}>→</span>
           </Link>
