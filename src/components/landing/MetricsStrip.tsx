@@ -1,6 +1,6 @@
 const metrics = [
   {
-    value: '+500',
+    value: '+190',
     suffix: '',
     label: 'Estudiantes activos',
     sub: 'traders formados en el método',
@@ -9,7 +9,7 @@ const metrics = [
     value: '+8',
     suffix: ' años',
     label: 'En los mercados',
-    sub: 'experiencia real en futuros y forex',
+    sub: 'experiencia real en trading',
   },
   {
     value: '6–8',

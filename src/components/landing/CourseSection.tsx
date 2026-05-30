@@ -154,7 +154,7 @@ export default function CourseSection() {
             >
               <span style={{ color: '#F59E0B', fontSize: '13px' }}>★★★★★</span>
               <p className="text-xs" style={{ color: '#5A7A95' }}>
-                <strong style={{ color: '#A8C4D8' }}>4.9/5</strong> · 318 traders formados con este método
+                <strong style={{ color: '#A8C4D8' }}>4.9/5</strong> · +190 traders formados con este método
               </p>
             </div>
           </div>
