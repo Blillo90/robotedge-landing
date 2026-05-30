@@ -273,7 +273,7 @@ export default function CalculadoraClient() {
 
         {/* header */}
         <header style={{ background: V.surface, borderBottom: `1px solid ${V.border}`, padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 14, position: 'sticky', top: 0, zIndex: 100, flexWrap: 'wrap' }}>
-          <Link href="/" style={{ fontFamily: V.mono, fontSize: 11, color: V.text2, textDecoration: 'none', flexShrink: 0 }}>
+          <Link href="/" style={{ fontFamily: V.mono, fontSize: 13, fontWeight: 600, color: V.text, textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 6, background: V.surface2, border: `1px solid ${V.border2}`, borderRadius: 6, padding: '7px 14px', letterSpacing: '0.04em' }}>
             ← Inicio
           </Link>
           <div style={{ width: 1, height: 20, background: V.border, flexShrink: 0 }} />
