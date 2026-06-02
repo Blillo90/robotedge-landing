@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Bricolage_Grotesque, IBM_Plex_Mono, Figtree } from 'next/font/google'
 import Script from 'next/script'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+import { GoogleTagManagerScript, GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager'
 import './globals.css'
 
 const bricolage = Bricolage_Grotesque({
@@ -116,6 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${bricolage.variable} ${ibmPlexMono.variable} ${figtree.variable}`}>
       <body className="antialiased">
+        <GoogleTagManagerNoScript />
         {/* Accessibility: skip to main content */}
         <a
           href="#main-content"
@@ -124,6 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Saltar al contenido principal
         </a>
         <GoogleAnalytics />
+        <GoogleTagManagerScript />
         {children}
         <Script
           id="schema-geo-org"
