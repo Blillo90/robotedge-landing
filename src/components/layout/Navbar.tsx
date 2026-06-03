@@ -6,10 +6,11 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Curso',     href: '/#curso' },
-  { label: 'Método',    href: '/#metodo' },
-  { label: 'Blog',      href: '/blog' },
-  { label: 'Acerca de', href: '/#about' },
+  { label: 'Curso',       href: '/#curso' },
+  { label: 'Método',      href: '/#metodo' },
+  { label: 'Calculadora', href: '/calculadora' },
+  { label: 'Blog',        href: '/blog' },
+  { label: 'Acerca de',   href: '/#about' },
 ]
 
 export default function Navbar() {
