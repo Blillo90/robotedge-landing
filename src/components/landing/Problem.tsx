@@ -87,7 +87,8 @@ export default function Problem() {
               className="font-display font-bold leading-tight mb-5"
               style={{ fontSize: 'clamp(26px, 3.5vw, 44px)', color: '#F0F4F8' }}
             >
-              Todos estamos cansados de tener que adivinar el precio
+              Deja de operar con el{' '}
+              <span style={{ color: '#148AFF', fontStyle: 'italic', fontWeight: 300 }}>estómago</span>
             </h2>
             <p className="leading-relaxed" style={{ maxWidth: '60ch', color: '#5A7A95' }}>
               El trading discrecional no es una estrategia: es una apuesta con pasos extra.
