@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { RAW_DATA, MAX_ABS_DD } from '@/lib/calculadora-data'
+import 'driver.js/dist/driver.css'
 
 /* ─── types ─── */
 type DataRow = { period: string; netProfit: number }
@@ -126,6 +127,56 @@ function SectionLabel({ children }: { children: string }) {
   )
 }
 
+/* ─── tour steps ─── */
+const TOUR_STEPS = [
+  {
+    popover: {
+      title: '👋 Bienvenido a la calculadora',
+      description: 'Esta herramienta simula la rentabilidad de la estrategia con tus parámetros. Ajusta los controles del panel izquierdo y los resultados se actualizan en tiempo real.',
+    },
+  },
+  {
+    element: '#tour-risk',
+    popover: {
+      title: 'Riesgo por operación',
+      description: 'Porcentaje del capital que se arriesga en cada operación. A mayor riesgo, mayor rentabilidad potencial — y mayor drawdown. Se recomienda empezar entre 5% y 15%.',
+      side: 'right' as const,
+    },
+  },
+  {
+    element: '#tour-contracts',
+    popover: {
+      title: 'Contratos iniciales',
+      description: 'Número de contratos con los que arrancas la simulación. Junto con el riesgo, determina el capital mínimo necesario para operar.',
+      side: 'right' as const,
+    },
+  },
+  {
+    element: '#tour-scaling',
+    popover: {
+      title: 'Plan de escalado',
+      description: 'Con el escalado activo, el número de contratos crece automáticamente al aumentar el balance. Simula el efecto del interés compuesto real en trading.',
+      side: 'right' as const,
+    },
+  },
+  {
+    element: '#tour-risks-list',
+    popover: {
+      title: 'Riesgos a comparar',
+      description: 'Introduce varios porcentajes separados por comas. La tabla inferior mostrará los resultados para cada uno, facilitando la comparación de escenarios.',
+      side: 'right' as const,
+    },
+  },
+  {
+    element: '#tour-date-range',
+    popover: {
+      title: 'Rango de fechas',
+      description: 'Filtra los periodos incluidos en la simulación. Útil para analizar el comportamiento de la estrategia en distintos tramos del histórico.',
+      side: 'right' as const,
+    },
+  },
+]
+
 /* ─── main component ─── */
 export default function CalculadoraClient() {
   const [risk, setRisk] = useState(15)
@@ -140,6 +191,35 @@ export default function CalculadoraClient() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const chartRef = useRef<any>(null)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const driverRef = useRef<any>(null)
+
+  const startTour = useCallback(async () => {
+    const { driver } = await import('driver.js')
+    if (driverRef.current) driverRef.current.destroy()
+    const d = driver({
+      showProgress: true,
+      progressText: '{{current}} de {{total}}',
+      nextBtnText: 'Siguiente →',
+      prevBtnText: '← Anterior',
+      doneBtnText: 'Entendido ✓',
+      steps: TOUR_STEPS,
+      onDestroyStarted: () => {
+        localStorage.setItem('calc-tour-seen', '1')
+        d.destroy()
+      },
+    })
+    driverRef.current = d
+    d.drive()
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (!localStorage.getItem('calc-tour-seen')) {
+      const t = setTimeout(() => startTour(), 800)
+      return () => clearTimeout(t)
+    }
+  }, [startTour])
 
   const drawChart = useCallback(async (labels: string[], retSeries: number[], ddSeries: number[]) => {
     if (!canvasRef.current) return
@@ -267,6 +347,17 @@ export default function CalculadoraClient() {
           .calc-menu-btn{display:flex!important;align-items:center;justify-content:center;}
           .calc-badge{display:none!important;}
         }
+        /* ── driver.js dark theme ── */
+        .driver-popover { background:#181c24 !important; border:1px solid #2e3545 !important; border-radius:10px !important; color:#e8ecf0 !important; font-family:'IBM Plex Mono',monospace !important; box-shadow:0 8px 32px rgba(0,0,0,0.6) !important; max-width:300px !important; }
+        .driver-popover-title { font-size:13px !important; font-weight:700 !important; color:#00d4ff !important; margin-bottom:6px !important; }
+        .driver-popover-description { font-size:12px !important; color:#8899aa !important; line-height:1.6 !important; font-family:'IBM Plex Sans',sans-serif !important; }
+        .driver-popover-footer { margin-top:14px !important; gap:6px !important; }
+        .driver-popover-next-btn, .driver-popover-done-btn { background:#00d4ff !important; color:#0a0c10 !important; border:none !important; border-radius:6px !important; font-size:11px !important; font-weight:700 !important; padding:6px 14px !important; cursor:pointer !important; font-family:'IBM Plex Mono',monospace !important; }
+        .driver-popover-prev-btn { background:transparent !important; color:#4a5568 !important; border:1px solid #252a35 !important; border-radius:6px !important; font-size:11px !important; padding:6px 14px !important; cursor:pointer !important; font-family:'IBM Plex Mono',monospace !important; }
+        .driver-popover-prev-btn:hover { color:#8899aa !important; border-color:#2e3545 !important; }
+        .driver-popover-progress-text { font-size:10px !important; color:#4a5568 !important; font-family:'IBM Plex Mono',monospace !important; }
+        .driver-popover-close-btn { color:#4a5568 !important; font-size:16px !important; }
+        .driver-popover-close-btn:hover { color:#8899aa !important; }
       `}</style>
 
       <div className="calc-wrap">
@@ -292,6 +383,13 @@ export default function CalculadoraClient() {
             </span>
           </div>
           <button
+            onClick={() => startTour()}
+            title="Ver tutorial"
+            style={{ marginLeft: 'auto', background: 'rgba(0,212,255,0.08)', border: '1px solid rgba(0,212,255,0.2)', borderRadius: 6, padding: '6px 12px', color: V.accent, cursor: 'pointer', fontFamily: V.mono, fontSize: 12, fontWeight: 600, letterSpacing: '0.04em', flexShrink: 0 }}
+          >
+            ? Tutorial
+          </button>
+          <button
             className="calc-menu-btn"
             onClick={() => setMobileOpen((v) => !v)}
             style={{ background: 'none', border: `1px solid ${V.border2}`, borderRadius: 6, padding: '6px 10px', color: V.text2, cursor: 'pointer', fontSize: 18 }}
@@ -312,7 +410,7 @@ export default function CalculadoraClient() {
           <aside className={`calc-sidebar${mobileOpen ? ' open' : ''}`}>
 
             {/* risk */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div id="tour-risk" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontFamily: V.mono, fontSize: 10, fontWeight: 600, color: V.text3, letterSpacing: '0.15em', textTransform: 'uppercase' }}>Riesgo seleccionado</span>
                 <span style={{ fontFamily: V.mono, fontSize: 13, fontWeight: 600, color: V.accent, background: 'rgba(0,212,255,0.08)', padding: '2px 8px', borderRadius: 4 }}>{risk}%</span>
@@ -321,7 +419,7 @@ export default function CalculadoraClient() {
             </div>
 
             {/* contracts */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div id="tour-contracts" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontFamily: V.mono, fontSize: 10, fontWeight: 600, color: V.text3, letterSpacing: '0.15em', textTransform: 'uppercase' }}>Contratos iniciales</span>
                 <span style={{ fontFamily: V.mono, fontSize: 13, fontWeight: 600, color: V.accent, background: 'rgba(0,212,255,0.08)', padding: '2px 8px', borderRadius: 4 }}>{contracts}</span>
@@ -330,7 +428,7 @@ export default function CalculadoraClient() {
             </div>
 
             {/* scaling toggle */}
-            <div>
+            <div id="tour-scaling">
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', background: V.surface2, borderRadius: 8, border: `1px solid ${V.border}` }}>
                 <span style={{ fontSize: 13, fontWeight: 500, color: V.text }}>Plan de <span style={{ color: V.accent }}>ESCALADO</span></span>
                 <label className="calc-toggle">
@@ -348,7 +446,7 @@ export default function CalculadoraClient() {
             </div>
 
             {/* risks list */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            <div id="tour-risks-list" style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               <label style={{ fontSize: 12, color: V.text2, fontWeight: 500 }}>Riesgos a comparar (%, separados por comas)</label>
               <input
                 type="text"
@@ -359,7 +457,7 @@ export default function CalculadoraClient() {
             </div>
 
             {/* date range */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div id="tour-date-range" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <span style={{ fontFamily: V.mono, fontSize: 10, fontWeight: 600, color: V.text3, letterSpacing: '0.15em', textTransform: 'uppercase' }}>Rango de fechas</span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
