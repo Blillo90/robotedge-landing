@@ -399,6 +399,21 @@ export default function CalculadoraClient() {
           </button>
         </header>
 
+        {/* context banner */}
+        <div style={{ background: 'rgba(0,212,255,0.04)', borderBottom: `1px solid rgba(0,212,255,0.12)`, padding: '10px 20px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+          <span style={{ width: 3, alignSelf: 'stretch', background: V.accent, borderRadius: 2, flexShrink: 0 }} />
+          <p style={{ fontFamily: V.sans, fontSize: 12, color: V.text2, lineHeight: 1.6, flex: 1, minWidth: 200, margin: 0 }}>
+            <span style={{ color: V.text, fontWeight: 600 }}>Estos son los datos reales de una de las estrategias que enseñamos en el curso.</span>
+            {' '}La rentabilidad que ves aquí es la referencia a la que aspiras cuando completas la formación y despliegas tu propio sistema.
+          </p>
+          <Link
+            href="/#curso"
+            style={{ fontFamily: V.mono, fontSize: 11, fontWeight: 600, color: V.accent, textDecoration: 'none', whiteSpace: 'nowrap', background: 'rgba(0,212,255,0.08)', border: '1px solid rgba(0,212,255,0.2)', borderRadius: 6, padding: '5px 12px', flexShrink: 0 }}
+          >
+            Ver el curso →
+          </Link>
+        </div>
+
         {/* mobile overlay */}
         {mobileOpen && (
           <div onClick={() => setMobileOpen(false)} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 199 }} />
