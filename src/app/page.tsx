@@ -28,6 +28,7 @@ export default function HomePage() {
         <GuiaBanner />
         <Problem />
         <Bridge />
+        <CalculadoraBanner />
         <CourseSection />
         <Features />
         <WhoIsFor />
@@ -38,7 +39,6 @@ export default function HomePage() {
         <About />
         <Objections />
         <FAQ />
-        <CalculadoraBanner />
         <LeadForm />
         <Glossary />
         <GuiaCTA />
