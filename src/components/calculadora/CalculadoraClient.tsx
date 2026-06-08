@@ -207,9 +207,9 @@ export default function CalculadoraClient() {
       onPopoverRender: (popover: { footerButtons: HTMLElement }) => {
         const skip = document.createElement('button')
         skip.textContent = 'Omitir'
-        skip.style.cssText = 'background:transparent;border:none;color:#4a5568;font-size:11px;cursor:pointer;font-family:IBM Plex Mono,monospace;padding:0 4px;margin-right:auto;line-height:1;white-space:nowrap;flex-shrink:0;'
-        skip.addEventListener('mouseover', () => { skip.style.color = '#8899aa' })
-        skip.addEventListener('mouseout', () => { skip.style.color = '#4a5568' })
+        skip.style.cssText = 'background:transparent;border:1px solid #2e3545;border-radius:6px;color:#8899aa;font-size:11px;cursor:pointer;font-family:IBM Plex Mono,monospace;padding:6px 12px;margin-right:auto;line-height:1;white-space:nowrap;flex-shrink:0;'
+        skip.addEventListener('mouseover', () => { skip.style.color = '#e8ecf0'; skip.style.borderColor = '#4a5568' })
+        skip.addEventListener('mouseout', () => { skip.style.color = '#8899aa'; skip.style.borderColor = '#2e3545' })
         skip.addEventListener('click', () => d.destroy())
         popover.footerButtons.prepend(skip)
       },
