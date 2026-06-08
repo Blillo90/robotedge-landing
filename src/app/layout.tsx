@@ -37,12 +37,7 @@ export const metadata: Metadata = {
   },
   description:
     'Aprende a diseñar, hacer backtesting y desplegar estrategias de trading automatizadas. RobotEdge es una academia de trading algorítmico y cuantitativo.',
-  keywords: [
-    'trading algorítmico', 'bots de trading', 'automatización trading',
-    'backtesting', 'trading cuantitativo', 'robots trading', 'trading sistemático',
-    'NinjaTrader', 'NinjaScript', 'curso trading algorítmico',
-  ],
-  authors: [{ name: 'Pablo Llobregat' }],
+authors: [{ name: 'Pablo Llobregat' }],
   openGraph: {
     type:        'website',
     siteName:    'RobotEdge',
