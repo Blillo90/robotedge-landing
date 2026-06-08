@@ -204,21 +204,24 @@ export default function CalculadoraClient() {
       prevBtnText: '← Anterior',
       doneBtnText: 'Entendido ✓',
       steps: TOUR_STEPS,
-      onDestroyStarted: () => {
-        localStorage.setItem('calc-tour-seen', '1')
-        d.destroy()
+      onPopoverRender: (popover: { footerButtons: HTMLElement }) => {
+        const skip = document.createElement('button')
+        skip.textContent = 'Omitir tutorial'
+        skip.style.cssText = 'background:transparent;border:none;color:#4a5568;font-size:11px;cursor:pointer;font-family:IBM Plex Mono,monospace;padding:0 4px;margin-right:auto;line-height:1;'
+        skip.addEventListener('mouseover', () => { skip.style.color = '#8899aa' })
+        skip.addEventListener('mouseout', () => { skip.style.color = '#4a5568' })
+        skip.addEventListener('click', () => d.destroy())
+        popover.footerButtons.prepend(skip)
       },
+      onDestroyStarted: () => { d.destroy() },
     })
     driverRef.current = d
     d.drive()
   }, [])
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
-    if (!localStorage.getItem('calc-tour-seen')) {
-      const t = setTimeout(() => startTour(), 800)
-      return () => clearTimeout(t)
-    }
+    const t = setTimeout(() => startTour(), 800)
+    return () => clearTimeout(t)
   }, [startTour])
 
   const drawChart = useCallback(async (labels: string[], retSeries: number[], ddSeries: number[]) => {
