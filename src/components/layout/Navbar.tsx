@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { label: 'Curso',       href: '/#curso' },
   { label: 'Método',      href: '/#metodo' },
-  { label: 'Calculadora', href: '/calculadora' },
+  { label: 'Tu rentabilidad esperada', href: '/calculadora' },
   { label: 'Blog',        href: '/blog' },
   { label: 'Acerca de',   href: '/#about' },
 ]

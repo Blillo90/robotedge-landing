@@ -282,7 +282,7 @@ export default function CalculadoraClient() {
               RobotEdge Account <span style={{ color: V.accent }}>Scaler</span>
             </div>
             <div style={{ fontFamily: V.mono, fontSize: 10, fontWeight: 500, color: V.text3, letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-              Calculadora de Crecimiento de Cuenta
+              Tu rentabilidad esperada
             </div>
           </div>
           <div className="calc-badge" style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 6, background: 'rgba(0,230,118,0.06)', border: '1px solid rgba(0,230,118,0.2)', borderRadius: 6, padding: '5px 12px' }}>
