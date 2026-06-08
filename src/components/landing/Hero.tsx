@@ -106,9 +106,9 @@ export default function Hero() {
               className="animate-fade-up delay-2 font-display font-extrabold leading-[1.05] tracking-tight mb-8"
               style={{ fontSize: 'clamp(34px, 4.5vw, 64px)', color: '#F0F4F8' }}
             >
-              Deja de operar<br />
-              con el{' '}
-              <span style={{ color: '#148AFF', fontStyle: 'italic', fontWeight: 300 }}>estómago</span>
+              Trading algorítmico<br />
+              con{' '}
+              <span style={{ color: '#148AFF', fontStyle: 'italic', fontWeight: 300 }}>NinjaTrader</span>
             </h1>
 
             {/* Body */}
