@@ -131,7 +131,7 @@ function SectionLabel({ children }: { children: string }) {
 const TOUR_STEPS = [
   {
     popover: {
-      title: '👋 Bienvenido a la calculadora',
+      title: 'Bienvenido a la calculadora',
       description: 'Esta herramienta simula la rentabilidad de la estrategia con tus parámetros. Ajusta los controles del panel izquierdo y los resultados se actualizan en tiempo real.',
     },
   },
@@ -206,8 +206,8 @@ export default function CalculadoraClient() {
       steps: TOUR_STEPS,
       onPopoverRender: (popover: { footerButtons: HTMLElement }) => {
         const skip = document.createElement('button')
-        skip.textContent = 'Omitir tutorial'
-        skip.style.cssText = 'background:transparent;border:none;color:#4a5568;font-size:11px;cursor:pointer;font-family:IBM Plex Mono,monospace;padding:0 4px;margin-right:auto;line-height:1;'
+        skip.textContent = 'Omitir'
+        skip.style.cssText = 'background:transparent;border:none;color:#4a5568;font-size:11px;cursor:pointer;font-family:IBM Plex Mono,monospace;padding:0 4px;margin-right:auto;line-height:1;white-space:nowrap;flex-shrink:0;'
         skip.addEventListener('mouseover', () => { skip.style.color = '#8899aa' })
         skip.addEventListener('mouseout', () => { skip.style.color = '#4a5568' })
         skip.addEventListener('click', () => d.destroy())
@@ -351,15 +351,15 @@ export default function CalculadoraClient() {
           .calc-badge{display:none!important;}
         }
         /* ── driver.js dark theme ── */
-        .driver-popover { background:#181c24 !important; border:1px solid #2e3545 !important; border-radius:10px !important; color:#e8ecf0 !important; font-family:'IBM Plex Mono',monospace !important; box-shadow:0 8px 32px rgba(0,0,0,0.6) !important; max-width:300px !important; }
-        .driver-popover-title { font-size:13px !important; font-weight:700 !important; color:#00d4ff !important; margin-bottom:6px !important; }
+        .driver-popover { background:#181c24 !important; border:1px solid #2e3545 !important; border-radius:10px !important; color:#e8ecf0 !important; font-family:'IBM Plex Mono',monospace !important; box-shadow:0 8px 32px rgba(0,0,0,0.6) !important; width:360px !important; max-width:90vw !important; }
+        .driver-popover-title { font-size:13px !important; font-weight:700 !important; color:#00d4ff !important; margin-bottom:8px !important; }
         .driver-popover-description { font-size:12px !important; color:#8899aa !important; line-height:1.6 !important; font-family:'IBM Plex Sans',sans-serif !important; }
-        .driver-popover-footer { margin-top:14px !important; gap:6px !important; }
-        .driver-popover-next-btn, .driver-popover-done-btn { background:#00d4ff !important; color:#0a0c10 !important; border:none !important; border-radius:6px !important; font-size:11px !important; font-weight:700 !important; padding:6px 14px !important; cursor:pointer !important; font-family:'IBM Plex Mono',monospace !important; }
-        .driver-popover-prev-btn { background:transparent !important; color:#4a5568 !important; border:1px solid #252a35 !important; border-radius:6px !important; font-size:11px !important; padding:6px 14px !important; cursor:pointer !important; font-family:'IBM Plex Mono',monospace !important; }
+        .driver-popover-footer { margin-top:14px !important; display:flex !important; align-items:center !important; flex-wrap:nowrap !important; gap:6px !important; }
+        .driver-popover-next-btn, .driver-popover-done-btn { background:#00d4ff !important; color:#0a0c10 !important; border:none !important; border-radius:6px !important; font-size:11px !important; font-weight:700 !important; padding:6px 12px !important; cursor:pointer !important; font-family:'IBM Plex Mono',monospace !important; white-space:nowrap !important; }
+        .driver-popover-prev-btn { background:transparent !important; color:#4a5568 !important; border:1px solid #252a35 !important; border-radius:6px !important; font-size:11px !important; padding:6px 10px !important; cursor:pointer !important; font-family:'IBM Plex Mono',monospace !important; white-space:nowrap !important; }
         .driver-popover-prev-btn:hover { color:#8899aa !important; border-color:#2e3545 !important; }
-        .driver-popover-progress-text { font-size:10px !important; color:#4a5568 !important; font-family:'IBM Plex Mono',monospace !important; }
-        .driver-popover-close-btn { color:#4a5568 !important; font-size:16px !important; }
+        .driver-popover-progress-text { font-size:10px !important; color:#4a5568 !important; font-family:'IBM Plex Mono',monospace !important; white-space:nowrap !important; }
+        .driver-popover-close-btn { color:#4a5568 !important; font-size:16px !important; line-height:1 !important; }
         .driver-popover-close-btn:hover { color:#8899aa !important; }
       `}</style>
 
