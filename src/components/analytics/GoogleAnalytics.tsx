@@ -21,6 +21,7 @@ export default function GoogleAnalytics() {
             wait_for_update: 500,
           });
           gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+          gtag('config', 'G-7YD8E8Z7YP', { page_path: window.location.pathname });
           try {
             if (localStorage.getItem('re_cookie_consent') === 'accepted') {
               gtag('consent', 'update', { analytics_storage: 'granted' });
