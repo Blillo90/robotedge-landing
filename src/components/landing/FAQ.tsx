@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-const faqs = [
+const faqs: { q: string; a: string; link?: { label: string; href: string } }[] = [
   {
     q: '¿Necesito saber programar para hacer esto?',
     a: 'No es necesario tener experiencia previa en programación. El método está diseñado para que entiendas la lógica antes del código. Hay partes donde aprenderás sintaxis básica, pero es algo que cualquier persona con mentalidad analítica puede dominar en semanas. Lo importante no es programar con fluidez desde el primer día, sino entender qué estás construyendo y por qué.',
@@ -41,6 +41,11 @@ const faqs = [
   {
     q: '¿Si ya soy trader discrecional rentable, para qué sirve este curso?',
     a: 'Si ya obtienes resultados, enhorabuena. Aun así, si quieres una carrera larga y consistente, el salto hacia el trading algorítmico es lo que marca la diferencia. Usar la programación para agilizar tu backtesting ya justifica el curso por sí solo.',
+  },
+  {
+    q: '¿Cómo me apunto al curso?',
+    a: 'Puedes acceder al curso directamente desde la página de inscripción. El proceso es rápido y tendrás acceso inmediato a todos los materiales desde el primer día.',
+    link: { label: 'Acceder al curso →', href: 'https://www.robotedge.tech/f01-av01-es-landing' },
   },
 ]
 
@@ -95,7 +100,18 @@ export default function FAQ() {
                 </span>
               </div>
               {open === i && (
-                <p className="text-sm text-ink-2 leading-relaxed">{faq.a}</p>
+                <div className="flex flex-col gap-3">
+                  <p className="text-sm text-ink-2 leading-relaxed">{faq.a}</p>
+                  {faq.link && (
+                    <a
+                      href={faq.link.href}
+                      className="self-start text-sm font-semibold transition-opacity hover:opacity-80"
+                      style={{ color: '#148AFF' }}
+                    >
+                      {faq.link.label}
+                    </a>
+                  )}
+                </div>
               )}
             </button>
           ))}
