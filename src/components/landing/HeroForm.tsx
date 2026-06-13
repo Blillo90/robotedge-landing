@@ -14,10 +14,7 @@ const PAISES_LATAM = [
 const PAISES = ['España', ...PAISES_LATAM, 'Otro país']
 
 export default function HeroForm() {
-  const nombreRef    = useRef<HTMLInputElement>(null)
-  const apellidosRef = useRef<HTMLInputElement>(null)
-  const emailRef     = useRef<HTMLInputElement>(null)
-  const paisRef      = useRef<HTMLSelectElement>(null)
+  const paisRef = useRef<HTMLSelectElement>(null)
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -45,50 +42,6 @@ export default function HeroForm() {
   return (
     <form onSubmit={handleSubmit} noValidate aria-label="Registro gratuito">
       <div className="flex flex-col sm:flex-row gap-2">
-        <label htmlFor="hf-nombre"    className="sr-only">Nombre</label>
-        <label htmlFor="hf-apellidos" className="sr-only">Apellidos</label>
-        <label htmlFor="hf-email"     className="sr-only">Email</label>
-
-        <input
-          id="hf-nombre"
-          ref={nombreRef}
-          type="text"
-          name="nombre"
-          placeholder="Nombre"
-          autoComplete="given-name"
-          className={inputBase}
-          style={inputStyle}
-          onFocus={onFocus}
-          onBlur={onBlur}
-        />
-        <input
-          id="hf-apellidos"
-          ref={apellidosRef}
-          type="text"
-          name="apellidos"
-          placeholder="Apellidos"
-          autoComplete="family-name"
-          className={inputBase}
-          style={inputStyle}
-          onFocus={onFocus}
-          onBlur={onBlur}
-        />
-        <input
-          id="hf-email"
-          ref={emailRef}
-          type="email"
-          name="email"
-          required
-          placeholder="tu@email.com"
-          autoComplete="email"
-          className={inputBase + ' sm:flex-[1.6]'}
-          style={inputStyle}
-          onFocus={onFocus}
-          onBlur={onBlur}
-        />
-      </div>
-
-      <div className="flex flex-col sm:flex-row gap-2 mt-2">
         <label htmlFor="hf-pais" className="sr-only">País</label>
         <select
           id="hf-pais"
