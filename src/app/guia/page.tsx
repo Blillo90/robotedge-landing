@@ -121,17 +121,6 @@ export default function GuiaPage() {
             >
               La diferencia entre jugar y operar.
             </p>
-
-            <div
-              className="mt-10 mx-auto px-6 py-6 rounded-2xl text-left"
-              style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.07)',
-                maxWidth: '560px',
-              }}
-            >
-              <HeroForm />
-            </div>
           </div>
         </section>
 
@@ -141,6 +130,17 @@ export default function GuiaPage() {
           style={{ background: '#111111' }}
         >
           <div className="max-w-4xl mx-auto flex flex-col gap-6">
+            <div
+              className="mx-auto px-6 py-6 rounded-2xl text-left"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.07)',
+                maxWidth: '560px',
+              }}
+            >
+              <HeroForm />
+            </div>
+
             {blocks.map((block) => (
               <article
                 key={block.number}
