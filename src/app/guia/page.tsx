@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { BarChart2, Cpu, ShieldCheck } from 'lucide-react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import HeroForm from '@/components/landing/HeroForm'
 
 export const metadata: Metadata = {
   title: '¿Por qué RobotEdge?',
@@ -120,6 +121,17 @@ export default function GuiaPage() {
             >
               La diferencia entre jugar y operar.
             </p>
+
+            <div
+              className="mt-10 mx-auto px-6 py-6 rounded-2xl text-left"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.07)',
+                maxWidth: '560px',
+              }}
+            >
+              <HeroForm />
+            </div>
           </div>
         </section>
 
