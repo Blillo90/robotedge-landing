@@ -264,7 +264,7 @@ export default function GuiaPage() {
                 <span aria-hidden>→</span>
               </Link>
               <Link
-                href="/"
+                href="/#metodo"
                 className="inline-flex items-center gap-2 text-sm font-medium px-8 py-4 rounded-xl transition-colors"
                 style={{
                   fontFamily: 'var(--font-mono)',
