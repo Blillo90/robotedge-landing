@@ -87,19 +87,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center shrink-0">
-          <Link
-            href="/#guia-gratuita"
-            className="text-xs tracking-[0.14em] uppercase px-4 py-2 rounded-lg text-white transition-colors"
-            style={{ fontFamily: 'var(--font-mono)', background: '#148AFF' }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#0E6FD4')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = '#148AFF')}
-          >
-            Empezar →
-          </Link>
-        </div>
-
         {/* Mobile hamburger */}
         <button
           className="md:hidden flex items-center justify-center w-10 h-10 text-ink-1 transition-colors rounded-lg hover:bg-black/[0.05]"
@@ -135,13 +122,6 @@ export default function Navbar() {
               style={{ background: '#148AFF', fontFamily: 'var(--font-mono)' }}
             >
               Guía
-            </Link>
-            <Link
-              href="/#guia-gratuita"
-              className="block text-center text-sm font-medium py-3 px-6 rounded-xl"
-              style={{ background: '#148AFF', fontFamily: 'var(--font-mono)' }}
-            >
-              Empezar →
             </Link>
           </div>
         </nav>

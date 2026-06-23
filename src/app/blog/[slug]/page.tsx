@@ -235,7 +235,7 @@ export default async function BlogPostPage({ params }: Props) {
               Todos los artículos
             </Link>
             <Link
-              href="/#guia-gratuita"
+              href="/guia"
               className="text-sm font-medium px-5 py-2.5 rounded-lg text-white transition-colors"
               style={{ background: '#059669' }}
             >

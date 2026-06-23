@@ -14,7 +14,6 @@ import About from '@/components/landing/About'
 import Objections from '@/components/landing/Objections'
 import FAQ from '@/components/landing/FAQ'
 import CalculadoraBanner from '@/components/landing/CalculadoraBanner'
-import LeadForm from '@/components/landing/LeadForm'
 import GuiaCTA from '@/components/landing/GuiaCTA'
 import GuiaBanner from '@/components/landing/GuiaBanner'
 import Glossary from '@/components/landing/Glossary'
@@ -39,7 +38,6 @@ export default function HomePage() {
         <About />
         <Objections />
         <FAQ />
-        <LeadForm />
         <Glossary />
         <GuiaCTA />
       </main>
