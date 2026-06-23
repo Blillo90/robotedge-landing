@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import HeroForm from './HeroForm'
 
+const KINFO_URL = 'https://kinfo.com/portfolio/48014/performance'
+
 function PerformanceCard() {
   return (
     <div
@@ -15,14 +17,20 @@ function PerformanceCard() {
         <span className="text-sm tracking-[0.16em] uppercase font-semibold" style={{ fontFamily: 'var(--font-mono)', color: '#F0F4F8' }}>
           Nuestros Resultados
         </span>
-        <span className="flex items-center gap-2 px-3 py-1 rounded-full ml-auto" style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.25)' }}>
+        <a
+          href={KINFO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-3 py-1 rounded-full ml-auto transition-opacity hover:opacity-80"
+          style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.25)' }}
+        >
           <span className="w-2 h-2 rounded-full shrink-0" style={{ background: '#10B981', boxShadow: '0 0 6px #10B981' }} />
           <span className="text-xs font-medium" style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}>Verificado</span>
-        </span>
+        </a>
       </div>
 
       {/* Results image */}
-      <div className="relative w-full">
+      <a href={KINFO_URL} target="_blank" rel="noopener noreferrer" className="relative w-full block">
         <Image
           src="/images/resultados.jpg"
           alt="Resultados verificados de trading algorítmico — Pablo, RobotEdge"
@@ -31,7 +39,7 @@ function PerformanceCard() {
           className="w-full h-auto"
           priority
         />
-      </div>
+      </a>
     </div>
   )
 }
