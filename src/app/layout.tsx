@@ -26,7 +26,7 @@ const figtree = Figtree({
   display: 'swap',
 })
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://robotedge.tech'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://robotedger.tech'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
