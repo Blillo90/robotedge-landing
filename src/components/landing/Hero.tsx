@@ -32,7 +32,7 @@ function PerformanceCard() {
       {/* Results image */}
       <a href={KINFO_URL} target="_blank" rel="noopener noreferrer" className="relative w-full block">
         <Image
-          src="/images/resultados.jpg"
+          src="/images/Foto_hero.png"
           alt="Resultados verificados de trading algorítmico — Pablo, RobotEdge"
           width={1024}
           height={768}
