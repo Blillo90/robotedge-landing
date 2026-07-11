@@ -2,10 +2,22 @@ import { revalidateTag } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 
 const tagMap: Record<string, string[]> = {
-  hero:         ['hero'],
-  globalColors: ['globalColors'],
-  testimonial:  ['testimonials'],
-  faqItem:      ['faq'],
+  hero:               ['hero'],
+  globalColors:       ['globalColors'],
+  testimonial:        ['testimonials'],
+  faqItem:            ['faq'],
+  problemSection:     ['problem'],
+  bridgeSection:      ['bridge'],
+  featuresSection:    ['features'],
+  whoIsForSection:    ['whoIsFor'],
+  howItWorksSection:  ['howItWorks'],
+  aboutSection:       ['about'],
+  objectionsSection:  ['objections'],
+  guiaBannerSection:  ['guiaBanner'],
+  guiaCTASection:     ['guiaCTA'],
+  beforeAfterSection: ['beforeAfter'],
+  courseSection:      ['courseSection'],
+  glossarySection:    ['glossary'],
 }
 
 export async function POST(req: NextRequest) {
