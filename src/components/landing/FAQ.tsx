@@ -1,55 +1,9 @@
 'use client'
 import { useState } from 'react'
 
-const faqs: { q: string; a: string; link?: { label: string; href: string } }[] = [
-  {
-    q: '¿Necesito saber programar para hacer esto?',
-    a: 'No es necesario tener experiencia previa en programación. El método está diseñado para que entiendas la lógica antes del código. Hay partes donde aprenderás sintaxis básica, pero es algo que cualquier persona con mentalidad analítica puede dominar en semanas. Lo importante no es programar con fluidez desde el primer día, sino entender qué estás construyendo y por qué.',
-  },
-  {
-    q: '¿Esto realmente funciona o es otro producto de "hazte rico con trading"?',
-    a: 'Es una pregunta legítima. El trading está lleno de promesas vacías. Lo que enseñamos no es una estrategia mágica, es un método de trabajo: cómo diseñar hipótesis, validarlas estadísticamente, medir el riesgo real y automatizar lo que funciona. Un sistema algorítmico bien construido no garantiza ganancias. Lo que sí garantiza es consistencia, control y decisiones basadas en datos. La ventaja la construyes tú con el proceso.',
-  },
-  {
-    q: '¿Cuánto tiempo necesito para tener un sistema operativo?',
-    a: 'Depende del tiempo que le dediques, pero la hoja de ruta realista es: primeras 4 semanas para fundamentos y terminología; semanas 4 a 8 para diseño y backtesting de tu primera estrategia; semanas 8 a 12 para optimización y preparación del despliegue. A partir del mes 3, con dedicación consistente, puedes tener tu primer robot operando en cuenta real.',
-  },
-  {
-    q: '¿Cuánto capital necesito para empezar?',
-    a: 'Puedes empezar en paper trading sin capital. Para operar en live, muchos brokers permiten cuentas desde 500–1.000 €. Lo más importante es validar bien la estrategia antes de arriesgar dinero real. No recomendamos pasar a live hasta que los resultados del backtesting sean robustos.',
-  },
-  {
-    q: '¿Qué mercados puedo operar con estos sistemas?',
-    a: 'Los conceptos son aplicables a cualquier mercado: futuros, forex, acciones, criptomonedas. Cubrimos principalmente mercados con buena liquidez y acceso a datos históricos fiables, como futuros (CME), forex y cripto (Binance, Bybit). Las herramientas que aprenderás son transferibles a cualquier mercado que te interese.',
-  },
-  {
-    q: '¿Puedo acceder al contenido desde cualquier dispositivo?',
-    a: 'Sí. Todo el contenido está optimizado para móvil, tablet y escritorio. No necesitas instalar ninguna aplicación adicional para acceder a las guías y materiales.',
-  },
-  {
-    q: '¿Se puede acceder desde cualquier país?',
-    a: 'Sí. El curso es completamente online, solo necesitas conexión a internet. Puedes seguirlo desde cualquier país sin restricciones.',
-  },
-  {
-    q: '¿Puedo ir a mi ritmo de forma autónoma?',
-    a: 'Sí. El curso está diseñado para que puedas avanzar a tu ritmo, sin presión y con acompañamiento real. Tienes acceso completo al contenido desde el primer día y puedes verlo cuando quieras.',
-  },
-  {
-    q: '¿Tendré contacto directo con Pablo Llobregat?',
-    a: 'Sí. Pablo realiza sesiones en directo con los alumnos donde podrás interactuar directamente, hacer preguntas y resolver dudas sobre tu caso concreto. El acompañamiento personalizado es una parte fundamental del método.',
-  },
-  {
-    q: '¿Si ya soy trader discrecional rentable, para qué sirve este curso?',
-    a: 'Si ya obtienes resultados, enhorabuena. Aun así, si quieres una carrera larga y consistente, el salto hacia el trading algorítmico es lo que marca la diferencia. Usar la programación para agilizar tu backtesting ya justifica el curso por sí solo.',
-  },
-  {
-    q: '¿Cómo me apunto al curso?',
-    a: 'Puedes acceder al curso directamente desde la página de inscripción. El proceso es rápido y tendrás acceso inmediato a todos los materiales desde el primer día.',
-    link: { label: 'Acceder al curso →', href: 'https://www.robotedge.tech/f01-av01-es-landing' },
-  },
-]
+type FaqItem = { pregunta: string; respuesta: string }
 
-export default function FAQ() {
+export default function FAQ({ items }: { items: FaqItem[] }) {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
@@ -75,7 +29,7 @@ export default function FAQ() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-px" style={{ background: 'rgba(0,0,0,0.06)' }}>
-          {faqs.map((faq, i) => (
+          {items.map((faq, i) => (
             <button
               key={i}
               className="text-left p-7 flex flex-col gap-3 transition-colors"
@@ -86,7 +40,7 @@ export default function FAQ() {
               aria-expanded={open === i}
             >
               <div className="flex items-start justify-between gap-4">
-                <span className="text-sm font-semibold text-ink-1 leading-snug">{faq.q}</span>
+                <span className="text-sm font-semibold text-ink-1 leading-snug">{faq.pregunta}</span>
                 <span
                   className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 transition-transform"
                   style={{
@@ -100,18 +54,7 @@ export default function FAQ() {
                 </span>
               </div>
               {open === i && (
-                <div className="flex flex-col gap-3">
-                  <p className="text-sm text-ink-2 leading-relaxed">{faq.a}</p>
-                  {faq.link && (
-                    <a
-                      href={faq.link.href}
-                      className="self-start text-sm font-semibold transition-opacity hover:opacity-80"
-                      style={{ color: '#148AFF' }}
-                    >
-                      {faq.link.label}
-                    </a>
-                  )}
-                </div>
+                <p className="text-sm text-ink-2 leading-relaxed">{faq.respuesta}</p>
               )}
             </button>
           ))}

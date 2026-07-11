@@ -1,13 +1,15 @@
-import { createClient } from 'next-sanity'
+import { createClient, type SanityClient } from 'next-sanity'
 import { projectId, dataset, apiVersion } from './env'
 
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: false,
-})
+let _client: SanityClient | null = null
+
+function getClient(): SanityClient {
+  if (!_client) {
+    _client = createClient({ projectId, dataset, apiVersion, useCdn: false })
+  }
+  return _client
+}
 
 export async function sanityFetch<T>(query: string, tags: string[]): Promise<T> {
-  return client.fetch<T>(query, {}, { next: { tags } })
+  return getClient().fetch<T>(query, {}, { next: { tags } })
 }

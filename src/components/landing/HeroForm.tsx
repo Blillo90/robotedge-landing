@@ -13,7 +13,7 @@ const PAISES_LATAM = [
 
 const PAISES = ['España', ...PAISES_LATAM, 'Otro país']
 
-export default function HeroForm() {
+export default function HeroForm({ textoCTA = 'Quiero montarlo ya →' }: { textoCTA?: string }) {
   const paisRef = useRef<HTMLSelectElement>(null)
   const [error, setError] = useState(false)
 
@@ -80,7 +80,7 @@ export default function HeroForm() {
           onMouseEnter={(e) => { e.currentTarget.style.background = '#0E6FD4' }}
           onMouseLeave={(e) => { e.currentTarget.style.background = '#148AFF' }}
         >
-          Quiero montarlo ya →
+          {textoCTA}
         </button>
       </div>
 

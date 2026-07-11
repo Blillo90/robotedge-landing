@@ -1,33 +1,21 @@
 import Link from 'next/link'
+import { sanityFetch } from '@/sanity/client'
+import { testimonialsQuery } from '@/sanity/queries'
 
-const testimonials = [
-  {
-    quote:
-      'He aprendido a utilizar las herramientas necesarias para automatizar el trading algorítmico de forma muy accesible, demostrando que no se necesita ser programador para lograrlo. Ahora tengo la libertad de invertir sin tener que pasar horas frente al ordenador. Es una de las maneras más fiables de invertir en bolsa, enfocándose en una excelente gestión de riesgo para limitar las pérdidas.',
-    name:  'Bernardo Aguayo',
-    role:  'Alumno de RobotEdge',
-    init:  'BA',
-    title: 'Mi experiencia como alumno ha sido extremadamente positiva',
-  },
-  {
-    quote:
-      'No suelo escribir reseñas, pero después de ver el nivel medio que hay en formación de trading, creo que aquí merece la pena matizar. RobotEdge no es la típica academia que promete rentabilidades absurdas ni vende señales milagro. Lo que me encontré fue un enfoque bastante más estructurado de lo habitual, centrado en entender el mercado. Hay lógica detrás de lo que explican, y eso no es tan común como debería.',
-    name:  'Mariano',
-    role:  'Alumno de RobotEdge',
-    init:  'M',
-    title: 'Entré con dudas y, sorprendentemente, tiene sentido',
-  },
-  {
-    quote:
-      'Llevo un par de años haciendo trading manual y gastando muchas horas viendo velas, hasta que me decidí a entrar en RobotEdge. Pablo va al grano y no hay paja, demuestra el movimiento andando y probando. Ahora tengo más tiempo y no necesito seguir las velas todo el rato.',
-    name:  'Miguel B. Aguado',
-    role:  'Trader manual reconvertido · Madrid',
-    init:  'MA',
-    title: 'RobotEdge funciona',
-  },
+type Testimonial = { titulo: string; cita: string; nombre: string; rol: string; iniciales: string }
+
+const FALLBACK: Testimonial[] = [
+  { titulo: 'Mi experiencia como alumno ha sido extremadamente positiva', cita: 'He aprendido a utilizar las herramientas necesarias para automatizar el trading algorítmico de forma muy accesible, demostrando que no se necesita ser programador para lograrlo. Ahora tengo la libertad de invertir sin tener que pasar horas frente al ordenador.', nombre: 'Bernardo Aguayo', rol: 'Alumno de RobotEdge', iniciales: 'BA' },
+  { titulo: 'Entré con dudas y, sorprendentemente, tiene sentido', cita: 'No suelo escribir reseñas, pero después de ver el nivel medio que hay en formación de trading, creo que aquí merece la pena matizar. RobotEdge no es la típica academia que promete rentabilidades absurdas ni vende señales milagro.', nombre: 'Mariano', rol: 'Alumno de RobotEdge', iniciales: 'M' },
+  { titulo: 'RobotEdge funciona', cita: 'Llevo un par de años haciendo trading manual y gastando muchas horas viendo velas, hasta que me decidí a entrar en RobotEdge. Pablo va al grano y no hay paja, demuestra el movimiento andando y probando.', nombre: 'Miguel B. Aguado', rol: 'Trader manual reconvertido · Madrid', iniciales: 'MA' },
 ]
 
-export default function Testimonials() {
+export default async function Testimonials() {
+  let testimonials: Testimonial[] = FALLBACK
+  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    const data = await sanityFetch<Testimonial[]>(testimonialsQuery, ['testimonials'])
+    if (data?.length) testimonials = data
+  }
   return (
     <section className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
@@ -70,7 +58,7 @@ export default function Testimonials() {
         <div className="grid md:grid-cols-3 gap-5">
           {testimonials.map((t) => (
             <div
-              key={t.name}
+              key={t.nombre}
               className="flex flex-col gap-5 p-8 rounded-2xl"
               style={{
                 background: 'rgba(255,255,255,0.75)',
@@ -88,11 +76,11 @@ export default function Testimonials() {
               </div>
 
               {/* Review title */}
-              <p className="text-sm font-semibold text-ink-1 leading-snug">{t.title}</p>
+              <p className="text-sm font-semibold text-ink-1 leading-snug">{t.titulo}</p>
 
               {/* Quote */}
               <blockquote className="text-sm text-ink-2 leading-relaxed flex-1">
-                &ldquo;{t.quote}&rdquo;
+                &ldquo;{t.cita}&rdquo;
               </blockquote>
 
               {/* Author */}
@@ -102,15 +90,15 @@ export default function Testimonials() {
                   style={{ background: '#0C1521', letterSpacing: '0.05em' }}
                   aria-hidden
                 >
-                  {t.init}
+                  {t.iniciales}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-ink-1">{t.name}</p>
+                  <p className="text-sm font-semibold text-ink-1">{t.nombre}</p>
                   <p
                     className="text-xs mt-0.5"
-                    style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}
+                    style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-acento)' }}
                   >
-                    {t.role}
+                    {t.rol}
                   </p>
                 </div>
               </div>

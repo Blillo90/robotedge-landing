@@ -3,7 +3,11 @@ import { Bricolage_Grotesque, IBM_Plex_Mono, Figtree } from 'next/font/google'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import CookieBanner from '@/components/ui/CookieBanner'
 import { GoogleTagManagerScript, GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager'
+import { sanityFetch } from '@/sanity/client'
+import { globalColorsQuery } from '@/sanity/queries'
 import './globals.css'
+
+type GlobalColors = { colorPrincipal: string; colorSecundario: string; colorAcento: string }
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -136,10 +140,19 @@ const faqJsonLd = {
   ],
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  let colors: GlobalColors | null = null
+  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    colors = await sanityFetch<GlobalColors>(globalColorsQuery, ['globalColors'])
+  }
+  const cp = colors?.colorPrincipal  ?? '#F0F4F8'
+  const cs = colors?.colorSecundario ?? '#5A7A95'
+  const ca = colors?.colorAcento     ?? '#148AFF'
+
   return (
     <html lang="es" className={`${bricolage.variable} ${ibmPlexMono.variable} ${figtree.variable}`}>
       <head>
+        <style>{`:root{--color-principal:${cp};--color-secundario:${cs};--color-acento:${ca}}`}</style>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />

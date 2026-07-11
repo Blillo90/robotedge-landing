@@ -1,5 +1,9 @@
 import Image from 'next/image'
 import HeroForm from './HeroForm'
+import { sanityFetch } from '@/sanity/client'
+import { heroQuery } from '@/sanity/queries'
+
+type HeroData = { titular: string; subtitulo: string; textoCTA: string }
 
 const KINFO_URL = 'https://kinfo.com/portfolio/48014/performance'
 
@@ -44,7 +48,14 @@ function PerformanceCard() {
   )
 }
 
-export default function Hero() {
+export default async function Hero() {
+  let data: HeroData | null = null
+  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    data = await sanityFetch<HeroData>(heroQuery, ['hero'])
+  }
+  const titular  = data?.titular  ?? 'Trading algorítmico'
+  const subtitulo = data?.subtitulo ?? 'Cada vez que cierras una operación por miedo, aguantas una pérdida porque “seguro que vuelve” o te quedas paralizado frente al gráfico, estás pagando el precio del trading emocional. Existe una forma de operar con reglas. Sin dudas. Sin interferencias.'
+  const textoCTA = data?.textoCTA ?? 'Quiero montarlo ya →'
   return (
     <section className="pt-[60px] px-4 sm:px-6 pb-6">
       <div
@@ -111,22 +122,19 @@ export default function Hero() {
             {/* Headline */}
             <h1
               className="animate-fade-up delay-2 font-display font-extrabold leading-[1.05] tracking-tight mb-8"
-              style={{ fontSize: 'clamp(34px, 4.5vw, 64px)', color: '#F0F4F8' }}
+              style={{ fontSize: 'clamp(34px, 4.5vw, 64px)', color: 'var(--color-principal)' }}
             >
-              Trading algorítmico<br />
+              {titular}<br />
               con{' '}
-              <span style={{ color: '#148AFF', fontStyle: 'italic', fontWeight: 300 }}>NinjaTrader</span>
+              <span style={{ color: 'var(--color-acento)', fontStyle: 'italic', fontWeight: 300 }}>NinjaTrader</span>
             </h1>
 
             {/* Body */}
             <p
               className="animate-fade-up delay-3 leading-relaxed"
-              style={{ fontSize: '1.1rem', maxWidth: '46ch', color: '#5A7A95' }}
+              style={{ fontSize: '1.1rem', maxWidth: '46ch', color: 'var(--color-secundario)' }}
             >
-              Cada vez que cierras una operación por miedo, aguantas una pérdida
-              porque &ldquo;seguro que vuelve&rdquo; o te quedas paralizado frente al
-              gráfico, <strong style={{ color: '#F0F4F8' }}>estás pagando el precio del trading emocional.</strong>{' '}
-              Existe una forma de operar con reglas. Sin dudas. Sin interferencias.
+              {subtitulo}
             </p>
           </div>
 
@@ -142,7 +150,7 @@ export default function Hero() {
             className="px-6 py-6"
             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
           >
-            <HeroForm />
+            <HeroForm textoCTA={textoCTA} />
           </div>
         </div>
 
