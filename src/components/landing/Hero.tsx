@@ -54,7 +54,7 @@ export default async function Hero() {
     data = await sanityFetch<HeroData>(heroQuery, ['hero'])
   }
   const titular  = data?.titular  ?? 'Trading algorítmico'
-  const subtitulo = data?.subtitulo ?? 'Cada vez que cierras una operación por miedo, aguantas una pérdida porque “seguro que vuelve” o te quedas paralizado frente al gráfico, estás pagando el precio del trading emocional. Existe una forma de operar con reglas. Sin dudas. Sin interferencias.'
+  const subtitulo = data?.subtitulo ?? 'Cada vez que cierras una operación por miedo, aguantas una pérdida porque “seguro que vuelve” o te quedas paralizado frente al gráfico, estás pagando el precio del trading emocional. Existe una forma de operar con reglas basadas en datos, matemáticas y estadística. Hombres mienten, números nunca mienten.'
   const textoCTA = data?.textoCTA ?? 'Quiero montarlo ya →'
   return (
     <section className="pt-[60px] px-4 sm:px-6 pb-6">
@@ -161,8 +161,8 @@ export default async function Hero() {
         >
           {[
             { label: 'Ejecución',          value: '24 / 7' },
-            { label: 'Tipo de estrategia', value: 'Basada en reglas' },
-            { label: 'Enfoque',            value: 'Sistemático' },
+            { label: 'Tipo de estrategia', value: 'Sistema basado en datos, matemáticas y estadística' },
+            { label: 'Enfoque',            value: 'Cuantitativo' },
           ].map((s) => (
             <div key={s.label}>
               <p

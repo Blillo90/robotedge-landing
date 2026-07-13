@@ -9,8 +9,8 @@ type GuiaBannerData = { badge: string; titulo: string; textoCTA: string; pilares
 const ICONS: LucideIcon[] = [BarChart2, Cpu, ShieldCheck]
 
 const FB_PILARES: Pilar[] = [
-  { titulo: 'Ventaja estadística', texto: 'Sistemas con probabilidad medible, no intuición ni predicciones' },
-  { titulo: 'NinjaTrader 8', texto: 'Infraestructura profesional sin necesidad de programar una línea' },
+  { titulo: 'Ventaja estadística', texto: 'Sistemas con probabilidad medible, no intuición ni predicciones. Sin IA ni fuerza bruta: eso no suele funcionar' },
+  { titulo: 'NinjaTrader 8', texto: 'Infraestructura profesional y gratuita, sin necesidad de programar una línea' },
   { titulo: 'Validación real', texto: 'Monte Carlo + Walk-Forward para robustez comprobada antes de operar' },
 ]
 

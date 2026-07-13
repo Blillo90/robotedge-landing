@@ -55,11 +55,11 @@ export default async function Problem() {
             <p className="leading-relaxed" style={{ maxWidth: '60ch', color: '#5A7A95' }}>{parrafo}</p>
           </div>
           <div className="grid md:grid-cols-2 gap-px" style={{ background: 'rgba(255,255,255,0.05)' }}>
-            <div style={{ background: '#111C28' }}>
-              <div className="px-8 py-4 flex items-center gap-3" style={{ borderBottom: '1px solid rgba(239,68,68,0.15)', background: 'rgba(239,68,68,0.04)' }}>
+            <div style={{ background: 'linear-gradient(180deg, rgba(239,68,68,0.10) 0%, rgba(239,68,68,0.03) 100%), #111C28' }}>
+              <div className="px-8 py-4 flex items-center gap-3" style={{ borderBottom: '1px solid rgba(239,68,68,0.3)', background: 'rgba(239,68,68,0.12)' }}>
                 <span className="text-xs font-semibold tracking-[0.14em] uppercase" style={{ fontFamily: 'var(--font-mono)', color: '#EF4444' }}>{tituloEmocional}</span>
               </div>
-              <ul className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+              <ul className="divide-y" style={{ borderColor: 'rgba(239,68,68,0.08)' }}>
                 {itemsEmocional.map((item) => (
                   <li key={item.titulo} className="px-8 py-6 flex gap-4 items-start">
                     <span className="mt-0.5 shrink-0 text-base leading-none" style={{ color: '#EF4444', opacity: 0.7 }} aria-hidden>✗</span>
@@ -71,11 +71,11 @@ export default async function Problem() {
                 ))}
               </ul>
             </div>
-            <div style={{ background: '#0E1E2E' }}>
-              <div className="px-8 py-4 flex items-center gap-3" style={{ borderBottom: '1px solid rgba(20,138,255,0.2)', background: 'rgba(20,138,255,0.05)' }}>
-                <span className="text-xs font-semibold tracking-[0.14em] uppercase" style={{ fontFamily: 'var(--font-mono)', color: '#148AFF' }}>{tituloAlgoritmico}</span>
+            <div style={{ background: 'linear-gradient(180deg, rgba(16,185,129,0.10) 0%, rgba(16,185,129,0.03) 100%), #0E1E2E' }}>
+              <div className="px-8 py-4 flex items-center gap-3" style={{ borderBottom: '1px solid rgba(16,185,129,0.3)', background: 'rgba(16,185,129,0.12)' }}>
+                <span className="text-xs font-semibold tracking-[0.14em] uppercase" style={{ fontFamily: 'var(--font-mono)', color: '#10B981' }}>{tituloAlgoritmico}</span>
               </div>
-              <ul className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+              <ul className="divide-y" style={{ borderColor: 'rgba(16,185,129,0.08)' }}>
                 {itemsAlgoritmico.map((item) => (
                   <li key={item.titulo} className="px-8 py-6 flex gap-4 items-start">
                     <span className="mt-0.5 shrink-0 text-base leading-none" style={{ color: '#10B981' }} aria-hidden>✓</span>

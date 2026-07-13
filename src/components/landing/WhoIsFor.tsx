@@ -4,13 +4,19 @@ import { whoIsForQuery } from '@/sanity/queries'
 type WhoIsForData = { badge: string; titulo: string; itemsParaQuien: string[]; tituloNo: string; itemsNoParaQuien: string[] }
 
 const FB_YES = [
-  'Llevas tiempo en los mercados pero los resultados son irregulares o negativos',
-  'Has probado estrategias de terceros y ninguna encaja con tu perfil ni capital',
-  'Quieres dejar de operar por instinto y empezar a operar con un sistema replicable',
-  'No tienes conocimientos de programación pero estás dispuesto a aprender lo necesario',
-  'Buscas construir un sistema que pueda operar sin estar pendiente de él 24 horas',
-  'Tienes mentalidad de largo plazo y entiendes que la ventaja se construye, no se encuentra',
+  '*Si eres un trader frustrado* que ha probado de todo y no le ha salido nada, y *quiere ser rentable por fin*',
+  '*Si tienes el fuego interno de ser trader* pero *no tienes estrategias que sean rentables*',
+  '*Si tienes un trabajo estable y quieres crear una vía para rentabilizar tus ahorros sin hacer horas extra ni arriesgarlo todo*',
+  '*Si eres trader manual,* pero quieres poner *el piloto automático y huir de largas horas en el pc.*',
 ]
+
+function renderBold(text: string) {
+  return text.split(/(\*[^*]+\*)/g).map((part, i) =>
+    part.startsWith('*') && part.endsWith('*')
+      ? <strong key={i} style={{ color: '#F0F4F8', fontWeight: 700 }}>{part.slice(1, -1)}</strong>
+      : part
+  )
+}
 const FB_NO = [
   'Buscas un sistema que "gana siempre" o promesas de rentabilidad garantizada',
   'Quieres resultados sin proceso ni aprendizaje real',
@@ -47,7 +53,7 @@ export default async function WhoIsFor() {
                   <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.3)' }}>
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden><path d="M2 5l2.5 2.5L8 3" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </span>
-                  <span className="text-sm leading-relaxed" style={{ color: '#A0BCD0' }}>{item}</span>
+                  <span className="text-sm leading-relaxed" style={{ color: '#A0BCD0' }}>{renderBold(item)}</span>
                 </li>
               ))}
             </ul>

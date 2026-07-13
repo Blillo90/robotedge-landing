@@ -15,7 +15,7 @@ export default async function Bridge() {
   if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     data = await sanityFetch<BridgeData>(bridgeQuery, ['bridge'])
   }
-  const cita     = data?.cita     ?? 'Un algoritmo no tiene miedo. No tiene ego. No duda. Ejecuta exactamente lo que tú decides cuando estás tranquilo, no lo que haces cuando el mercado se mueve.'
+  const cita     = data?.cita     ?? 'Un algoritmo no tiene miedo. No tiene ego. No duda. Ejecuta exactamente lo que tú decides cuando estás tranquilo, no lo que haces cuando el mercado se mueve, o cuando has discutido con tu pareja.'
   const pieQuote = data?.pieQuote ?? 'El principio del trading sistemático'
   const pasos    = data?.pasos?.length ? data.pasos : FB_PASOS
 
@@ -26,7 +26,7 @@ export default async function Bridge() {
         <div className="px-8 md:px-14 py-16 md:py-20 max-w-6xl mx-auto">
           <blockquote className="mb-16 max-w-3xl">
             <span className="block font-display font-black leading-none mb-5 select-none" style={{ fontSize: '5rem', color: '#059669', opacity: 0.18, lineHeight: 1 }} aria-hidden>&ldquo;</span>
-            <p className="font-display font-bold leading-tight mb-6" style={{ fontSize: 'clamp(22px, 3vw, 38px)', color: '#141412' }}>{cita}</p>
+            <p className="font-display font-bold leading-tight mb-6" style={{ fontSize: 'clamp(22px, 3vw, 38px)', color: '#059669' }}>{cita}</p>
             <footer className="flex items-center gap-3" style={{ fontFamily: 'var(--font-mono)' }}>
               <span className="block w-6 h-px" style={{ background: '#059669', opacity: 0.5 }} />
               <span className="text-xs tracking-[0.14em] uppercase" style={{ color: '#6B7280' }}>{pieQuote}</span>
