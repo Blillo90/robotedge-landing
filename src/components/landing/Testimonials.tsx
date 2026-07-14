@@ -35,8 +35,8 @@ export default async function Testimonials() {
               className="font-display font-bold text-ink-1 leading-tight"
               style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
             >
-              Lo que dicen los alumnos de RobotEdge.<br />
-              <span style={{ color: '#148AFF' }}>En sus propias palabras.</span>
+              Lo mal que hablan de mí,<br />
+              <span style={{ color: '#148AFF' }}>en sus propias palabras.</span>
             </h2>
           </div>
 

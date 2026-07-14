@@ -5,12 +5,15 @@ type Fase = { titulo: string; duracion: string; descripcion: string }
 type HowItWorksData = { badge: string; titulo: string; parrafo: string; fases: Fase[] }
 
 const FB_FASES: Fase[] = [
-  { titulo: 'Fundamentos del trading algorítmico', duracion: 'Semanas 1 – 4', descripcion: 'Antes de programar nada, entiendes cómo funcionan los mercados desde una perspectiva cuantitativa: qué es un sistema de trading, qué lo diferencia del trading discrecional y por qué la validación estadística lo cambia todo.' },
-  { titulo: 'Diseño de la estrategia', duracion: 'Semanas 3 – 5', descripcion: 'Aprendes a construir hipótesis operables: condiciones de entrada, condiciones de salida, filtros y gestión de posición. Sin código todavía. Solo lógica, estructura y criterio.' },
-  { titulo: 'Backtesting con datos reales', duracion: 'Semanas 4 – 8', descripcion: 'Pruebas la estrategia sobre datos históricos para medir su comportamiento real. Aprendes a interpretar métricas clave: profit factor, drawdown, Sharpe ratio, curva de equity. Y a detectar overfitting antes de que te cueste dinero.' },
-  { titulo: 'Optimización y robustez', duracion: 'Semanas 7 – 10', descripcion: 'Una estrategia que funciona en un solo periodo no es robusta. Validarás que tu sistema es sólido en distintas condiciones de mercado, no solo en el rango donde lo diseñaste.' },
-  { titulo: 'Automatización y despliegue', duracion: 'Semanas 9 – 12', descripcion: 'Con la estrategia validada, pasas al código. Conectas el sistema a tu bróker y lo pones en funcionamiento. A partir de aquí, el robot opera siguiendo las reglas que tú definiste.' },
-  { titulo: 'Supervisión y cartera de sistemas', duracion: 'Mes 3 en adelante', descripcion: 'Un sistema algorítmico no es "ponlo y olvídalo". Aprendes a monitorizar el rendimiento, detectar señales de degradación y gestionar una cartera de sistemas diversificados para mayor estabilidad.' },
+  { titulo: 'La clave para ser un RobotEdger rentable', duracion: 'Semana 1', descripcion: 'Deja de hacer lo que te hace perder y aprende a ganar con robots. Qué es el trading algorítmico y por qué supera al discrecional, el lenguaje esencial del trader, tus primeros pasos en NinjaTrader y cómo usar el interés compuesto para multiplicar capital.' },
+  { titulo: 'Teoría probabilística', duracion: 'Semana 2', descripcion: 'Usa las matemáticas para operar con ventaja. Esperanza matemática, ratios clave (Profit Factor, Sharpe, Sortino, Drawdown), simulaciones Montecarlo y gestión del riesgo con position sizing para crecer de forma segura.' },
+  { titulo: 'Indicadores y análisis técnico', duracion: 'Semana 3', descripcion: 'Identifica los indicadores que realmente te hacen ganar dinero. Instalación de NinjaTrader, lectura de velas japonesas, indicadores clave (SMA, EMA, RSI, DM, Estocástico, Bollinger) y cómo combinarlos sin sobrecargar la estrategia.' },
+  { titulo: 'Crea y backtestea tu primera estrategia', duracion: 'Semana 4', descripcion: 'Monta tu robot en minutos sin programar. Uso del Strategy Builder paso a paso, las entradas y salidas más efectivas, y cómo hacer un backtest en NinjaTrader — con una primera estrategia rentable lista para usar.' },
+  { titulo: 'Estrategia avanzada en NinjaTrader', duracion: 'Semana 5', descripcion: 'Saca todo el potencial del backtest profesional. Cómo medir la rentabilidad real de tu estrategia, patrones estructurales y correlaciones entre activos, y salidas avanzadas con variables, breakeven y stops inteligentes.' },
+  { titulo: 'Optimiza tu estrategia sin cagarla', duracion: 'Semana 6', descripcion: 'Aumenta beneficios evitando el overfitting. Qué es el sobreajuste y cómo evitarlo, qué parámetros optimizar (indicadores, stops, instrumentos, horarios) y las señales que confirman que tu estrategia es sólida.' },
+  { titulo: 'Gestión del riesgo y puesta en marcha en real', duracion: 'Semana 7', descripcion: 'Opera en vivo con control total y sin sustos. Position sizing aplicado a estrategias reales, horarios y márgenes de futuros, montaje de servidor y activación en tiempo real — con tu trabajo final: una estrategia validada con Montecarlo.' },
+  { titulo: 'Domina las Prop Firms', duracion: 'Bonus', descripcion: 'Aprende a exprimir a las casas de fondeo con un sistema matemático que calcula exactamente tu tasa de retiro en piloto automático.' },
+  { titulo: 'Correlación entre estrategias', duracion: 'Bonus', descripcion: 'Aprende a combinar tus estrategias — no para hacer multiestrategia, sino para maximizar tus ganancias y minimizar tus pérdidas combinándolas entre ellas.' },
 ]
 
 export default async function HowItWorks() {
@@ -18,8 +21,8 @@ export default async function HowItWorks() {
   if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
     data = await sanityFetch<HowItWorksData>(howItWorksQuery, ['howItWorks'])
   }
-  const badge   = data?.badge   ?? 'Cómo funciona'
-  const titulo  = data?.titulo  ?? 'De cero a sistema operativo en vivo'
+  const badge   = data?.badge   ?? 'De BoboTrader a RobotEdger'
+  const titulo  = data?.titulo  ?? 'Pasarás de cero a sistema operativo en vivo'
   const parrafo = data?.parrafo ?? 'El proceso de construir un robot de trading sigue una secuencia lógica. No hay atajos, pero hay un camino claro. Esto es lo que recorrerás.'
   const fases   = data?.fases?.length ? data.fases : FB_FASES
 
